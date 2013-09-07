@@ -1,0 +1,38 @@
+program restaurante;
+var
+   mesa, tela : semaphore;
+
+process Type TipoProcessoRefeicao(numeroDoCliente : integer);
+begin
+     while(true) do
+     begin
+          wait(tela);
+                     writeln('Cliente: ',numeroDoCliente,' chegando e esperando mesa.');
+          signal(tela);
+          sleep(random(20)+3);
+
+          wait(mesa);
+                     wait(tela);
+                                writeln('Cliente: ',numeroDoCliente,' iniciando refeição.');
+                     signal(tela);
+                     sleep(random(20)+3);
+                     wait(tela);
+                                writeln('Cliente: ',numeroDoCliente,' terminando refeição e liberando mesa.');
+                     signal(tela);
+          signal(mesa);
+
+     end;
+end;
+
+var
+   clientes : array[1..20] of TipoProcessoRefeicao;
+   numeroDoCliente : integer;
+
+begin
+     initial(mesa, 3);
+     initial(tela, 1);
+     cobegin
+            for numeroDoCliente := 1 to 10
+                do clientes[numeroDoCliente](numeroDoCliente);
+     coend;
+end.

@@ -1,0 +1,69 @@
+program BancoCompartilhado;
+var
+   saldo : integer;
+   semafaroSaque, semafaroTela, semafaroDeposito, semafaroEsperaDeposito : semaphore;
+
+process type processoFilho(idFilho : integer);
+var
+   saque : integer;
+begin
+     repeat
+           wait(semafaroSaque);
+           saque := random(50) + 50;
+           wait(semafaroTela);
+           writeln('----------');
+           writeln('Filho ',idFilho,' deseja sacar R$ ',saque,'.');
+           signal(semafaroTela);
+           sleep(random(10));
+           while (saque > saldo) do
+           begin
+                signal(semafaroDeposito);
+                wait(semafaroEsperaDeposito);
+           end;
+           saldo := saldo - saque;
+           wait(semafaroTela);
+           writeln('Saque realizado pelo filho ',idFilho,'. O novo saldo é: R$',saldo,'.');
+           writeln('----------');
+           signal(semafaroTela);
+           sleep(random(15));
+           signal(semafaroSaque);
+     forever;
+end;
+
+process type processoPai;
+begin
+     repeat
+           wait(semafaroDeposito);
+           wait(semafaroTela);
+           writeln('Não a dinheiro suficiente para realizar o saque. O saldo é de: R$ ',saldo,'.');
+           signal(semafaroTela);
+           sleep(random(15));
+           saldo := saldo + random(150) + 50;
+           wait(semafaroTela);
+           writeln('Novo depósito efetuado. O saldo é de: R$ ',saldo,'.');
+           signal(semafaroTela);
+           sleep(random(15));
+           signal(semafaroEsperaDeposito);
+     forever;
+end;
+
+
+var
+   processosFilho : array[1..10] of processoFilho;
+   processosPai : processoPai;
+   cont : integer;
+
+begin
+     initial(semafaroSaque, 1);
+     initial(semafaroTela, 1);
+     initial(semafaroDeposito, 0);
+     initial(semafaroEsperaDeposito, 0);
+     saldo := 0;
+     cobegin
+            processosPai;
+            for cont := 1 to 10 do
+            begin
+                 processosFilho[cont](cont);
+            end;
+     coend;
+end.

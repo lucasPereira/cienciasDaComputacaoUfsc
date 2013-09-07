@@ -1,0 +1,10 @@
+* Tabela: 
+ListaEncadeada: Usar ListaEncadeada simples pois não é necessário que seja duplamente encadeada já que não será necessário ir e voltar, evitando assim, dados desnecessários. Para evitar dados desnecessários poderia-se criar a tabela apenas com ListaArray, porém o problema neste caso é que não há muita flexibilidade, uma vez que precisará alocar um espaço x na memória e dependendo da massa de dados que for inserida pode-se precisar ter mais ou menos espaço do que determinado em x.
+Ou seja por se tratar de uma tabela de dados e como não se sabe o quanto a massa de dados pode crescer é mais vantajoso usar uma ListaEncadeada do que uma ListaArray.
+
+* Indexar Chave Primária: 
+Árvore pois possue busca binária.
+
+* Diretórios: 
+ListaArray de ListaEncadeada: Lista array pois os diretórios tendem a crescer pouco para baixo, ficando com a mesma altura a maior parte do tempo. E ListaEncadeada pois os dados tendem a crescer bastante assim para dar uma maior flexibilidade já que algumas categorias podem ter quantidade de indexações bem diferentes então é interessante que se possa crescer tanto quanto se queira sem que precise se comprometer com um tamanho minímo.
+

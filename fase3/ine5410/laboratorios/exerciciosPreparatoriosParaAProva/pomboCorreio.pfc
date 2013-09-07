@@ -1,0 +1,75 @@
+program PomboCorreio;
+type tipoMensagem = record
+      remetente : integer;
+      destinatario : integer;
+      mensagem : integer;
+end;
+
+var
+   bufferDeMensagens : array[1..3] of tipoMensagem;
+   semafaroEscrita, semafaroPombo, semafaroEnviarPombo, semafaroTela : semaphore;
+   numeroDeMensagens : integer;
+
+process depositarCarta;
+var
+   mensagem : tipoMensagem;
+begin
+     repeat
+           wait(semafaroEscrita);
+           mensagem.remetente := random(10);
+           mensagem.destinatario := random(10);
+           mensagem.mensagem := random(10000);
+           bufferDeMensagens[numeroDeMensagens] := mensagem;
+           sleep(2);
+           wait(semafaroTela);
+           writeln('Colocando mensagem. Remetente: ',mensagem.remetente,'. Destinatário: ',mensagem.destinatario,'.');
+           signal(semafaroTela);
+           if (numeroDeMensagens = 3)
+           then
+           begin
+                wait(semafaroPombo);
+                signal(semafaroEnviarPombo);
+                numeroDeMensagens := 1;
+                signal(semafaroEscrita);
+            end
+            else
+            begin
+                 numeroDeMensagens := numeroDeMensagens + 1;
+                 signal(semafaroEscrita);
+            end;
+     forever;
+end;
+
+process type enviarCaixaPostal;
+var
+   idPombo : integer;
+begin
+     repeat
+           wait(semafaroEnviarPombo);
+           idPombo := random(50);
+           wait(semafaroTela);
+           writeln('Caixa postal encheu. Pombo ',idPombo,' enviando caixa postal');
+           signal(semafaroTela);
+           sleep(random(100));
+           wait(semafaroTela);
+           writeln('Pombo ',idPombo,' retornou');
+           signal(semafaroTela);
+           signal(semafaroPombo);
+     forever;
+end;
+
+var
+   enviarPombo : array[1..3] of enviarCaixaPostal;
+begin
+     numeroDeMensagens := 1;
+     initial(semafaroTela, 1);
+     initial(semafaroEscrita, 1);
+     initial(semafaroPombo, 3);
+     initial(semafaroEnviarPombo, 0);
+     cobegin
+            depositarCarta;
+            enviarPombo[1];
+            enviarPombo[2];
+            enviarPombo[3];
+     coend;
+end.
