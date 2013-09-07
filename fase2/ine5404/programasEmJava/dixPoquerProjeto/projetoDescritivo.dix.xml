@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file:/home/lucas/.eclipse/eclipse/plugins/br.ufsc.edugraf.dix_2010.9.2/transformacao/dix.xml"?>
+
+<página nome="PoquerDixProjeto">
+	<estilo uri="recursos/css/estiloParqueVerde.css" />
+	
+	<etiqueta nome="Título" largura="800">Dix Pôquer - Planejamento de Projeto</etiqueta>
+	
+	<etiqueta nome="Explicativo" esquerda="20" topo="70" largura="740">
+		Explicativo do Projeto:
+		\n\n		
+		O objetivo do projeto é fazer a criação de um jogo de pôquer online. Serão feitos torneios
+		no estilo SNGs (Sit and Gos), onde o torneio começa quando tiver jogadores suficientes e só termina
+		quando restar apenas um jogador. A modalidade adotada será o Texas Holdem.
+		\n\n
+		Nesse projeto não será feito SNGs multi-tables devido a sua complexidade de implementação, portanto
+		o número de jogadores por torneio será limitado, podendo ter torneios com 2, 3, 6 ou 9 jogadores
+		no máximo.
+		\n\n
+		O projeto consistirá basicamente de três programas distintos: Um cliente que será usado pelos 
+		jogadores. Um servidor que será usado para a criação de diversos torneios e um admnistrador
+		que poderá ver os torneios que estão aguardando jogadores para começar, torneios em andamento
+		e torneios finalizados. Assim que o torneio acabar, o jogador necessitará atualizar a página
+		para poder entrar em um novo torneio caso desejado.
+	</etiqueta>	
+	
+	<etiqueta nome="Insteressados" esquerda="20" topo="380" largura="740">
+		Interessados no Dix Pôquer:
+		\n\n
+		* Jogadores e aprendizes de Pôquer;
+		\n\n
+		* Admnistrador: É o cara que comprou o software Dix Pôquer e ganha dinheiro com ele;
+		\n\n
+		* Servidor: Trabalha para o administrador e cria torneios.
+	</etiqueta>
+	
+	<etiqueta nome="Insteressados" esquerda="20" topo="550" largura="740">
+		Casos de Uso:
+		\n\n
+		* Jogadores e aprendizes de Pôquer: Aqui existem inúmeros casos de uso. Cada rodada
+		do jogo é na verdade um caso de uso diferente. O jogador pode apostar, apostar tudo, desistir,
+		pagar a aposta, pedir mesa, enfim;
+		\n\n
+		* Admnistrador: O admnistrador poderá
+		gerenciar todos os torneios em andamento. Poderá ver quais torneios que estão aguardando jogadores
+		para poder iniciar, poderá chegar quais torneios estão em andamento e quantos jogadores estão
+		jogando entre outros. Basicamente o admnistrador tem como casos de uso cuidar dos "negócios"
+		gerenciando os funcionários que cuidam dos servidores;
+		\n\n			
+		* Servidor: Também tem vários casos de uso. Tem como funcão principal criar torneios e escolher 
+		configuracões. 
+	</etiqueta>
+	
+	<etiqueta nome="Adicionais" esquerda="20" topo="850" largura="740">
+		Adicionais ao Projeto:\n\n
+		* Opcão para reentrar no torneiro: Essa opcão servirá para caso o jogador perca a conexão por
+		exemplo, e queira voltar ao torneio que estava jogando.
+	</etiqueta>	
+</página>

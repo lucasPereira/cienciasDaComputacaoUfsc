@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file:/home/lucas/.eclipse/plugins/br.ufsc.edugraf.dix_2010.9.2/transformacao/dix.xml"?>
+
+<página nome="Cliente">
+	<estilo nome="TemaDixPoquer" uri="recursos/css/estiloDixPoquer.css" /> 
+	
+	<imagem nome="imagemLogo" uri="recursos/imagens/logo.png" esquerda="10" topo="10" altura="53" largura="201" />
+	<áreaDeTexto nome="areaDeTextoMensagens" esquerda="330" topo="0" altura="55" largura="400">Notificações</áreaDeTexto>
+	
+	<imagem nome="imagemMesa" uri="recursos/imagens/mesa.png" esquerda="210" topo="170" altura="342" largura="650" />
+	<imagem nome="imagemCarta1Flop" uri="recursos/imagens/cartas/10espadas.png" esquerda="400" topo="330" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Flop" uri="recursos/imagens/cartas/Jespadas.png" esquerda="450" topo="330" altura="54" largura="42" />
+	<imagem nome="imagemCarta3Flop" uri="recursos/imagens/cartas/Qespadas.png" esquerda="500" topo="330" altura="54" largura="42" />
+	<imagem nome="imagemCartaTurn" uri="recursos/imagens/cartas/Kespadas.png" esquerda="570" topo="330" altura="54" largura="42" />
+	<imagem nome="imagemCartaRiver" uri="recursos/imagens/cartas/Aespadas.png" esquerda="640" topo="330" altura="54" largura="42" />
+	<etiqueta nome="etiquetaPote" esquerda="495" topo="260" largura="70">Pote</etiqueta>
+	<etiqueta nome="etiquetaValorPote" esquerda="495" topo="280" largura="70">$ 35000</etiqueta>
+	
+	<imagem nome="imagemDealerJogador1" uri="recursos/imagens/dealer.png" esquerda="517" topo="170" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador1" uri="recursos/imagens/baralhoVerde.png" esquerda="404" topo="95" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador1" uri="recursos/imagens/baralhoVerde.png" esquerda="450" topo="95" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador1" esquerda="505" topo="212" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador1" esquerda="499" topo="95" largura="100">Jogador 1</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador1" esquerda="499" topo="122" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador1" esquerda="499" topo="142" largura="100">Sitting Out</etiqueta>
+	
+	<imagem nome="imagemDealerJogador2" uri="recursos/imagens/dealer.png" esquerda="736" topo="186" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador2" uri="recursos/imagens/baralhoVerde.png" esquerda="674" topo="110" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador2" uri="recursos/imagens/baralhoVerde.png" esquerda="720" topo="110" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador2" esquerda="724" topo="228" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador2" esquerda="769" topo="110" largura="100">Jogador 2</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador2" esquerda="769" topo="137" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador2" esquerda="769" topo="157" largura="100">Sitting Out</etiqueta>
+	
+	<imagem nome="imagemDealerJogador3" uri="recursos/imagens/dealer.png" esquerda="824" topo="307" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador3" uri="recursos/imagens/baralhoVerde.png" esquerda="882" topo="220" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador3" uri="recursos/imagens/baralhoVerde.png" esquerda="928" topo="220" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador3" esquerda="764" topo="312" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador3" esquerda="865" topo="279" largura="100">Jogador 3</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador3" esquerda="865" topo="306" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador3" esquerda="865" topo="326" largura="100">Sitting Out</etiqueta>
+
+	<imagem nome="imagemDealerJogador4" uri="recursos/imagens/dealer.png" esquerda="780" topo="430" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador4" uri="recursos/imagens/baralhoVerde.png" esquerda="867" topo="512" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador4" uri="recursos/imagens/baralhoVerde.png" esquerda="913" topo="512" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador4" esquerda="720" topo="436" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador4" esquerda="850" topo="430" largura="100">Jogador 4</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador4" esquerda="850" topo="457" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador4" esquerda="850" topo="477" largura="100">Sitting Out</etiqueta>
+	
+	<imagem nome="imagemDealerJogador5" uri="recursos/imagens/dealer.png" esquerda="603" topo="475" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador5" uri="recursos/imagens/baralhoVerde.png" esquerda="700" topo="534" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador5" uri="recursos/imagens/baralhoVerde.png" esquerda="746" topo="534" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador5" esquerda="589" topo="445" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador5" esquerda="589" topo="515" largura="100">Jogador 5</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador5" esquerda="589" topo="542" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador5" esquerda="589" topo="562" largura="100">Sitting Out</etiqueta>
+
+	<imagem nome="imagemDealerJogador6" uri="recursos/imagens/dealer.png" esquerda="441" topo="475" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador6" uri="recursos/imagens/baralhoVerde.png" esquerda="284" topo="534" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador6" uri="recursos/imagens/baralhoVerde.png" esquerda="330" topo="534" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador6" esquerda="429" topo="445" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador6" esquerda="379" topo="515" largura="100">Jogador 6</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador6" esquerda="379" topo="542" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador6" esquerda="379" topo="562" largura="100">Sitting Out</etiqueta>
+
+	<imagem nome="imagemDealerJogador7" uri="recursos/imagens/dealer.png" esquerda="250" topo="430" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador7" uri="recursos/imagens/cartas/2espadas.png" esquerda="25" topo="430" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador7" uri="recursos/imagens/cartas/7espadas.png" esquerda="71" topo="430" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador7" esquerda="290" topo="436" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador7" esquerda="120" topo="430" largura="100">Jogador 7</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador7" esquerda="120" topo="457" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador7" esquerda="120" topo="477" largura="100">Sitting Out</etiqueta>
+	
+	<imagem nome="imagemDealerJogador8" uri="recursos/imagens/dealer.png" esquerda="210" topo="307" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador8" uri="recursos/imagens/baralhoVerde.png" esquerda="5" topo="280" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador8" uri="recursos/imagens/baralhoVerde.png" esquerda="51" topo="280" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador8" esquerda="250" topo="312" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador8" esquerda="100" topo="280" largura="100">Jogador 8</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador8" esquerda="100" topo="307" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador8" esquerda="100" topo="327" largura="100">Sitting Out</etiqueta>
+	
+	<imagem nome="imagemDealerJogador9" uri="recursos/imagens/dealer.png" esquerda="296" topo="186" altura="36" largura="36" />
+	<imagem nome="imagemCarta1Jogador9" uri="recursos/imagens/baralhoVerde.png" esquerda="94" topo="110" altura="54" largura="42" />
+	<imagem nome="imagemCarta2Jogador9" uri="recursos/imagens/baralhoVerde.png" esquerda="140" topo="110" altura="54" largura="42" />
+	<etiqueta nome="etiquetaApostaJogador9" esquerda="282" topo="228" largura="50">50000</etiqueta>
+	<etiqueta nome="etiquetaNomeJogador9" esquerda="189" topo="110" largura="100">Jogador 9</etiqueta>	
+	<etiqueta nome="etiquetaFichasJogador9" esquerda="189" topo="137" largura="100">$ 20000</etiqueta>
+	<etiqueta nome="etiquetaAcaoJogador9" esquerda="189" topo="157" largura="100">Sitting Out</etiqueta>
+</página>

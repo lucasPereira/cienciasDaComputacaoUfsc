@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file:/home/lucas/eclipse/plugins/br.ufsc.edugraf.dix_2010.9.2/transformacao/dix.xml"?>
+
+<página nome="parqueVerde">
+  	
+  	<estilo nome="folhadeestilo" uri="recursos/css/estiloParqueVerde.css" />
+  
+	<etiqueta nome="enlace" url="recursos/imagens/reciclagem.png" esquerda="50" topo="20">
+		Um enlace para uma imagem
+	</etiqueta>
+  
+	<imagem nome="imagem" largura="100" altura="100" esquerda="50" topo="90" uri="recursos/imagens/reciclagem.png" legenda="Uma Imagem:"/>
+  
+	<etiqueta nome="etiqueta" esquerda="50" topo="200">
+		Uma Etiqueta
+	</etiqueta>
+  
+	<áreaDeTexto nome="áreaDeTexto" esquerda="50" topo="240">Uma Área de Texto</áreaDeTexto>
+
+	<botão nome="botão" esquerda="50" topo="310">Um Botão</botão>
+
+	<campoDeTexto nome="campoDeTexto" esquerda="50" topo="350">Um Campo de texto</campoDeTexto>
+
+	<botõesDeRádio nome="botõesDeRádio" esquerda="50" topo="390">	
+		<opção nome="botõesDeRádio_opção1">Botão de Rádio 1</opção>
+		<opção nome="botõesDeRádio_opção2">Botão de Rádio 2</opção>
+		<opção nome="botõesDeRádio_opção3">Botão de Rádio 3</opção>
+	</botõesDeRádio>
+
+	<caixaDeEscolha nome="caixaDeEscolha" esquerda="50" topo="480">	
+		<opção nome="caixaDeEscolha_opção1">Caixa de Escolha - primeira opção</opção>
+		<opção nome="caixaDeEscolha_opção2">Caixa de Escolha - segunda opção</opção>
+	</caixaDeEscolha>
+  
+	<grade nome="grade" largura="100" altura="100" esquerda="350" topo="50" linhas="2" colunas="2" legenda="Uma Grade:"/>
+
+	<áreaSensível nome="áreaSensível" largura="120" altura="100" esquerda="350" topo="250" legenda="Uma Área Sensível:"/>
+
+	<listaDeEscolha nome="listaDeEscolha" esquerda="50" topo="560">	
+		<opção nome="listaDeEscolha_opção1">Lista de escolha - opção 1</opção>
+		<opção nome="listaDeEscolha_opção2">Lista de escolha - opção 2</opção>
+	</listaDeEscolha>
+
+</página>

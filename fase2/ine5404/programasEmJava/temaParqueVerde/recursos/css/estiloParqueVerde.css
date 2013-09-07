@@ -1,0 +1,117 @@
+*, .página 
+{
+	background-color:#A3EE5C;
+	font-family:Arial, Helvetica, Sans-Serif;
+	font-size:15px;
+}
+
+.etiqueta, .campoDeTexto, .áreaDeTexto, .listaDeEscolha, .caixaDeEscolha, .áreaSensível, .botãoDeRadio, option 
+{
+	background-color:#F7F7F7;
+}
+
+.campoDeTexto, .áreaDeTexto, .listaDeEscolha, .caixaDeEscolha, .botãoDeRadio
+{
+	border-color:#AAA;
+	border-style:solid;
+	border-width:3px;
+	color:#444;
+	padding:3px;
+}
+
+.campoDeTexto:hover, .áreaDeTexto:hover, .listaDeEscolha:hover, .caixaDeEscolha:hover, .botãoDeRadio:hover
+{
+	border-color:#008B00;
+	color:#000;
+}
+
+label
+{
+	background-color:transparent;
+	color:#000;	
+}
+
+.etiqueta
+{
+	background-color:#C0FF3E;
+	color:#009900;
+	padding:5px;
+	text-decoration:none;
+}
+
+
+a, a#enlace 
+{
+	color:#009900;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+a:hover, a#enlace:hover 
+{
+	text-decoration:none;
+}
+
+.botãoDeRadio
+{
+	padding:10px;	
+}
+
+.botão 
+{
+	background-color:#66CD00;
+	border-color:#008B00;
+	border-style:outset; 
+	border-width:2px;
+	color:#FFFFFF;
+	font-weight:bold;
+	padding:5px;
+}
+
+.botão:hover 
+{
+	background-color:#C0FF3E;
+	border-color:#698B22;
+	border-style:inset;
+	color:#008B00;
+	cursor:pointer;
+}
+
+.botão:active 
+{
+	border-style:outset;
+	cursor:pointer;
+}
+
+.grade 
+{
+	background-color:#CD661D;
+}
+
+.célula 
+{
+	background-color:#66CD00;
+	border-color:#008B00;
+	border-syle:solid; 
+	border-width:3px; 
+}
+
+.célula:hover 
+{
+	background-color:#C0FF3E;
+	cursor:pointer;
+}
+
+.áreaSensível
+{
+	background-color:#66CD00
+}	
+	
+.áreaSensível:hover 
+{
+	border-color:#008B00; 
+	border-style:solid;
+	border-width:3px;
+	cursor:pointer;
+	margin:-3px;
+}

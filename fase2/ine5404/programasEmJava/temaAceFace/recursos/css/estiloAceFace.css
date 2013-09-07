@@ -1,0 +1,89 @@
+*, .página 
+{
+	background-color:#F8F4E8;
+	font-family:Arial, Helvetica, Sans-Serif;
+	font-size:15px;
+}
+
+.etiqueta, .campoDeTexto, .áreaDeTexto, .listaDeEscolha, .caixaDeEscolha, .áreaSensível, .botãoDeRadio, label, option 
+{
+	background-color:#ECE8CD;
+}
+
+.etiqueta 
+{
+	padding:5px;
+	text-decoration:none;
+}
+
+.áreaSensível
+{
+	background-color:#CEC3A9
+}	
+	
+.áreaSensível:hover 
+{
+	border-color:#FF8C00; 
+	border-style:solid;
+	border-width:3px;
+	cursor:pointer;
+	margin:-3px;
+}
+
+.botãoDeRadio
+{
+	padding:10px;	
+}
+
+.botão 
+{
+	background-color:#CD661D;
+	border-color:#CD661D;
+	border-style:outset; 
+	border-width:2px;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+.botão:hover 
+{
+	border-style:inset;
+	cursor:pointer;
+}
+
+.botão:active 
+{
+	border-style:outset;
+	cursor:pointer;
+}
+
+a, a#enlace 
+{
+	color:#FF8C00;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+a:hover, a#enlace:hover 
+{
+	text-decoration:none;
+}
+
+.grade 
+{
+	background-color:#CD661D;
+}
+
+.célula 
+{
+	background-color:#CD661D;
+	border-color:#8B4513;
+	border-syle:solid; 
+	border-width:3px; 
+}
+
+.célula:hover 
+{
+	background-color:#FF8C00;
+	cursor:pointer;
+}

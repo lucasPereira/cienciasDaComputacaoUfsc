@@ -1,0 +1,6 @@
+package modelo.torneio;
+
+public enum RankDeMaos 
+{
+	KICKER, PAR, DOIS_PARES, TRINCA, SEQUENCIA, FLUSH, FULL_HOUSE, QUADRA, FLUSH_SEQUENCIA, FLUSH_SEQUENCIA_REAL
+}

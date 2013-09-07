@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file:/home/lucas/.eclipse/eclipse/plugins/br.ufsc.edugraf.dix_2010.9.2/transformacao/dix.xml"?>
+
+<página nome="Inicial" tema="campeche">
+	<aplique nome="Aplique" classe="aplique.UmAplique" />
+	
+	<áreaDeTexto nome="áreaDeTextoChat" altura="400" largura="400" esquerda="50" topo="50"></áreaDeTexto>
+	<campoDeTexto nome="campoDeTextoMensagens" largura="250" topo="470" esquerda="50">Digite Sua Mensagem</campoDeTexto>
+	<botão nome="botaoEnviar" largura="100" esquerda="350" topo="470">Enviar</botão>
+</página>

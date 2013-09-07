@@ -1,0 +1,52 @@
+<class-diagram version="0.9.86" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.FachadaJogador" project="Bingo Cliente 1.5" 
+    file="/Bingo Cliente 1.5/src/modelo/FachadaJogador.java" binary="false">    
+    <position x="291" y="215" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.Cartela" project="Bingo Cliente 1.5" 
+    file="/Bingo Cliente 1.5/src/modelo/Cartela.java" binary="false">    
+    <position x="291" y="657" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.Jogador" project="Bingo Cliente 1.5" 
+    file="/Bingo Cliente 1.5/src/modelo/Jogador.java" binary="false">    
+    <position x="291" y="464" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association>    
+    <source project="Bingo Cliente 1.5" name="modelo.FachadaJogador" 
+      file="/Bingo Cliente 1.5/src/modelo/FachadaJogador.java" binary="false" navigable="false">      
+      <attribute name="jogadorBingo"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="Bingo Cliente 1.5" name="modelo.Jogador" file="/Bingo Cliente 1.5/src/modelo/Jogador.java" 
+      binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="Bingo Cliente 1.5" name="modelo.Jogador" file="/Bingo Cliente 1.5/src/modelo/Jogador.java" 
+      binary="false" navigable="false">      
+      <attribute name="cartelaBingo"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="Bingo Cliente 1.5" name="modelo.Cartela" file="/Bingo Cliente 1.5/src/modelo/Cartela.java" 
+      binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

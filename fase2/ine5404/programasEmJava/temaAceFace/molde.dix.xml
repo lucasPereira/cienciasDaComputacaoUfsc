@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file:/home/lucas/eclipse/plugins/br.ufsc.edugraf.dix_2010.9.2/transformacao/dix.xml"?>
+<página nome="temaAceFace">
+
+	<estilo nome="folhadeestilos" uri="recursos/css/estiloAceFace.css" />
+	
+	<etiqueta nome="enlace" topo="450" esquerda="90" url="recursos/imagens/aceFace.png">
+ 		Um enlace para uma imagem
+	</etiqueta>
+  
+ 	<imagem nome="imagem" esquerda="320" largura="100" altura="100" topo="50" uri="recursos/imagens/aceFace.png" legenda="Uma Imagem:"/>
+  
+ 	<etiqueta nome="etiqueta" topo="60" esquerda="125">
+ 		Uma Etiqueta
+	</etiqueta>
+  
+	<áreaDeTexto nome="áreaDeTexto" largura="300" altura="50" esquerda="300" topo="195">Uma Área de Texto</áreaDeTexto>
+
+	<botão nome="botão" largura="150" altura="50" esquerda="95" topo="110">Um Botão</botão>
+
+	<campoDeTexto nome="campoDeTexto" largura="300" altura="20" esquerda="300" topo="285">Um Campo de texto</campoDeTexto>
+			
+	<botõesDeRádio nome="botõesDeRádio" largura="130" altura="50" esquerda="110" topo="360">	
+		<opção nome="botõesDeRádio_opção1">Botão de Rádio 1</opção>
+		<opção nome="botõesDeRádio_opção2">Botão de Rádio 2</opção>
+		<opção nome="botõesDeRádio_opção3">Botão de Rádio 3</opção>
+	</botõesDeRádio>
+
+	<caixaDeEscolha nome="caixaDeEscolha" largura="300" altura="50" esquerda="300" topo="350">	
+		<opção nome="caixaDeEscolha_opção1">Caixa de Escolha - primeira opção</opção>
+		<opção nome="caixaDeEscolha_opção2">Caixa de Escolha - segunda opção</opção>
+	</caixaDeEscolha>
+  
+	<grade nome="grade" largura="100" altura="100" esquerda="480" topo="50" linhas="2" colunas="2" legenda="Uma Grade:"/>
+
+	<áreaSensível nome="áreaSensível" largura="120" altura="100" esquerda="110" topo="215" legenda="Uma Área Sensível:"/>
+
+	<listaDeEscolha nome="listaDeEscolha" largura="250" altura="20" esquerda="350" topo="450">	
+		<opção nome="listaDeEscolha_opção1">Lista de escolha - opção 1</opção>
+		<opção nome="listaDeEscolha_opção2">Lista de escolha - opção 2</opção>
+	</listaDeEscolha>
+	
+</página>

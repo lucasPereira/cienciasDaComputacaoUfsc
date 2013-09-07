@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/dix/dix_2010-09-02/transformacao/dix.xml"?>
+
+<página nome="Servidor" tema="aceface">
+	<aplique nome="Servidor" classe="apliques.ApliqueServidor" />
+	<botão nome="botaoIniciarServidor" topo="50" esquerda="50">Iniciar Servidor</botão>
+</página>

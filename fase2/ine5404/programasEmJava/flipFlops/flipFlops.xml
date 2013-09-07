@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="file:/home/lucas/.eclipse/org.eclipse.platform_3.5.0_155965261/plugins/br.ufsc.edugraf.dix_2009.9.2/transformacao/dix.xml"?>
+
+<página nome="index" tema="aceface">
+	<aplique nome="principal" topo="20" esquerda="20" largura="800" altura="500" classe="aplique.Principal" />
+	<botão nome="DisparaAplique" topo="550" esquerda="20"></botão> 
+</página>

@@ -1,0 +1,208 @@
+<class-diagram version="0.9.86" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true">  
+  <interface corner="BOTTOM_RIGHT" language="java" name="modelo.cartela.TipoCartela" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/cartela/TipoCartela.java" binary="false">    
+    <position x="374" y="124" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </interface>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.cartela.CartelaAbstrata" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/cartela/CartelaAbstrata.java" binary="false">    
+    <position x="373" y="209" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.cartela.FabricaDeCartelaQuadrada" 
+    project="Bingo Servidor 3.0" file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaDeCartelaQuadrada.java" 
+    binary="false">    
+    <position x="704" y="348" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.cartela.FabricaDeCartela" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaDeCartela.java" binary="false">    
+    <position x="891" y="286" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.cartela.CartelaQuadrada" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/cartela/CartelaQuadrada.java" binary="false">    
+    <position x="373" y="348" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="modelo.cartela.TipoFabricaDeCartela" 
+    project="Bingo Servidor 3.0" file="/Bingo Servidor 3.0/src/modelo/cartela/TipoFabricaDeCartela.java" binary="false">    
+    <position x="807" y="123" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </interface>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.cartela.FabricaAbstrataDeCartela" 
+    project="Bingo Servidor 3.0" file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaAbstrataDeCartela.java" 
+    binary="false">    
+    <position x="810" y="195" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.cartela.Cartela" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/cartela/Cartela.java" binary="false">    
+    <position x="468" y="286" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.jogador.Jogador" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/jogador/Jogador.java" binary="false">    
+    <position x="84" y="124" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.jogador.ListaDeJogador" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/jogador/ListaDeJogador.java" binary="false">    
+    <position x="84" y="39" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="modelo.sorteio.TipoGlobo" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/sorteio/TipoGlobo.java" binary="false">    
+    <position x="73" y="229" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </interface>  
+  <interface corner="BOTTOM_RIGHT" language="java" name="modelo.sorteio.TipoRecipiente" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/sorteio/TipoRecipiente.java" binary="false">    
+    <position x="193" y="229" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </interface>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.sorteio.Globo" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/sorteio/Globo.java" binary="false">    
+    <position x="73" y="343" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="modelo.sorteio.Recipiente" project="Bingo Servidor 3.0" 
+    file="/Bingo Servidor 3.0/src/modelo/sorteio/Recipiente.java" binary="false">    
+    <position x="193" y="347" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="true" signature="true" visibility="true">      
+      <attributes public="false" package="false" protected="false" private="false"/>      
+      <operations public="false" package="false" protected="false" private="false"/>    
+    </display>  
+  </class>  
+  <association>    
+    <source project="Bingo Servidor 3.0" name="modelo.jogador.ListaDeJogador" 
+      file="/Bingo Servidor 3.0/src/modelo/jogador/ListaDeJogador.java" binary="false" navigable="false">      
+      <attribute name="jogadores"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="Bingo Servidor 3.0" name="modelo.jogador.Jogador" 
+      file="/Bingo Servidor 3.0/src/modelo/jogador/Jogador.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.FabricaDeCartelaQuadrada" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaDeCartelaQuadrada.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.CartelaQuadrada" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/CartelaQuadrada.java" binary="false"/>  
+  </dependency>  
+  <realization>    
+    <source project="Bingo Servidor 3.0" name="modelo.sorteio.Recipiente" 
+      file="/Bingo Servidor 3.0/src/modelo/sorteio/Recipiente.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.sorteio.TipoRecipiente" 
+      file="/Bingo Servidor 3.0/src/modelo/sorteio/TipoRecipiente.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.FabricaDeCartelaQuadrada" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaDeCartelaQuadrada.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.FabricaAbstrataDeCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaAbstrataDeCartela.java" binary="false"/>  
+  </generalization>  
+  <generalization>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.CartelaQuadrada" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/CartelaQuadrada.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.CartelaAbstrata" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/CartelaAbstrata.java" binary="false"/>  
+  </generalization>  
+  <dependency>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.TipoFabricaDeCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/TipoFabricaDeCartela.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.TipoCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/TipoCartela.java" binary="false"/>  
+  </dependency>  
+  <generalization>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.FabricaDeCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaDeCartela.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.FabricaAbstrataDeCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaAbstrataDeCartela.java" binary="false"/>  
+  </generalization>  
+  <realization>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.FabricaAbstrataDeCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaAbstrataDeCartela.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.TipoFabricaDeCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/TipoFabricaDeCartela.java" binary="false"/>  
+  </realization>  
+  <generalization>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.Cartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/Cartela.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.CartelaAbstrata" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/CartelaAbstrata.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="Bingo Servidor 3.0" name="modelo.jogador.Jogador" 
+      file="/Bingo Servidor 3.0/src/modelo/jogador/Jogador.java" binary="false" navigable="false">      
+      <attribute name="cartela"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.TipoCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/TipoCartela.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization>    
+    <source project="Bingo Servidor 3.0" name="modelo.sorteio.Globo" 
+      file="/Bingo Servidor 3.0/src/modelo/sorteio/Globo.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.sorteio.TipoGlobo" 
+      file="/Bingo Servidor 3.0/src/modelo/sorteio/TipoGlobo.java" binary="false"/>  
+  </realization>  
+  <dependency>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.FabricaDeCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/FabricaDeCartela.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.Cartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/Cartela.java" binary="false"/>  
+  </dependency>  
+  <realization>    
+    <source project="Bingo Servidor 3.0" name="modelo.cartela.CartelaAbstrata" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/CartelaAbstrata.java" binary="false"/>    
+    <target project="Bingo Servidor 3.0" name="modelo.cartela.TipoCartela" 
+      file="/Bingo Servidor 3.0/src/modelo/cartela/TipoCartela.java" binary="false"/>  
+  </realization>  
+  <classifier-display autosize="true" package="true" initial-value="true" signature="true" visibility="true">    
+    <attributes public="false" package="false" protected="false" private="false"/>    
+    <operations public="false" package="false" protected="false" private="false"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

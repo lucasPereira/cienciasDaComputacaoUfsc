@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+*, página
+{
+	font-family: Arial, Helvetica, Sans-Serif;
+	font-size: 15px;
+}
+
+.etiqueta
+{
+	background-color: rgb(96, 93, 92);
+	color: rgb(255, 255, 255);
+	padding :3px;
+	text-align: center;
+}
+
+#etiquetaAcaoJogador1, #etiquetaAcaoJogador2, #etiquetaAcaoJogador3, #etiquetaAcaoJogador4, #etiquetaAcaoJogador5, #etiquetaAcaoJogador6, #etiquetaAcaoJogador7, #etiquetaAcaoJogador8, #etiquetaAcaoJogador9, #etiquetaValorPote
+{
+	background-color: rgb(77, 73, 72);
+}
+
+#etiquetaApostaJogador1, #etiquetaApostaJogador2, #etiquetaApostaJogador3, #etiquetaApostaJogador4, #etiquetaApostaJogador5, #etiquetaApostaJogador6, #etiquetaApostaJogador7, #etiquetaApostaJogador8, #etiquetaApostaJogador9
+{
+	background-color: rgb(111, 188, 66);
+}
+
+.áreaDeTexto
+{
+	border-color: rgb(200, 200, 200);
+	border-style: solid;
+	border-width: 3px;
+}

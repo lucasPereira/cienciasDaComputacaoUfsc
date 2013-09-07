@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/dix/dix_2010-09-02/transformacao/dix.xml"?>
+
+<página nome="Jogador" tema="aceface" largura="1020" altura="700">
+	<aplique nome="aplique" classe="apliques.ApliqueJogador" />
+	<estilo nome="folhadeestilo" uri="recursos/estiloBingo.css" />
+	
+	<etiqueta nome="etiquetaJogadorVencedor" topo="0" esquerda="50" largura ="500">Último Vencedor do Bingo: </etiqueta>
+	<etiqueta nome="etiquetaNumeroSorteado" topo="0" esquerda="600" largura="350">Números Sorteados:</etiqueta>
+	
+	<grade nome="gradeCartela" linhas="3" colunas="5" topo="50" esquerda="50" altura="300" largura="500" />
+	<grade nome="gradeNumerosJaSorteados" linhas="7" colunas="7" topo="50" esquerda="600" altura="350" largura="350" />
+	
+	<campoDeTexto nome="campoNomeJogador" topo="380" esquerda="50" largura="200">Nome do Jogador</campoDeTexto>
+	<botão nome="botaoPegarCartela" topo="380" esquerda="260" largura="120">Pegar Cartela</botão>
+	<botão nome="botaoGritarBingo" topo="380" esquerda="390" largura="120">Gritar Bingo</botão>
+	
+	<etiqueta nome="Regras" topo="470" esquerda="50" largura="500">
+		REGRAS: Você deve marcar seus números e "Gritar Bingo" quando ganhar. O primeiro que "Gritar Bingo" é o vencedor.
+		Assim que houver um vencedor o bingo reiniciará em 1 minuto. Para participar do novo bingo você precisar pegar
+		um nova cartela.
+	</etiqueta>
+	
+	<etiqueta nome="OBS" topo="470" esquerda="600" largura="350">
+		OBS: Para marcar um número na cartela de um clique e para desmarcar um número de um duplo clique.
+	</etiqueta>
+</página>

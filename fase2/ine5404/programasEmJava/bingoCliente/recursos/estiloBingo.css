@@ -1,0 +1,35 @@
+.célula
+{
+	text-align:center;
+	vertical-align:middle;	
+}
+
+.célula span 
+{
+	color:#FFF;
+	background-color:transparent;
+	font-size:60px; 
+	font-weight:bold;
+}
+
+.áreaDeTexto 
+{
+	font-size:20px; 
+	padding:5px 5px 5px 10px;
+}
+
+.etiqueta big
+{
+	background-color:transparent;
+	font-size:60px; 
+	font-weight:bold;
+	padding:0 0 0 60px;
+	text-align:center;
+}
+
+.etiqueta em
+{
+	color:#F00;
+	background-color:transparent;
+	font-weight:bold;
+}
