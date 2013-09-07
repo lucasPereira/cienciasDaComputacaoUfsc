@@ -1,0 +1,14 @@
+STORECONST 0 0 //Número de Notas
+STORECONST 0 1 //Soma das Notas
+STORECONST 1 2 //Constante 1
+READ 3 //Nota
+JUMP 2 6
+ADD 1 3
+STORE 1
+ADD 0 2
+STORE 0
+JUMP 3 -6
+JUMP 3 -5
+DIV 1 0 
+STORE 4
+WRITE 4

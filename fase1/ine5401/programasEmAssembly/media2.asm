@@ -1,0 +1,25 @@
+READ 0 //Número de notas
+STORECONST 0 1 //Soma das Notas
+LOAD 0
+STORE 2 //Váriavel de Decremento 
+STORECONST 1 3 //Decrementar 1
+STORECONST 8 6 //Maior Nota
+STORECONST 0 8
+JUMP 3 12
+READ 4 //Inseri Nota
+ADD 1 4
+STORE 1
+SUB 2 3
+STORE 2
+SUB 4 6
+STORE 7
+JUMP 3 3
+STORECONST 1 8
+STORECONST 0 7
+JUMP 7 -2
+JUMP 2 -11
+DIV 1 0
+STORE 5
+ADD 5 8
+STORE 9
+WRITE 9
