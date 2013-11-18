@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" type="text/css" href="../css/principal.css" />
+		<script type="text/javascript" src="../js/utilitarios.js"></script>
+		<script type="text/javascript" src="../js/controleDaVisao.js"></script>
+		<script type="text/javascript" src="../js/controleDoModelo.js"></script>
+		<script type="text/javascript" src="../js/livresDeContexto.js"></script>
+		<script type="text/javascript">
+			window.onload = ControleDaVisao.adicionarTratadores;
+		</script>
+		<title>Analisador sintático preditivo LL(1) para linguagens livres de contexto</title>
+	</head>
+	<body>
+		<div id="conteinerGlobal">
+			<nav id="navegacaoGramaticas">
+				<button id="botaoCriarGramatica" accesskey="n">Criar gramática</button>
+				<ul id="listaGramaticas"></ul>
+			</nav>
+			<section id="secaoGramatica">
+				<h1 id="tituloNomeDaGramatica">Gramática</h1>
+				<table id="tabelaInformacoesDaGramatica">
+					<tr><th>Fatorada</th><td id="colunaGramaticaFatorada">Não</td></tr>
+					<tr><th>Recursão á esquerda</th><td id="colunaGramaticaComRecursaoAEsquerda">Não</td></tr>
+					<tr><th>First(A) ∩ Follow(A) = φ ∀ A | A ⇒* ε ?</th><td id="colunaGramaticaComInterseccaoDeFirstsEFollowsVazia">Não</td></tr>
+				</table>
+				<div id="conteinerEdicaoEAnalise">
+					<section id="secaoEdicao">
+						<h1>Edição</h1>
+						<textarea id="areaDeTextoCodigoDaGramatica" placeholder="insira a gramática" spellcheck="false"></textarea>
+						<nav id="navegacaoEdicao">
+							<button accesskey="s" id="botaoSalvarGramatica">Salvar</button>
+							<button accesskey="x" id="botaoExcluirGramatica">Excluir</button>
+						</nav>
+					</section>
+					<section id="secaoAnalise">
+						<h1>Análise</h1>
+						<div id="conteinerFirstsEFollows">
+							<table id="tabelaFirstsDaGramatica">
+								<caption>Firsts</caption>
+							</table>
+							<table id="tabelaFollowsDaGramatica">
+								<caption>Follows</caption>
+							</table>
+						</div>
+					</section>
+				</div>
+				<section id="secaoTabelaDeParsing">
+					<h1>Tabela de parsing</h1>
+					<p id="textoTabelaDeParsing">Resultado da construção da tabela de parsing.</p>
+					<table id="tabelaTabelaDeParsing"></table>
+					<input id="caixaDeMarcacaoMostrarIndicesDasProducoes" name="caixaDeMarcacaoMostrarIndicesDasProducoes" type="checkbox" accesskey="i" />
+					<label for="caixaDeMarcacaoMostrarIndicesDasProducoes">Mostrar indíces ao invés das produções</label>
+				</section>
+				<section id="secaoReconhecimento">
+					<h1>Reconhecimento</h1>
+					<input id="campoDeTextoSentencaAReconhecer" type="text" placeholder="insira a sentença" />
+					<button accesskey="r" id="botaoReconhecerSentenca">Reconhecer</button>
+					<h2>Resultado</h2>
+					<p id="textoReconhecimento">Resultado do reconhecimento da sentença.</p>
+				</section>
+			</section>
+			<section id="secaoMensagemDoSistema">
+				<h1>Mensagens do sistema</h1>
+				<p id="textoMensagemDoSistema"></p>
+			</section>
+		</div>
+	</body>
+</html>

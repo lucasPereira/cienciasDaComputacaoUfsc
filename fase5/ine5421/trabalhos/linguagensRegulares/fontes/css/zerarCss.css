@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+* {
+	font-weight: normal;
+	list-style: inside;
+	margin: 0;
+	outline-width: 0;
+	padding: 0;
+}

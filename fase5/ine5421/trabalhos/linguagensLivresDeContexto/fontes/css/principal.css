@@ -1,0 +1,379 @@
+@charset "utf-8";
+@import url("zerarCss.css");
+
+button,
+a {
+	cursor: pointer;	
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+button {
+	border-radius: 20px;
+	box-shadow: 1px 1px 3px #DDD;
+	color: #FFF;
+	font-weight: bold;
+	padding: 10px;
+	text-shadow: 1px 1px 1px #333;
+	background: linear-gradient(top, #89A 0%, #467 100%);
+	background: -webkit-linear-gradient(top, #89A 0%, #467 100%);
+	background: -moz-linear-gradient(top, #89A 0%, #467 100%);
+	background: -o-linear-gradient(top, #89A 0%, #467 100%);
+	background: -ms-linear-gradient(top, #89A 0%, #467 100%);
+}
+
+button:hover,
+button:focus {
+	background: #89A;
+}
+
+button:active {
+	text-shadow: 0 0 3px #89A;
+}
+
+button[disabled="disabled"] {
+	background: #888;
+	color: #EEE;
+	cursor: default;
+}
+
+h1 {
+	color: #48C;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+h2,
+caption {
+	color: #247;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea {
+	background-color: #FFC;
+	border-color: #EEE;
+	border-width: 1px;
+	color: #555;
+	font-size: 20px;
+	padding: 10px;
+	width: 400px;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+	border-color: #89A;
+}
+
+p strong {
+	color: inherit;
+	font-weight: bold;
+}
+
+p,
+label {
+	color: #555;
+}
+
+p.aceita {
+	color: #070;
+}
+
+p.rejeita {
+	color: #A77;
+	color: #E00;
+}
+
+p.sucesso {
+	display: block;
+	color: #070;
+}
+
+p.fracasso {
+	display: block;
+	color: #E00;
+}
+
+p.informativo {
+	display: block;
+	color: #00A;
+}
+
+body {
+    display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+	
+	height:100%;
+	width:100%;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+table th {
+	background-color: #89A;
+	color: #FFF;
+	font-weight: bold;
+	padding: 5px;
+}
+
+table td {
+	color: #247;
+	padding-left: 10px;
+}
+
+#conteinerGlobal {
+	box-flex: 1;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-o-box-flex: 1;
+	-ms-box-flex: 1;
+	
+	box-align: stretch;
+	-webkit-box-align: stretch;
+	-moz-box-align: stretch;
+	-o-box-align: stretch;
+	-ms-box-align: stretch;
+	
+	box-orient: horizontal;
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	-o-box-orient: horizontal;
+	-ms-box-orient: horizontal;
+	
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+
+	margin: 20px;
+	width: 100%;
+}
+
+#navegacaoGramaticas {
+	box-flex: 0; 
+	-webkit-box-flex: 0;
+	-moz-box-flex: 0;
+	-o-box-flex: 0;
+	-ms-box-flex: 0;
+	
+	box-align: start;
+	-webkit-box-align: start;
+	-moz-box-align: start;
+	-o-box-align: start;
+	-ms-box-align: start;
+	
+	box-orient: vertical;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-o-box-orient: vertical;
+	-ms-box-orient: vertical;
+	
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+}
+
+#navegacaoGramaticas > #listaGramaticas {
+	margin-top: 20px;	
+}
+
+#navegacaoGramaticas > #listaGramaticas > li {
+	padding: 10px;
+}
+
+#navegacaoGramaticas > #listaGramaticas > li.selecionado {
+	color: #777;
+	font-weight: bold;
+}
+
+#navegacaoGramaticas > #listaGramaticas > li,
+#navegacaoGramaticas > #listaGramaticas > li > input {
+	background-color: #EEE;
+	border-color: #888;
+	border-bottom-width: 1px;
+	color: #888;
+	display: block;
+	width: 150px;
+}
+
+#navegacaoGramaticas > #listaGramaticas > li > input {
+	background-color: #FFF;
+	border-color: #F00;
+	border-width: 1px;
+}
+
+#navegacaoGramaticas > #listaGramaticas > li:hover {
+	background-color: #FFC;
+	cursor: pointer;
+}
+
+#secaoGramatica {
+	box-flex: 1; 
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-o-box-flex: 1;
+	-ms-box-flex: 1;
+	
+	margin-left: 50px;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise {
+	border-color: #89A;
+	border-width: 2px 0;
+
+	box-orient: horizontal;
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	-o-box-orient: horizontal;
+	-ms-box-orient: horizontal;
+	
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+	
+	margin: 30px 0;
+	padding: 30px 0;	
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoEdicao {
+	box-flex: 0; 
+	-webkit-box-flex: 0;
+	-moz-box-flex: 0;
+	-o-box-flex: 0;
+	-ms-box-flex: 0;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoEdicao > #areaDeTextoCodigoDaGramatica {
+	color: #555;
+	font-size: 20px;
+	font-family: "Courier New", monospace;
+	height: 300px;
+	width: 500px;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoEdicao > #navegacaoEdicao {
+	margin-top: 20px;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoAnalise {
+	box-flex: 1; 
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-o-box-flex: 1;
+	-ms-box-flex: 1;
+	
+	margin-left: 50px;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoAnalise > #conteinerFirstsEFollows {
+	box-orient: horizontal;
+	-webkit-box-orient: horizontal;
+	-moz-box-orient: horizontal;
+	-o-box-orient: horizontal;
+	-ms-box-orient: horizontal;
+
+	box-pack: justify;
+	-webkit-box-pack: justify;
+	-moz-box-pack: justify;
+	-o-box-pack: justify;
+	-ms-box-pack: justify;
+
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoAnalise > #conteinerFirstsEFollows > table {
+	display: block;
+	box-flex: 1; 
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-o-box-flex: 1;
+	-ms-box-flex: 1;
+	table-layout: auto;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoAnalise > #conteinerFirstsEFollows > table > tr > th {
+	text-align: center;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoAnalise > #conteinerFirstsEFollows > #tabelaFollowsDaGramatica {
+/* 	margin-left: 30px; */
+	padding-left: 30px;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoAnalise > #conteinerFirstsEFollows > #tabelaFirstsDaGramatica strong {
+	color: #7A7;
+	font-weight: bold;
+}
+
+#secaoGramatica > #conteinerEdicaoEAnalise > #secaoAnalise > #conteinerFirstsEFollows > #tabelaFollowsDaGramatica strong {
+	color: #A77;
+	font-weight: bold;
+}
+
+#secaoGramatica > #secaoTabelaDeParsing > #tabelaTabelaDeParsing {
+	margin: 10px 0;
+	width: 100%;
+}
+
+#secaoGramatica > #secaoTabelaDeParsing > #tabelaTabelaDeParsing tr > td,
+#secaoGramatica > #secaoTabelaDeParsing > #tabelaTabelaDeParsing tr > th {
+	padding: 5px;
+	text-align: center;
+}
+
+#secaoGramatica > #secaoTabelaDeParsing > #tabelaTabelaDeParsing tr > td {
+	background-color: #EEE;
+	color: #888;
+}
+
+#secaoGramatica > #secaoTabelaDeParsing > #tabelaTabelaDeParsing tr > th {
+	background-color: #89A;
+	color: #FFF;
+	font-weight: bold;
+}
+
+#secaoGramatica > #secaoReconhecimento {
+	border-color: #89A;
+	border-width: 2px 0;
+	margin: 30px 0;
+	padding: 30px 0;
+}
+
+#secaoGramatica > #secaoReconhecimento > input {
+	margin-bottom: 20px;
+}
+
+#secaoMensagemDoSistema {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 500px;
+}
+
+#secaoMensagemDoSistema > h1 {
+	text-align: right;
+}
+
+#secaoMensagemDoSistema #textoMensagemDoSistema {
+	text-align: right;
+}	

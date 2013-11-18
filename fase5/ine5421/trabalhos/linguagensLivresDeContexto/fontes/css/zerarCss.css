@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+* {
+	background-attachment: fixed; 
+	background-color: transparent;
+	background-image: none;
+	background-position: top left;
+	background-repeat: no-repeat;
+	border-color: #000;
+	border-style: solid;
+	border-width: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #000;
+	cursor: default;
+	direction: ltr;
+	empty-cells: show;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size-adjust: none;
+	font-stretch: normal;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	line-height: normal;
+	list-style-image: none;
+	list-style-position: inside;
+	list-style-type: none;
+	margin: 0;
+	marker-offset: 0;
+	marks: none;
+	outline-color: #000;
+	outline-style: none;
+	outline-width: 0;
+	overflow: visible;
+	padding: 0;
+	position: relative;
+	quotes: none;
+	table-layout: fixed;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+	text-shadow: none;
+	text-transform: none;
+    vertical-align: baseline;
+	visibility: visible;
+	white-space: normal;
+	word-spacing: normal;
+	z-index: 0;
+}
+
+blockquote:before,
+blockquote:after,
+q:before, 
+q:after {
+    content: '';
+    content: none;
+}

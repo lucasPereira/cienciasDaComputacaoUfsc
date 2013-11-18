@@ -1,0 +1,405 @@
+@charset "UTF-8";
+@import url(zerarCss.css);
+
+* {
+	font-size: 1em;
+	font-family: Helvetica, Verdana, Tahoma, Arial, Sens-serif;
+}
+
+.clear {
+	display: block;
+	clear: both;
+}
+
+body {
+	padding: 100px 0 50px 0;
+}
+
+h1 {
+	color: #777;
+	font-size: 3em;
+	font-weigith: bold;
+}
+
+h2 {
+	color: #777;
+	font-size: 1.5em;
+	font-weigith: bold;
+	margin-bottom: 10px;
+}
+
+h3 {
+	font-size: 2em;
+	font-weigith: bold;
+}
+
+h4 {
+	font-size: 1.5em;
+	font-weigith: bold;
+}
+
+h5 {
+	font-size: 1.25em;
+	font-weigith: bold;
+}
+
+h6 {
+	font-size: 1em;
+	font-weigith: bold;
+}
+
+button {
+	color: #555;
+	text-shadow: 0.1em 0.1em 0.1em #FFF;
+	
+	background-image: linear-gradient(top, #EEE 0%, #BBB 100%);
+	background-image: -webkit-linear-gradient(top, #EEE 0%, #BBB 100%);
+	background-image: -moz-linear-gradient(top, #EEE 0%, #BBB 100%);
+	background-image: -ms-linear-gradient(top, #EEE 0%, #BBB 100%);
+	background-image: -o-linear-gradient(top, #EEE 0%, #BBB 100%);
+	
+	border-radius: 20px;
+	border-width: 0;
+	font-size: 0.9em;
+	padding: 8px;
+}
+
+button:hover {
+	background-color: #DDD;
+	background-image: none;
+}
+
+button:active {
+	background-color: #CCC;
+}
+
+button[disabled] {
+	background-image: none;
+	background-color: #BBB;
+}
+
+input[type="text"] {
+	background-color: #FFF;
+	border-color: #DDD;
+	border-style: solid;
+	border-width: 1px;
+	color: #555;
+	padding: 5px;
+}
+
+input[type="text"]:focus {
+	border-color: #0066FF;
+}
+
+input[type="text"].pequeno {
+	width: 1em;
+}
+
+input[type="text"].grande {
+	font-size: 2em;
+	padding: 5px;
+	width: 20em;
+}
+
+input[type="text"].transicaoDeAutomatoFinito {
+	background-color: transparent;
+	border-width: 0;
+	display: block;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+
+#cabecalho {
+	display: none;
+	margin-bottom: 30px;
+	padding: 15px 15px 0 15px;
+}
+
+#cabecalho ul li { 
+	list-style: none;
+}
+	
+#containerDeMenuPrincipal {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+#menuPrincipal {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+	
+	box-orient: hotizontal;
+	-webkit-box-orient: hotizontal;
+	-moz-box-orient: hotizontal;
+	-o-box-orient: hotizontal;
+	-ms-box-orient: hotizontal;
+	
+	border-color: #AAA;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	background-color: #F9F9F9;
+	padding: 15px;
+}
+
+#menuPrincipal button {
+	margin-right: 15px;
+}
+
+#menuDeOpcoesDoAutomatoFinito button {
+	margin-right: 15px;
+}
+
+#menuDeOpcoesDoAutomatoFinito,
+#menuDeOpcoesDaExpressaoRegular {
+	margin-bottom: 30px;
+}
+
+.listaDeEscolha {
+	background-color: #F9F9F9;
+	max-height: 200px;
+	width: 200px;
+}
+
+.listaDeEscolha li {
+	border-color: #AAA;
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	color: #777;
+	list-style:none;
+	padding: 5px;
+}
+
+.listaDeEscolha li:hover {
+	cursor: pointer;
+	background-color: #EEE;
+}
+
+.listaDeEscolha li.selecionado {
+	font-weight: bold;
+}
+
+.listaDeEscolha input {
+	border-color: #DDD;
+	padding: 0;
+}
+
+.expressaoRegular {
+	background-color: rgba(0, 102, 255, 0.08);
+}
+
+ul {
+	color: #777;
+	margin-bottom: 20px;
+}
+
+p {
+	color: #777;
+	margin-bottom: 20px;
+}
+
+#containerSuperiorFixo {
+	display: inline-box;
+	
+	box-flex: 1;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-ms-box-flex: 1;
+	-o-box-flex: 1;
+}
+
+#caixaDeMensagens {
+	background-color: #EEE;
+	border-color: #AAA;
+	border-style: solid;
+	border-width: 1px;
+	color: #777;
+	margin: auto;
+	padding: 5px;
+	text-align: center;
+	visibility: hidden;
+	width: 800px;
+}
+
+#caixaDeMensagens.erro {
+	background-color: #FFEBE6;
+	border-color: #F00;
+	color: #F00;
+	visibility: visible;
+}
+
+#caixaDeMensagens.sucesso {
+	background-color: #E6F5E6;
+	border-color: #0A3;
+	color: #0A3;
+	visibility: visible;
+}
+
+#caixaDeMensagens.aviso {
+	background-color: #FFFAE6;
+	border-color: #EA0;
+	color: #EA0;
+	visibility: visible;
+}
+
+#caixaDeMensagens.informativo {
+	background-color: #E6F0FF;
+	border-color: #06F;
+	color: #06F;
+	visibility: visible;
+}
+
+#containerPrincipal {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+	
+	box-orient: vertical;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-o-box-orient: vertical;
+	-ms-box-orient: vertical;
+}
+
+#containerCentral {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+	
+	box-orient: hotizontal;
+	-webkit-box-orient: hotizontal;
+	-moz-box-orient: hotizontal;
+	-o-box-orient: hotizontal;
+	-ms-box-orient: hotizontal;
+}
+
+#containerDeAutomatoFinitoExpressaoRegular {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -o-box;
+	display: -ms-box;
+	
+	box-orient: vertical;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-o-box-orient: vertical;
+	-ms-box-orient: vertical;
+	
+	box-flex: 1;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-o-box-flex: 1;
+	-ms-box-flex: 1;
+	
+	margin-left: 50px;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 2px;
+	margin-bottom: 30px;
+	width: 800px;
+}
+
+th {
+	background-color: #333;
+	color: #FFF;
+	padding: 5px;
+	min-width: 100px;
+}
+
+td {
+	background-color: #EEE;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.caixaAlta {
+	text-transform: uppercase;
+}
+
+.caixaBaixa {
+	text-transform: lowercase;
+}
+
+.estadoFinal,
+.estadoInicial {
+	margin-right: 15px;
+}
+
+.estadoFinal:hover,
+.estadoInicial:hover {
+	cursor: pointer;
+}
+
+.estadoFinal {
+	width: 1em;
+}
+
+.estadoInicial {
+	margin-right: 5px;
+	width: 1em;
+}
+
+#containerDeExpressaoRegular {
+	display: none;
+}
+
+#expressaoRegularComoTexto {
+	color: rgba(0, 102, 255, 0.6);
+	font-size: 2.2em;
+	margin-bottom: 30px;
+}
+
+#expressaoRegularComoTexto .parenteses {
+	color: rgba(0, 102, 255, 1);
+}
+
+#expressaoRegularComoTexto .simbolos {
+	color: rgba(0, 102, 255, 0.6);
+}
+
+#expressaoRegularComoTexto .operadoresBinarios {
+	color: rgba(0, 102, 255, 1);
+}
+
+#expressaoRegularComoTexto .operadoresUnarios {
+	color: rgba(0, 102, 255, 1);
+}
+
+#containerReconhecimentoDeAutomatoFinito,
+#containerEnumeracaoDeAutomatoFinito,
+#containerEquivalenciaDeExpressaoRegular {
+	margin: 40px 0;
+}
+
+#resultadoDoReconhecimento,
+#resultadoEquivalenciaComExpressaoRegular {
+	font-size: 1.2em;
+	margin: 20px 0;
+}
+
+#resultadoDaEnumeracao {
+	color: #06F;
+	font-size: 1.2em;
+	margin: 20px 0;
+}
+
+.aceita {
+	color: #0A3;
+}
+
+.naoAceita {
+	color: #F00;
+}

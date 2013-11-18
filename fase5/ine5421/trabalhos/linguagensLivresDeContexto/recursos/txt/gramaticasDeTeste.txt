@@ -1,0 +1,87 @@
+--
+S -> D E a
+D -> D b | F G
+E -> e | &
+F -> f | &
+G -> g | &
+BUG: calcularFirsts, derivaEpsilon (corrigido).
+--
+
+--
+S -> a S a | B c
+B -> a B | B b | &
+
+S -> c SL | a B BL c | b BL c
+SL -> S c | &
+B -> a B BL | BL
+BL -> b BL | &
+--
+
+--
+P -> P ; B | B
+B -> K V C
+K -> c K | &
+V -> v V | &
+C -> b K V ; C e | b C e | C com | &
+
+P -> B PL
+PL -> ; B PL | &
+B -> K V C
+K -> c K | &
+V -> v V | &
+C -> b CLL | CL
+CL -> com CL | &
+CLL -> K V ; C e CL | C e CL
+BUG: construirTabelaDeParsing (corrigido).
+--
+
+--
+P -> D C
+D -> T V
+T -> type T | &
+V -> var V | &
+C -> begin D ; C end | com C | &
+--
+
+--
+S -> if E then T else S | if E then S | com
+T -> if E then T else T | com
+E -> exp
+--
+
+--
+S -> a S | R
+R -> a R b | &
+--
+
+--
+S -> A a A b | B b B a
+A -> &
+B -> &
+--
+
+--
+E -> E + T | E - T | T
+T -> T * F | T / F | F
+F -> ( E ) | id
+
+E -> T EL
+EL -> + T EL | &
+TL -> * F TL | &
+T -> F TL
+F -> ( E ) | id
+--
+
+S -> D b
+D -> D c | &
+BUG: calcularFirsts (corrigido).
+
+
+PROG -> DECL COM
+DECL -> dec DECL | &
+COM -> com COM | &
+
+S -> a S | &
+
+A -> B a | c
+B -> A b | d

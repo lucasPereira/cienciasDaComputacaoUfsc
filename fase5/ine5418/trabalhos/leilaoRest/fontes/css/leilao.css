@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+* {
+	font-family: Helvetica, Tahoma, Verdana, Arial, Sans-serif;
+}
+
+#leilao {
+	display: none;
+	margin-top: 30px;
+}
+
+#criarLeilao, #acesso {
+	background-color: #EEE;
+	margin: 10px;	
+	padding: 10px;
+}
+
+#leiloesEmAndamento {
+	background-color: rgba(0, 100, 250, 0.3);
+	margin: 30px 10px 10px 10px;	
+	padding: 10px;
+}
+
+#leiloesEmAndamento div {
+	background-color: rgba(0, 100, 250, 0.1);
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	width: 450px;
+}
+
+#leiloesTerminados {
+	background-color: rgba(220, 75, 45, 0.3);
+	margin: 30px 10px 10px 10px;	
+	padding: 10px;
+}
+
+
+#leiloesTerminados div {
+	background-color: rgba(220, 75, 45, 0.1);
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	width: 450px;
+}
+
+ul {
+	list-style: none;
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+
+input:hover,
+input:focus {
+	outline: none;
+}
+
+input[type="text"] {
+	border-color: #AAA;
+	border-style: solid;
+	padding: 5px;
+	margin: 10px 0;
+	width: 200px;
+}
+
+label {
+	display: block;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Leilão REST</title>
+		<link href="css/leilao" rel="stylesheet" type="text/css" />
+		<script src="js/leilao" type="text/javascript"></script>
+	</head>
+	<body>
+		<section id="acesso">
+			<input id="campoNomeDoUsuario" type="text" placeholder="digite seu nome de usuário" />
+			<button id="botaoEntrar">Entrar</button>
+		</section>
+		<section id="leilao">
+			<section id="criarLeilao">
+				<label>Nome: <input id="campoNomeDoLeilao" type="text" placeholder="nome do leilão" /></label>
+				<label>Produto: <input id="campoProdutoDoLeilao" type="text" placeholder="produto do leilão" /></label>
+				<label>Duração (em segundos): <input id="campoDuracaoDoLeilao" type="text" placeholder="duracao em segundos" /></label>
+				<button id="botaoCriarLeilao">Criar Leilão</button>
+			</section>
+			<div id="leiloesEmAndamento">
+				<h1>Leilões em Andamento</h1>
+			</div>
+			<div id="leiloesTerminados">
+				<h1>Leilões Terminados</h1>
+			</div>
+		</section>
+	</body>
+</html>
