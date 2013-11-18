@@ -1,0 +1,16 @@
+Realizar teste com: [1, 2, 3, 8, 4, 5, 7, 6, 0].
+
+
+$ swipl
+?- [jogoDosOito].
+	É necessário informar a configuração inicial das peças:
+	* A configuração inicial deve ser fornecida como uma lista.
+	* Liste a matriz das peças linha a linha, de cima para baixo e da esquerda para direita.
+	* Além disso, no lugar do espaço em branco deve-se colocar um 0.
+
+	Informe a configuração inicial: [1, 2, 3, 8, 4, 5, 7, 6, 0].
+
+	Solução Encontrada.
+	* Configuração inicial: [1, 2, 3, 8, 4, 5, 7, 6, 0]
+	* Configuração final: [1, 2, 3, 8, 0, 4, 7, 6, 5]
+	* Movimentos necessários: [cima, esquerda]

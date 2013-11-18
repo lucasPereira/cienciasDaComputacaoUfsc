@@ -1,0 +1,7 @@
+* Para testar abra o console e digite:
+	java -jar caingangue.jar
+* Após isso o servidor vai estar rodando e você pode ver mensagens de status no console.
+* Agora é só acessar via algum navegador web o endereço http://localhost:7070/arquivo
+	Nessa versão foi implementada apenas o envio de arquivos de texto, então para funcionar o arquivo deve ser um arquivo de texto como HTML, CSS, TXT, etc.
+	No mesmo diretório que se encontra a pasta cainguange.jar existe uma pasta chama publico. É nessa pasta que devem ser inseridos os arquivos para ficarem visíveis ao servidor web.
+	Na pasta público já foi colocado um arquivo HTML de exemplo. Portando ao acessar via navegador web o endereço http://localhost:7070/exemplo.html será enviado para o navegador o arquivo exemplo.html que será interpretado pelo navegador.

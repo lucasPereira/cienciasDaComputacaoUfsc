@@ -1,0 +1,5 @@
+Na Listagem 1 a função sizeof mostra o tamanho em bytes de um tipo de dado em C. Um ponto interessante que pode ser destacado é que um long int e um int possuem a mesma quantidade de bytes. Ao fazer um pesquisa sobre o motivo disso acontecer é que um long int deve possuir pelo menos 32 bits, enquanto que um int pode ter 16, 32 ou 64 bits. No computador em que foi rodado o programaca tipos.c o long int e o int possuem a mesma quantidade de bytes, ou seja, 4 bytes.
+
+Já na Listagem 2 após declarar um short int e guardar um valor na variável, é declarado um char e nesse char é colocado o valor guardado no endereço inicial do short int declarado inicialmente. O que acontece é que um short int tem tamanho de dois bytes, enquanto que o char tem tamanho de um byte. O valor guardado no short int é 0x55C, assim irá ser armazenado no char o valor 0x5C.
+
+As listagem 3 e 4 fazem o cast de variáveis. No primeiro é feito um cast na de um double para um char e no segundo caso é feito um cast de um int para um float.

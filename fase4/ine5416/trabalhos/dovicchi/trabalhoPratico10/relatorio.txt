@@ -1,0 +1,6 @@
+Roteiro 1
+
+somaLista[] = 0
+somaLista(a:x) = a + somaLista x
+produtoLista[] = 1
+produtoLista(a:x) = a*produtoLista x

@@ -1,0 +1,4 @@
+Roteiro 2
+
+1.	O módulo para as funções tr.igonométricas e hiperbólicas está junto a este relatório.
+2.	O programa que retorna os valores para um dado agrumento está junto a este relatório.

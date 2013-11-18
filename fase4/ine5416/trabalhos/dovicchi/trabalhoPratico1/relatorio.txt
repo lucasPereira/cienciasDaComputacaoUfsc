@@ -1,0 +1,26 @@
+Arquivo .lex
+
+Ao analizar este arquivo o primeiro fator percebido é a definição das palavras reservadas usadas na linguagem. Paralavras como do, while, int, break, struct e outros. Neste arquivo cada uma das palavras reservadas da linguagem é definida da seguinte forma: 
+"double"		{ count(); return(DOUBLE); }	
+Mas abaixo no arquivo .lex são definidos os operadores usados na linguagem. No arquivo são descrito tanto os operadores lógicos (ou, e, não, ...), quanto os aritiméticos (+, /, *, ...) e operadores relacionais (>, <=, ==, ...). Um exemplo de como isso é descrito no arquivo .lex se encotnra abaixo:
+"&&"			{ count(); return(AND_OP); }
+Além disso neste arquivo também são mostrados todos os outros simbolos auxiliares, como chaves, parentêses, virgulas, ponto e virgula e demais caracteres que são usados na construção de declarações da linguagem. 
+Um ponto que ficou meio obscuro neste arquivo e difícil de interpretar em um primeiro momento são linhas do tipo:
+D			[0-9]
+L			[a-zA-Z_]
+E			[Ee][+-]?{D}+
+0{D}+{IS}?		{ count(); return(CONSTANT); }
+Onde nas três primeiras linhas tem-se a impresão de que se trata de expressões regulares que serão usadas para fazer a análise sintática da linguagem.
+
+
+Arquivo .y
+
+Já, no arquivo .y o primeiro fato que pode ser notado é a separação dos operadores e palavras reservadas da linguagem que antes foram definidas no arquivo .lex. Essa separação parece se dar por categoria, por exemplo: Os tipos de variáveis como int, double, char e outros são definidos em uma linha de token separada. Já os elementos lógicos, como and, or e outros são definidos em uma outra linha separa e assim por diante. Um exemplo desta linha é mostrado abaixo:
+%token PTR_OP INC_OP DEC_OP LEFT_OP RIGHT_OP LE_OP GE_OP EQ_OP NE_OP
+%token CHAR SHORT INT LONG SIGNED UNSIGNED FLOAT DOUBLE CONST VOLATILE VOID
+Um ponto interessante a ser notado é que no arquivo .y são usados os nomes dos simbolos que foram definidos no arquivo .lex e não os simbolos propriamente ditos.
+
+
+Conclusão
+
+Em suma o que podemos perceber com a analise dos dois arquivos é que no arquivo .lex são definidos os simbolos utilizados na linguagem e como estes simbolos devem ser agrupados para formar alguma sentença e no arquivo .y estes mesmo simbolos são separados e classificados por classes.

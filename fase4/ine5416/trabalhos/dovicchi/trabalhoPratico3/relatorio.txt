@@ -1,0 +1,14 @@
+Roteiro 1
+
+1.	deleteBy (\x y -> y `mod` x) 3 [5..10]
+	[5, 7, 8, 9, 10]
+	
+2.	let divisiveisPorQuatro xs = [x | x <- xs, x `mod` 4 == 0]
+	divisiveisPorQuatro [4..19]
+	[4,8,12,16]
+
+
+Roteiro 2
+
+1.	Iterpretação: Lista com todos os x pertencentes a [1..4] que somados com todos os y pertencentes a [1..5] são pares.
+	[1, 1, 1, 2, 2, 3, 3, 4]

@@ -1,0 +1,15 @@
+Compilação e Execução:
+
+	$ ghc --make Principal.hs -o separadorRgb
+	$ ./separadorRgb imagem.bmp
+	
+	$ * Arquivo de imagem separado pelas cores RGB com sucesso.
+	$ * Os seguintes arquivos foram criados:
+	$ imagem.vermelho.txt
+	$ imagem.verde.txt
+	$ imagem.azul.txt
+	
+	$ ./separadorRgb imagem.bmp
+	$ * Passe o nome do arquivo do tipo .bmp como parametro.
+
+OBSERVAÇÃO: No GHCi novo não funciona. Caso dê problema pode-se compilar e rodar na marte que funcionará corretamente.

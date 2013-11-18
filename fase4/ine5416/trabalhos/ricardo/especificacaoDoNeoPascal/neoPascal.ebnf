@@ -1,0 +1,41 @@
+declaraçãoDeVariável ::= "variavel" (nomeDeVariável (',' nomeDeVariável)* ':' tipoPrimitivo ";")+
+declaraçãoDeConstante ::= "constante" (nomeDeConstante "=" valorNumérico ";")+
+nomeDeVariável ::= (([a-z]|[A-Z]|'_')([0-9])*)+
+nomeDeConstante ::= nomeDeVariável
+usoDeVariável ::= nomeDeVariável ("["valorInteiro ("," valorInteiro)*"]")?
+usoDeConstante ::= nomeDeConstante
+
+comentário ::=	'/*' ( [^*] | '*'+ [^*/] )* '*'* '*/'
+
+definiçãoDeProcedimento ::= "procedimento" nomeDeProcedimento ("("definiçãoDeArgumento (";" definiçãoDeArgumento)*")")? ";" declaraçãoDeVariável "início" sentença* "fim;"
+nomeDeProcedimento ::= nomeDeVariável 
+usoDeProcedimento ::= nomeDeProcedimento "("argumento ("," argumento)*")"
+definiçãoDeArgumento ::= (nomeDeVariável (',' nomeDeVariável)* ':' tipoPrimitivo) 
+argumento ::= (usoDeVariável|usoDeConstante|usoDeProcedimento|valorDeTipoPrimitivo)
+
+sentença ::= (atribuiçãoDeVariável|incremento|decremento|se|repitaAté|enquantoFaça|façaEnquanto|usoDeProcedimento) ";"
+
+atribuiçãoDeVariável ::= usoDeVariável ":=" (usoDeVariável|usoDeProcedimento|valorDeTipoPrimitivo|operaçãoAritimética|operaçãoRelacional|operaçãoLógica)
+incremento ::= (("++" usoDeVariável)|(usoDeVariável "++"))
+decremento ::= (("--" usoDeVariável)|(usoDeVariável "--"))
+operaçãoAritimética ::= "("? (valorNumérico|usoDeVariável|usoDeProcedimento|operaçãoAritimética) ("+"|"-"|"*"|"/"|"mod") (valorNumérico|usoDeVariável|usoDeProcedimento|operaçãoAritimética) ")"? 
+operaçãoRelacional ::= "("? (valorNumérico|usoDeVariável|usoDeProcedimento|operaçãoAritimética|operaçãoRelacional) ("="|"<>"|"<"|"<="|">="|">") (valorNumérico|usoDeVariável|usoDeProcedimento|operaçãoAritimética|operaçãoRelacional) ")"? 
+operaçãoLógica ::= "("? (valorBoleano|usoDeVariável|usoDeProcedimento|operaçãoRelacional|operaçãoLógica) ("não"|"e"|"ou") (valorBoleano|usoDeVariável|usoDeProcedimento|operaçãoRelacional|operaçãoLógica) ")"? 
+
+se ::= "se" condição "entao" "início" sentença* "fim" seSenão* senão*
+seSenão ::= "senão" se*
+senão ::= "senão" "início" sentença* "fim"
+repitaAté ::= "repita" sentença* "até" condição
+enquantoFaça ::= "enquanto" condição "início" sentença* "fim"
+façaEnquanto ::= "faça" "início" sentença* "fim" "enquanto" condição
+condição ::= (valorBoleano|usoDeVariável|operaçãoRelacional|operaçãoLógica)
+
+tipoPrimitivo ::= ("boleano"|"inteiro"|"byte"|"real"|"caractere"|"string"|("vetor" "["(valorInteiro".."valorInteiro) ("," valorInteiro".."valorInteiro)*"]" "of" tipoPrimitivo))
+valorDeTipoPrimitivo ::= valorBoleano|valorNumérico|("'"valorCaractere"'")|('"'valorString'"')|"nulo"
+valorBoleano ::= ("verdadeiro"|"falso")
+valorCaractere ::= ([0-9a-zA-Z]|'\0'|'\n')
+valorString ::= (valorCaractere+|"")
+valorNumérico ::= ('-'? (valorInteiro|valorReal))|valorByte
+valorInteiro ::= '0'|[1-9]([0-9]+)?
+valorByte ::= valorInteiro
+valorReal ::= valorInteiro'.'('0'+valorInteiro)

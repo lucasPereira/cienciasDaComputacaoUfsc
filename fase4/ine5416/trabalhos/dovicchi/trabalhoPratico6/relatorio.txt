@@ -1,0 +1,9 @@
+Roteiro 2
+
+1.	Incrementa x.
+	Multiplicação de pares até n.
+	Primeiro elemento de uma lista.
+	Último elemento de uma lista.
+	Coloca a cabeça da lista na última posição.
+
+2. Gera uma lista contendo triplas, onde essas triplas são os lados de triângulos pitagóricos.

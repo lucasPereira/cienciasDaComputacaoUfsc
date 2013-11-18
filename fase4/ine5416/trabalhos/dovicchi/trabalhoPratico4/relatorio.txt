@@ -1,0 +1,12 @@
+Roteiro 2
+
+1.	Feito.
+
+2.	Feito.
+
+3.	main = print(arSim 6 3)
+	main = print(arRep 4 2)
+	main = print(perCirc 8)
+	main = print(combRep 8)
+	
+Para treinar fiz meu próprio módulo de análise combinatória que se encontra na mesma pasta que deste relatório.

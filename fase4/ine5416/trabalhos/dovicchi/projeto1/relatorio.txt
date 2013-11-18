@@ -1,0 +1,4 @@
+Compilação e Execução:
+
+	$ ghci
+	Prelude> :l FormasGeometricasEspaciais.hs

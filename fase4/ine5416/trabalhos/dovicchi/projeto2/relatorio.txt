@@ -1,0 +1,7 @@
+Compilação e Execução:
+
+	$ ghci
+	Prelude> :l SeriesFinitas.hs
+
+	$ ghci
+	Prelude> :l SeriesInfinitas.hs
