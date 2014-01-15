@@ -1,0 +1,97 @@
+parser grammar CanecaSintatico options {backtrack=false; k=1; language=Java; output=AST; tokenVocab=CanecaLexico; } ;
+programa : ( unicadeDeCompilacao )+ ;
+unicadeDeCompilacao : cabecalho ( classe | interfaces ) ;
+cabecalho : pacote importacoes ;
+pacote : PACOTE IDENTIFICADOR_DE_PACOTE TERMINADOR ;
+importacoes : ( importacao )* ;
+importacao : IMPORTE ( IDENTIFICADOR IDENTIFICADOR_DE_PACOTE ( COMO IDENTIFICADOR )? | IDENTIFICADOR_DE_PACOTE ) TERMINADOR ;
+classe : CLASSE modificadorDeAcessoFeminino IDENTIFICADOR listaDeTiposGenericos listaDeInterfaces corpoDaClasse ;
+interfaces : INTERFACE modificadorDeAcessoFeminino IDENTIFICADOR listaDeTiposGenericos listaDeInterfaces corpoDaInterface ;
+corpoDaClasse : INICIO atributos construtores destrutor metodos FIM ;
+corpoDaInterface : INICIO atributos assinaturasDeMetodos FIM ;
+atributos : ( atributo )* ;
+construtores : ( construtor )+ ;
+metodos : ( metodo )* ;
+assinaturasDeMetodos : ( assinaturaDeMetodo TERMINADOR )* ;
+atributo : ATRIBUTO modificadorDeAcessoMasculino ( ESTATICO )? tipo IDENTIFICADOR ( ATRIBUIDOR expressaoOuLogico )? TERMINADOR ;
+construtor : assinaturaDeConstrutor blocoDeInstrucoes ;
+destrutor : assinaturaDeDestrutor blocoDeInstrucoes ;
+metodo : assinaturaDeMetodo blocoDeInstrucoes ;
+assinaturaDeConstrutor : CONSTRUTOR modificadorDeAcessoMasculino IDENTIFICADOR listaDeArgumentos ;
+assinaturaDeDestrutor : DESTRUTOR modificadorDeAcessoMasculino IDENTIFICADOR listaDeArgumentosVazia ;
+assinaturaDeMetodo : METODO modificadorDeAcessoMasculino ( ESTATICO )? tipo IDENTIFICADOR listaDeArgumentos ;
+modificadorDeAcessoMasculino : ( PUBLICO | PRIVADO | PROTEGIDO );
+modificadorDeAcessoFeminino : ( PUBLICA | PRIVADA | PROTEGIDA );
+listaDeParametros : PARENTESE_ESQUERDO ( expressao ( SEPARADOR expressao )* )? PARENTESE_DIREITO ;
+listaDeArgumentosVazia : PARENTESE_ESQUERDO PARENTESE_DIREITO ;
+listaDeArgumentos : PARENTESE_ESQUERDO ( declaracao ( SEPARADOR declaracao )* )? PARENTESE_DIREITO ;
+listaDeInterfaces : ( IMPLEMENTA tipo ( SEPARADOR tipo )* )? ;
+listaDeTiposGenericos : ( COLCHETE_ESQUERDO tipoGenerico COLCHETE_DIREITO )* ;
+listaDeTipos : ( COLCHETE_ESQUERDO tipo ( SEPARADOR tipo )* COLCHETE_DIREITO )? ;
+listaDeCapturas : ( capture )+ ;
+tipoGenerico : IDENTIFICADOR listaDeInterfaces ;
+tipo : IDENTIFICADOR listaDeTipos ;
+declaracao : tipo IDENTIFICADOR ;
+declaracaoComAtribuicaoOpcional : tipo IDENTIFICADOR ( ATRIBUIDOR expressaoOuLogico )? ;
+expressao : expressaoOuLogico ( ATRIBUIDOR expressaoOuLogico )? ;
+expressaoOuLogico : expressaoELogico ( OU expressaoELogico )* ;
+expressaoELogico : expressaoComparacaoLogica ( E expressaoComparacaoLogica )* ;
+expressaoComparacaoLogica : expressaoAditiva ( ( IGUAL | DIFERENTE | MAIOR | MAIOR_IGUAL | MENOR | MENOR_IGUAL ) expressaoAditiva )? ;
+expressaoAditiva : expressaoMultiplicativa ( ( SOMA | SUBTRACAO ) expressaoMultiplicativa )* ;
+expressaoMultiplicativa : expressaoUnaria ( ( MULTIPLICACAO | DIVISAO | RESTO_DA_DIVISAO ) expressaoUnaria )* ;
+expressaoUnaria : ( expressaoPrimaria | SUBTRACAO expressaoPrimaria | NEGACAO expressaoPrimaria );
+expressaoPrimaria : ( PARENTESE_ESQUERDO expressao PARENTESE_DIREITO | VALOR_BOOLEANO | VALOR_NULO | CONSTANTE_INTEIRA | CONSTANTE_REAL | LITERAL_CARACTERE | LITERAL_TEXTO | comando );
+comando : referencia ( chamada )* ;
+referencia : ( ESSE | ESSA | instanciacao | IDENTIFICADOR ( listaDeParametros )? );
+chamada : ( CHAMADA_DE_CLASSE | CHAMADA_DE_OBJETO ) IDENTIFICADOR ( listaDeParametros )? ;
+instanciacao : ( NOVO | NOVA ) tipo listaDeParametros ;
+destruicao : DESTRUA expressao ;
+retorno : RETORNE expressao ;
+se : SE PARENTESE_ESQUERDO expressao PARENTESE_DIREITO blocoDeInstrucoes ( SENAO blocoDeInstrucoes )? ;
+para : PARA PARENTESE_ESQUERDO expressao TERMINADOR expressao TERMINADOR expressao PARENTESE_DIREITO blocoDeInstrucoes ;
+repita : REPITA PARENTESE_ESQUERDO declaracao TERMINADOR expressao PARENTESE_DIREITO blocoDeInstrucoes ;
+enquanto : ENQUANTO PARENTESE_ESQUERDO expressao PARENTESE_DIREITO blocoDeInstrucoes ;
+tente : TENTE blocoDeInstrucoes listaDeCapturas ;
+capture : CAPTURE PARENTESE_ESQUERDO declaracao PARENTESE_DIREITO blocoDeInstrucoes ;
+lance : LANCE expressao ;
+instrucao : ( ( options {k=2; } : expressao TERMINADOR | declaracaoComAtribuicaoOpcional TERMINADOR ) | IMPRIMIR TERMINADOR | DEPURAR TERMINADOR | destruicao TERMINADOR | retorno TERMINADOR | se | para | repita | enquanto | tente | lance TERMINADOR );
+blocoDeInstrucoes : INICIO ( instrucao )* FIM ;
+CanecaSintatico.programa:154:23 decision 1: k=1
+CanecaSintatico.unicadeDeCompilacao:158:13 decision 2: k=1
+CanecaSintatico.importacoes:170:14 decision 3: k=1
+CanecaSintatico.importacao:174:50 decision 4: k=1
+CanecaSintatico.importacao:174:11 decision 5: k=1
+CanecaSintatico.atributos:194:12 decision 6: k=1
+CanecaSintatico.construtores:198:14 decision 7: k=1
+CanecaSintatico.metodos:202:10 decision 8: k=1
+CanecaSintatico.assinaturasDeMetodos:206:33 decision 9: k=1
+CanecaSintatico.atributo:210:41 decision 10: k=1
+CanecaSintatico.atributo:210:72 decision 11: k=1
+CanecaSintatico.assinaturaDeMetodo:234:39 decision 12: k=1
+CanecaSintatico.listaDeParametros:250:53 decision 13: k=1
+CanecaSintatico.listaDeParametros:250:22 decision 14: k=1
+CanecaSintatico.listaDeArgumentos:258:55 decision 15: k=1
+CanecaSintatico.listaDeArgumentos:258:22 decision 16: k=1
+CanecaSintatico.listaDeInterfaces:262:35 decision 17: k=1
+CanecaSintatico.listaDeInterfaces:262:3 decision 18: k=1
+CanecaSintatico.listaDeTiposGenericos:266:51 decision 19: k=1
+CanecaSintatico.listaDeTipos:270:42 decision 20: k=1
+CanecaSintatico.listaDeTipos:270:3 decision 21: k=1
+CanecaSintatico.listaDeCapturas:274:11 decision 22: k=1
+CanecaSintatico.declaracaoComAtribuicaoOpcional:290:22 decision 23: k=1
+CanecaSintatico.expressao:294:21 decision 24: k=1
+CanecaSintatico.expressaoOuLogico:298:40 decision 25: k=1
+CanecaSintatico.expressaoELogico:302:57 decision 26: k=1
+CanecaSintatico.expressaoComparacaoLogica:306:20 decision 27: k=1
+CanecaSintatico.expressaoAditiva:310:70 decision 28: k=1
+CanecaSintatico.expressaoMultiplicativa:314:80 decision 29: k=1
+CanecaSintatico.expressaoUnaria:318:1 decision 30: k=1
+CanecaSintatico.expressaoPrimaria:324:1 decision 31: k=1
+CanecaSintatico.comando:335:22 decision 32: k=1
+CanecaSintatico.referencia:342:17 decision 33: k=1
+CanecaSintatico.referencia:339:1 decision 34: k=1
+CanecaSintatico.chamada:346:57 decision 35: k=1
+CanecaSintatico.se:362:71 decision 36: k=1
+CanecaSintatico.instrucao:391:1 decision 37: k=2
+CanecaSintatico.instrucao:390:1 decision 38: k=1
+CanecaSintatico.blocoDeInstrucoes:408:20 decision 39: k=1

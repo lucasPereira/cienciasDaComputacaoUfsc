@@ -1,0 +1,7 @@
+Booleano
+Inteiro
+Real
+Caractere
+Texto
+Nada
+

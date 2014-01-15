@@ -1,0 +1,22 @@
+pacote @caneca.exemplos;
+classe publica Principal inicio
+	construtor publico Principal() inicio
+		Repeticao contador = nova Repeticao();
+		contador.contar();
+	fim
+	destrutor publico Principal() inicio fim
+fim
+
+pacote @caneca.exemplos;
+classe publica Repeticao inicio
+	construtor publico Repeticao() inicio fim
+	destrutor publico Repeticao() inicio fim
+	metodo publico Nada contar() inicio
+		Inteiro contagem = 0;
+		enquanto (contagem < 10) inicio
+			contagem;
+			imprimir;
+			contagem = contagem + 1;
+		fim
+	fim
+fim

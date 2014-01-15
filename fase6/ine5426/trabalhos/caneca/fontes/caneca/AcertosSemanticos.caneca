@@ -1,0 +1,19 @@
+pacote @pacoteQualquer;
+classe publica MinhaClasse inicio
+	construtor publico MinhaClasse() inicio
+		Inteiro numero;
+		numero = 20 + 2;
+		numero * -numero * numero * numero / 50.5;
+		10 + 10.4 * 2 + 3;
+		10 + 20 == 4;
+		verdadeiro != verdadeiro;
+		10 * 20 + 30 > 20.0 || verdadeiro;
+		numero = 10 + 20 % 2;
+		Booleano teste;
+		teste = falso;
+		meuMetodo("teste");
+	fim
+	destrutor publico MinhaClasse() inicio fim
+	metodo publico Texto meuMetodo(Texto argumento) inicio fim
+fim
+

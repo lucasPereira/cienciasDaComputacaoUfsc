@@ -1,0 +1,316 @@
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	privado atributo;
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C[V] inicio
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inici
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo Nada nomeDoMetodo() inicio fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(inicio);
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto();
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel][Igualavel] declaracaoDeGenericoErrada;
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		5 + 10 + ;
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		vouEsquecerAVirgula()
+		Booleano valor;
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = falso~;
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar[];
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar().para();
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar().paraEncadear()."textoNaoPodeEstarAqui";
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer com Apelido;
+classe publica Classe[C][V] inicio
+	construtor privado Classe(TipoDeArgumento[TipoGenerico] nomeDeArgumento) inicio
+		destrua essa.variavelQualquer;
+		retorne semanticamenteErradoPoremSintaticamenteCorreto;
+	fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar().paraEncadear().variasChamadas(esse);
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	construtor privado Classe() inicio
+		destrua essa.variavelQualquer();
+		retorne semanticamenteErradoPoremSintaticamenteCorreto;
+	fim
+	destrutor protegido Casse() inicio
+		certoPoisDeveTerPeloMenosUmDestrutor(variavel = 10);
+		(novo Objeto()).parametrosDevemVirAntes;
+	fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar().paraEncadear().variasChamadas(esse);
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Comparavel[Classe] classeComparavel = nova Classe();
+	construtor privado Classe() inicio
+		destrua essa.variavelQualquer(verdadeiro);
+		retorne semanticamenteErradoPoremSintaticamenteCorreto;
+	fim
+	destrutor protegido Casse() inicio
+		certoPoisDeveTerPeloMenosUmDestrutor(variavel = 10);
+		novo Objeto().parametrosDevemVirAntes();
+	fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar().paraEncadear().variasChamadas(esse);
+	fim
+	metodo privado Texto testeDeErros(Texto parametro) inicio
+		identificador + 10 * *;
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Comparavel[Classe] classeComparavel = nova Classe();
+	construtor privado Classe() inicio
+		destrua essa.variavelQualquer(verdadeiro);
+		retorne semanticamenteErradoPoremSintaticamenteCorreto;
+	fim
+	destrutor protegido Casse() inicio
+		certoPoisDeveTerPeloMenosUmDestrutor(variavel = 10);
+		novo Objeto().parametrosDevemVirAntes();
+	fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar().paraEncadear().variasChamadas(esse);
+	fim
+	metodo privado Texto testeDeErros(Texto parametro, 3 + 3) inicio
+		identificador + 10 * verdadeiro * 2;
+	fim
+fim
+
+pacote @meu.erro.emPacote;
+importe OutraClasse@de.algumPacote.qualquer;
+importe OutraClasse.de.algumPacote.qualquer;
+classe publica Classe[C implementa TipoA, TipoB][V] inicio
+	construtor privado Classe() inicio fim
+	destrutor protegido Casse() inicio fim
+fim
+
+pacote meu;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C implementa TipoA, TipoB][V] inicio
+	construtor privado Classe() inicio fim
+	destrutor protegido Casse() inicio fim
+fim
+
+pacote @meu;
+importe OutraClasse@de.algumPacote.qualquer.A;
+importe OutraClasse@de.algumPacote.qualquer.B;
+importe OutraClasse@de.algumPacote.qualquer.C;
+2 + 3;
+classe publica Classe[C implementa TipoA, TipoB][V] inicio
+	construtor privado Classe() inicio fim
+	destrutor protegido Casse() inicio fim
+fim
+
+pacote @nomeDoPacote.nomeDoSubpacote;
+importe NomeDaClasseImportada@pactodeDaClasse.subpacoteDaClasse;
+classe publica MinhaClasse[C implementa TipoGenericoQualquer, OutroTipo][V] inicio
+	construtor privado Classe() inicio fim
+	destrutor protegido Casse() inicio fim
+	metodo publico Nada imprimir() inicio
+		Sistema.saidaPadrao.imprimir("Essa é uma unicade de compilação básica correta. As demais possuem algum erro sintático :-)");
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	destrutor privado Classe() inicio
+		destrua suaMente.com();
+		imprima("Deve ter pelo menos um construtor");
+	fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar().paraEncadear().variasChamadas(esse);
+	fim
+fim
+
+pacote @caminho.nome;
+importe OutraClasse@de.algumPacote.qualquer;
+classe publica Classe[C][V] inicio
+	atributo privado Texto nome = "Classe";
+	construtor privado Classe() inicio
+		destrua suaMente.com();
+		imprima("Deve ter pelo menos um destrutor");
+	fim
+	metodo publico Nada nomeDoMetodo() inicio
+		chamadaDeOutroMetodo(novo Objeto(10));
+		Generico[Comparavel, Igualavel] declaracaoDeGenericoCorreta;
+		identificador = 5 + 10;
+		naoVouEsquecerAVirgula();
+		Booleano valor = ~falso;
+		novo Objeto(nova Objeta().comoNumero + 2).peparar().paraEncadear().variasChamadas(esse);
+	fim
+fim
+

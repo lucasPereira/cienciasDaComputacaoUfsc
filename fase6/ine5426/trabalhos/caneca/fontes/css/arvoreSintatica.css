@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+ul {
+	border-color: #36F;
+	border-style: dotted;
+	border-width: 0 0 0 2px;
+	margin-left: 40px;
+}
+
+ul:hover {
+	border-color: #D39;
+}
+
+ul > li > h1 {
+	background-color: #059;
+	color: #FFF;
+	font-size: 1em;
+	font-weight: normal;
+	display: inline-block;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+

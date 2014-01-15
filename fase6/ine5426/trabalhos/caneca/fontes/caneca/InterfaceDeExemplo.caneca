@@ -1,0 +1,12 @@
+pacote @caneca.interfaces;
+
+importe ClasseQualquer@pacoteQualquer.da.classeQualquer;
+
+interface publica InterfaceDeExemplo inicio
+	metodo publico Nada fazerAlgumaCoisa(Texto texto);
+
+	metodo protegido Inteiro dobrar(Inteiro numero);
+
+	metodo publico ClasseQualquer computar();
+fim
+

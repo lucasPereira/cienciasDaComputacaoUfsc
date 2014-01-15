@@ -1,0 +1,60 @@
+pacote @pacoteQualquer;
+classe publica MinhaClasse inicio
+	atributo publico Texto nome;
+	atributo publico OutraClasse outraClasse;
+	atributo publico OutraClasse outraOutraClasse;
+	atributo publico MinhaClasse euMesmo;
+	
+	construtor publico MinhaClasse() inicio fim
+	construtor publico MinhaClasse(Texto parametroDeConstrutorExtra) inicio fim
+	destrutor publico MinhaClasse() inicio fim
+	
+	metodo publico Nada meuMetodo(Inteiro parametroQualquer, Inteiro outroParametro) inicio
+		se (verdadeiro) inicio
+			Caractere variavelQualquer;
+			esse.nome = "Texto" + variavelQualquer;
+			repita (Inteiro contador; 10) inicio
+				outroMetodo();
+				variavelQualquer;
+				essa.variavelQualquer;
+				euMesmo.outraClasse.excutar();
+				euMesmo.outraClasse.excutar().pegarRetorno();
+				Texto textoQualquer;
+				textoQualquer = euMesmo.outraClasse.executar().pegarRetorno();
+				Texto textoQualquerDeAtributo;
+				textoQualquerDeAtributo = euMesmo.outraClasse.executar().pegarRetorno.tamanho;
+				Inteiro variavelQualquer;
+				variavelQualquer = 2;
+				Real variavelQualquerOutra;
+				variavelQualquerOutra = 2.5;
+				contador;
+				meuMetodo();
+			fim
+		fim
+	fim
+	
+	metodo publico Texto outroMetodo() inicio fim
+fim
+
+pacote @pacoteQualquer;
+classe publica OutraClasse inicio
+	construtor publico OutraClasse() inicio fim
+	destrutor publico OutraClasse() inicio fim
+	
+	metodo publico ExtraClasse executar() inicio
+		referenciadoAntes;
+		ExtraClasse referenciadoAntes;
+		retorne nova ExtraClasse();
+	fim
+fim
+
+pacote @pacoteQualquer;
+classe publica ExtraClasse inicio
+	construtor publico ExtraClasse() inicio fim
+	destrutor publico ExtraClasse() inicio fim
+	
+	metodo publico Texto pegarRetorno() inicio
+		retorne "Texto qualquer.";
+	fim
+fim
+

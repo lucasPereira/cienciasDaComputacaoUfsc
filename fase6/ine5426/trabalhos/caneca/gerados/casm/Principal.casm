@@ -1,0 +1,63 @@
+[000] instanciar Principal
+[001] extrairContexto
+[002] chamar construtor 4
+[003] resolverSimbolo esse
+[004] fecharContexto
+[005] sair
+[006] abrirContextoDeProcedimento Repeticao
+[007] abrirContexto
+[008] fecharContexto
+[009] fecharContexto
+[010] retornar
+[011] abrirContextoDeProcedimento Repeticao
+[012] abrirContexto
+[013] fecharContexto
+[014] fecharContexto
+[015] retornar
+[016] abrirContextoDeProcedimento Repeticao
+[017] abrirContexto
+[018] empilhar 0
+[019] definirSimbolo contagem
+[020] resolverSimbolo contagem
+[021] empilhar 0
+[022] atribuir
+[023] resolverSimbolo contagem
+[024] empilhar 10
+[025] menor
+[026] desviarSeFalso 37
+[027] abrirContexto
+[028] resolverSimbolo contagem
+[029] imprimir
+[030] resolverSimbolo contagem
+[031] resolverSimbolo contagem
+[032] empilhar 1
+[033] somarI
+[034] atribuir
+[035] fecharContexto
+[036] desviar 23
+[037] fecharContexto
+[038] fecharContexto
+[039] retornar
+[040] abrirContextoDeProcedimento Principal
+[041] abrirContexto
+[042] empilhar nulo
+[043] definirSimbolo contador
+[044] resolverSimbolo contador
+[045] instanciar Repeticao
+[046] extrairContexto
+[047] chamar construtor 47
+[048] resolverSimbolo esse
+[049] fecharContexto
+[050] atribuir
+[051] resolverSimbolo contador
+[052] extrairContexto
+[053] chamar contar 53
+[054] fecharContexto
+[055] fecharContexto
+[056] fecharContexto
+[057] retornar
+[058] abrirContextoDeProcedimento Principal
+[059] abrirContexto
+[060] fecharContexto
+[061] fecharContexto
+[062] retornar

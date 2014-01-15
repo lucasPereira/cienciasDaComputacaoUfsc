@@ -1,0 +1,30 @@
+pacote @caneca.exemplos;
+classe publica Principal inicio
+	construtor publico Principal() inicio
+		Teste t = nova Teste();
+		t.testar();
+	fim
+	destrutor publico Principal() inicio fim
+fim
+
+pacote @caneca.exemplos;
+classe publica Teste inicio
+	construtor publico Teste() inicio fim
+	destrutor publico Teste() inicio fim
+	metodo publico Nada testar() inicio
+		se (2 < 4) inicio
+			"Teste de Se: 2 é menor que 4";
+			imprimir;
+		fim
+		se (3*3 <= 4) inicio
+			"Não vai cair aqui :-)";
+		fim senao inicio
+			"Teste de SeNão: 3 ao quadrado não é menor ou igual 4";
+			imprimir;
+		fim
+		se (falso != verdadeiro) inicio
+			"Falso não é verdadeiro.";
+			imprimir;
+		fim
+	fim
+fim

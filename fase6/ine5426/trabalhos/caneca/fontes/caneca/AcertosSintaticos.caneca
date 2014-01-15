@@ -1,0 +1,67 @@
+pacote @caminho.nomeDoPacote;
+
+importe @caminho.algumPacote;
+importe AlgumaClasse@caminho.algumPacote;
+importe OutraClasse@caminho.outroPacote como ApelidoQualquer;
+
+classe publica MinhaClasse[T implementa Comparavel[Igualavel[T]]][E implementa Igualavel[E], OutraInterface] inicio
+	atributo privado Tipo[Igualavel[Tipo], Comparavel[Igualavel[Tipo]]] atributoDeTipoGenerico;
+	atributo publico estatico Texto atributoEstatico = "Texto qualquer";
+	
+	construtor publico MinhaClasse(Objeto parametro, Inteiro outroParametro) inicio
+		esse.atributoDeTipoGenerico = novo Objeto(parametro);
+		esse.continuarConstrucao(outroParametro);
+	fim
+	
+	destrutor publico MinhaClasse() inicio
+		esse.atributoDeTipoGenerico.limpar(1024 * 1024);
+		destrua esse.atributoDeTipoGenerico;
+	fim
+	
+	metodo protegido Lista[Numero] continuarConstrucao(Objeto conteudoInicial) inicio
+		Inteiro tamanhoDaLista;
+		Lista[Numero] listaEstiloJava = nova Lista[Numero](tamanhoDaLista = 10);
+		MinhaClasse:contarAteDez();
+		retorne listaEstiloJava;
+	fim
+	
+	metodo privado estatico Nada contarAteDez(Inteiro tipo) inicio
+		se (tipo == 1) inicio
+			contarAteDezComEnquanto();
+		fim senao inicio
+			se (tipo == 2) inicio
+				contarAteDezComPara();
+			fim senao inicio
+				contarAteDezComRepita();
+			fim
+		fim
+		tente inicio
+			Arquivo arquivo = novo Arquivo("CanecaSintatico.g");
+ 		fim capture (TipoDeExcecao excecao) inicio
+			Sistema:saida:mostrar(excecao.fornecerLinha() + " " + excecao.fornecerMensagem());
+		fim
+	fim
+	
+	metodo privado estatico Nada contarAteDezComEnquanto() inicio
+		Inteiro contador = 1;
+		enquanto (contador <= 10) inicio
+			contador = contador + 1;
+			Sistama:saida:mostrar(contador);
+		fim
+	fim
+	
+	metodo privado estatico Nada contarAteDezComPara() inicio
+		Inteiro indice;
+		para (indice = 0; indice < 10; indice = indice + 1) inicio
+			Sistema:saida:mostrar(indice + 1 * 1);
+		fim
+	fim
+	
+	metodo privado estatico Nada contarAteDezComRepita() inicio
+		repita (Inteiro repeticao) inicio
+			Sistama:saida:mostrar(repeticao);
+		fim
+		Sistema:saida:mostrar("Contei até " + '1' + '0');
+	fim
+fim
+

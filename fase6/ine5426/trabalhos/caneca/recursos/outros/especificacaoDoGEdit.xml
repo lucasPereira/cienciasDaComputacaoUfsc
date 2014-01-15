@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="caneca" _name="Caneca++" version="2.0" _section="Sources">
+	<metadata>
+		<property name="mimetypes">text/x-caneca</property>
+		<property name="globs">*.caneca</property>
+	</metadata>
+	<styles>
+		<style id="constanteEspecial" _name="Constante especial" map-to="def:special-constant" />
+		<style id="booleano" _name="Booleano" map-to="def:boolean" />
+		<style id="numero" _name="Número" map-to="def:number" />
+		<style id="texto" _name="Texto" map-to="def:string" />
+		<style id="caractere" _name="Caractere" map-to="def:character" />
+		<style id="caractereEspecial" _name="Caractere especial" map-to="def:special-char" />
+		<style id="preProcessador" _name="Pré processador" map-to="def:preprocessor" />
+		<style id="tipo" _name="Tipo" map-to="def:type" />
+		<style id="palavraChave" _name="Palavra chave" map-to="def:keyword" />
+		<style id="sentenca" _name="Sentença" map-to="def:statement" />
+		<style id="interno" _name="Interno" map-to="def:builtin" />
+		<style id="comentario" _name="Comentário" map-to="def:comment" />
+	</styles>
+	<definitions>
+		<context id="caneca" class="no-spell-check">
+			<include>
+				<context id="comentarioEmBloco" style-ref="comentario" end-at-line-end="false">
+					<start>#\?</start>
+					<end>\?#</end>
+				</context>
+				<context id="comentarioEmLinha" style-ref="comentario" end-at-line-end="true">
+					<start>\?</start>
+				</context>
+				<context id="texto" style-ref="texto" end-at-line-end="true">
+					<start>"</start>
+					<end>"</end>
+					<include>
+						<context id="caractereDeEscapeParaTexto" style-ref="caractereEspecial">
+							<match extended="true">\\(n|r|t|f|'|"|\\|a|b|e|v)</match>
+						</context>
+						<context id="caractereParaTexto" style-ref="texto">
+							<match extended="true">[^\n\r\t\f\'"\\]</match>
+						</context>
+					</include>
+				</context>
+				<context id="caractere" style-ref="caractere">
+					<match extended="true">'(\\(n|r|t|f|'|"|\\|a|b|e|v)|[^\n\r\t\f\'"\\])'</match>
+				</context>
+				<context id="booleano" style-ref="booleano">
+					<keyword>falso</keyword>
+					<keyword>verdadeiro</keyword>
+				</context>
+				<context id="nulo" style-ref="constanteEspecial">
+					<keyword>nulo</keyword>
+				</context>
+				<context id="numero" style-ref="numero">
+					<match>-?[0-9]+([.][0-9]+)?</match>
+				</context>
+				<context id="cabecalho" style-ref="preProcessador">
+					<keyword>pacote</keyword>
+					<keyword>importe</keyword>
+					<keyword>como</keyword>
+				</context>
+				<context id="definicaoDeTipo" style-ref="interno">
+					<keyword>classe</keyword>
+					<keyword>interface</keyword>
+					<keyword>metodo</keyword>
+					<keyword>atributo</keyword>
+					<keyword>construtor</keyword>
+					<keyword>destrutor</keyword>
+				</context>
+				<context id="modificadoreDeAcesso" style-ref="palavraChave">
+					<keyword>privado</keyword>
+					<keyword>protegido</keyword>
+					<keyword>publico</keyword>
+					<keyword>privada</keyword>
+					<keyword>protegida</keyword>
+					<keyword>publica</keyword>
+				</context>
+				<context id="modificadorComplementar" style-ref="palavraChave">
+					<keyword>implementa</keyword>
+					<keyword>estatico</keyword>
+				</context>
+				<context id="objeto" style-ref="palavraChave">
+					<keyword>novo</keyword>
+					<keyword>nova</keyword>
+					<keyword>destrua</keyword>
+					<keyword>esse</keyword>
+					<keyword>essa</keyword>
+				</context>
+				<context id="bloco" style-ref="palavraChave">
+					<keyword>inicio</keyword>
+					<keyword>fim</keyword>
+				</context>
+				<context id="fluxo" style-ref="palavraChave">
+					<keyword>se</keyword>
+					<keyword>senao</keyword>
+					<keyword>para</keyword>
+					<keyword>repita</keyword>
+					<keyword>enquanto</keyword>
+					<keyword>lance</keyword>
+					<keyword>tente</keyword>
+					<keyword>capture</keyword>
+					<keyword>retorne</keyword>
+				</context>
+				<context id="tipoPrimitivo" style-ref="tipo">
+					<keyword>Booleano</keyword>
+					<keyword>Caractere</keyword>
+					<keyword>Texto</keyword>
+					<keyword>Inteiro</keyword>
+					<keyword>Real</keyword>
+					<keyword>Nada</keyword>
+				</context>
+				<context id="pacote" style-ref="sentenca">
+					<keyword>@</keyword>
+				</context>
+			</include>
+		</context>
+	</definitions>
+</language>
+

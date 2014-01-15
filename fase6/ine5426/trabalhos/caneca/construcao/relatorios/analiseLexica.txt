@@ -1,0 +1,93 @@
+lexer grammar CanecaLexico options {language=Java; } ;
+IMPRIMIR : 'imprimir' ;
+DEPURAR : 'depurar' ;
+INICIO : 'inicio' ;
+FIM : 'fim' ;
+SE : 'se' ;
+SENAO : 'senao' ;
+PARA : 'para' ;
+REPITA : 'repita' ;
+ENQUANTO : 'enquanto' ;
+TENTE : 'tente' ;
+LANCE : 'lance' ;
+CAPTURE : 'capture' ;
+RETORNE : 'retorne' ;
+DESTRUA : 'destrua' ;
+DECLARE : 'declare' ;
+PACOTE : 'pacote' ;
+IMPORTE : 'importe' ;
+COMO : 'como' ;
+CLASSE : 'classe' ;
+INTERFACE : 'interface' ;
+METODO : 'metodo' ;
+ATRIBUTO : 'atributo' ;
+CONSTRUTOR : 'construtor' ;
+DESTRUTOR : 'destrutor' ;
+ESTATICO : 'estatico' ;
+IMPLEMENTA : 'implementa' ;
+PRIVADO : 'privado' ;
+PUBLICO : 'publico' ;
+PROTEGIDO : 'protegido' ;
+PRIVADA : 'privada' ;
+PUBLICA : 'publica' ;
+PROTEGIDA : 'protegida' ;
+NOVO : 'novo' ;
+NOVA : 'nova' ;
+ESSE : 'esse' ;
+ESSA : 'essa' ;
+CHAMADA_DE_OBJETO : '.' ;
+CHAMADA_DE_CLASSE : ':' ;
+PARENTESE_ESQUERDO : '(' ;
+PARENTESE_DIREITO : ')' ;
+COLCHETE_ESQUERDO : '[' ;
+COLCHETE_DIREITO : ']' ;
+SEPARADOR : ',' ;
+TERMINADOR : ';' ;
+ATRIBUIDOR : '=' ;
+SOMA : '+' ;
+SUBTRACAO : '-' ;
+MULTIPLICACAO : '*' ;
+DIVISAO : '/' ;
+RESTO_DA_DIVISAO : '%' ;
+NEGACAO : '~' ;
+E : '&&' ;
+OU : '||' ;
+MENOR : '<' ;
+MAIOR : '>' ;
+MENOR_IGUAL : '<=' ;
+MAIOR_IGUAL : '>=' ;
+IGUAL : '==' ;
+DIFERENTE : '!=' ;
+VALOR_BOOLEANO : ( 'verdadeiro' | 'falso' );
+VALOR_NULO : 'nulo' ;
+CONSTANTE_INTEIRA : ( '-' )? ( DIGITO )+ ;
+CONSTANTE_REAL : ( '-' )? ( DIGITO )+ '.' ( DIGITO )+ ;
+LITERAL_CARACTERE : '\'' CARACTERE '\'' ;
+LITERAL_TEXTO : '"' ( CARACTERE )* '"' ;
+IDENTIFICADOR : LETRA ( LETRA | DIGITO | '_' )* ;
+IDENTIFICADOR_DE_PACOTE : '@' IDENTIFICADOR ( '.' IDENTIFICADOR )* ;
+ESPACO_EM_BRANCO : ( ' ' | TABULACAO | QUEBRA_DE_LINHA ) ;
+COMENTARIO_EM_LINHA : ( '?' (~ ( QUEBRA_DE_LINHA ) )* ) ;
+COMENTARIO_EM_BLOCO : ( '#?' ( options {greedy=false; } : . )* '?#' ) ;
+fragment CARACTERE : ( CARACTERE_DE_ESCAPE |~ ( CARACTERE_NAO_IMPRIMIVEL ) );
+fragment CARACTERE_NAO_IMPRIMIVEL : ( USADO_EM_TEXTO | TABULACAO | QUEBRA_DE_LINHA );
+fragment CARACTERE_DE_ESCAPE : '\\' ( 'n' | 'r' | 't' | 'f' | '\\' | '\'' | '"' ) ;
+fragment QUEBRA_DE_LINHA : ( '\n' | '\r' );
+fragment TABULACAO : ( '\t' | '\f' );
+fragment USADO_EM_TEXTO : ( '\\' | '\'' | '"' );
+fragment LETRA : ( 'A' .. 'Z' | 'a' .. 'z' );
+fragment DIGITO : '0' .. '9' ;
+Tokens : ( IMPRIMIR | DEPURAR | INICIO | FIM | SE | SENAO | PARA | REPITA | ENQUANTO | TENTE | LANCE | CAPTURE | RETORNE | DESTRUA | DECLARE | PACOTE | IMPORTE | COMO | CLASSE | INTERFACE | METODO | ATRIBUTO | CONSTRUTOR | DESTRUTOR | ESTATICO | IMPLEMENTA | PRIVADO | PUBLICO | PROTEGIDO | PRIVADA | PUBLICA | PROTEGIDA | NOVO | NOVA | ESSE | ESSA | CHAMADA_DE_OBJETO | CHAMADA_DE_CLASSE | PARENTESE_ESQUERDO | PARENTESE_DIREITO | COLCHETE_ESQUERDO | COLCHETE_DIREITO | SEPARADOR | TERMINADOR | ATRIBUIDOR | SOMA | SUBTRACAO | MULTIPLICACAO | DIVISAO | RESTO_DA_DIVISAO | NEGACAO | E | OU | MENOR | MAIOR | MENOR_IGUAL | MAIOR_IGUAL | IGUAL | DIFERENTE | VALOR_BOOLEANO | VALOR_NULO | CONSTANTE_INTEIRA | CONSTANTE_REAL | LITERAL_CARACTERE | LITERAL_TEXTO | IDENTIFICADOR | IDENTIFICADOR_DE_PACOTE | ESPACO_EM_BRANCO | COMENTARIO_EM_LINHA | COMENTARIO_EM_BLOCO );
+CanecaLexico.VALOR_BOOLEANO:372:1 decision 1: k=1
+CanecaLexico.CONSTANTE_INTEIRA:381:3 decision 2: k=1
+CanecaLexico.CONSTANTE_INTEIRA:381:10 decision 3: k=1
+CanecaLexico.CONSTANTE_REAL:385:3 decision 4: k=1
+CanecaLexico.CONSTANTE_REAL:385:10 decision 5: k=1
+CanecaLexico.CONSTANTE_REAL:385:22 decision 6: k=1
+CanecaLexico.LITERAL_TEXTO:393:17 decision 7: k=1
+CanecaLexico.IDENTIFICADOR:397:30 decision 8: k=1
+CanecaLexico.IDENTIFICADOR_DE_PACOTE:401:39 decision 9: k=1
+CanecaLexico.COMENTARIO_EM_LINHA:409:8 decision 10: k=1
+CanecaLexico.COMENTARIO_EM_BLOCO:413:36 decision 11: k=2
+CanecaLexico.CARACTERE:417:1 decision 12: k=1
+CanecaLexico.Tokens:1:7 decision 13: cyclic

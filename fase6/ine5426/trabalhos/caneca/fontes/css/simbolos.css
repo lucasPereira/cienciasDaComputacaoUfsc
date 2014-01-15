@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+section {
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+}
+
+section:nth-child(odd) {
+	background-color: #48B;
+}
+
+section:nth-child(even) {
+	background-color: #9C6;
+}
+
+section > p.codigo {
+	font-family: monospace;
+	font-size: 1.5em;
+}
+
+section > p,
+section > h1 {
+	color: #FFF;
+}
+

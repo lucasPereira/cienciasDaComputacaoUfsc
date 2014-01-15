@@ -1,0 +1,28 @@
+pacote @caneca.exemplos;
+classe publica Principal inicio
+	atributo publico Texto nome;
+	construtor publico Principal() inicio
+		Texto nome = "Caneca";
+		nome;
+		depurar;
+		nome = "Caneca++";
+		nome;
+		depurar;
+		iniciar();
+	fim
+	destrutor publico Principal() inicio fim
+	metodo publico Nada iniciar() inicio
+		depurar;
+		nome;
+		depurar;
+		nome = ".casm";
+		nome;
+		depurar;
+		iniciarComParametro(10);
+	fim
+	metodo publico Nada iniciarComParametro(Numero valor) inicio
+		depurar;
+		valor;
+		depurar;
+	fim
+fim

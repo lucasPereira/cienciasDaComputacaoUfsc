@@ -1,0 +1,255 @@
+@charset "utf-8";
+
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	background-color: #EEE;
+	background-image: linear-gradient(top, #FFF, #EEE);
+	background-image: -webkit-linear-gradient(top, #FFF, #EEE);
+	background-image: -moz-linear-gradient(top, #FFF, #EEE);
+	background-image: -o-linear-gradient(top, #FFF, #EEE);
+	background-image: -ms-linear-gradient(top, #FFF, #EEE);
+	border-color: #CCC;
+	border-style: solid;
+	border-width: 1px;
+	color: #333;
+	border-radius: 5px;
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.2),
+		0 1px 2px rgba(0, 0, 0, 0.05);
+	padding: 5px;
+	text-align: center;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+}
+
+button::before,
+button::after {
+	background-color: #333;
+	color: #FFF;
+	border-radius: 16px;
+	opacity: 0.2;
+	padding: 3px 5px;
+}
+
+button:hover::before,
+button:hover::after {
+	opacity: 1;
+}
+
+button::before {
+	margin-right: 5px;
+}
+
+button::after {
+	margin-left: 5px;
+}
+
+button[iconeantes]::before {
+	content: attr(iconeantes);
+	font-family: attr(fonteantes), serif;
+}
+
+button[iconedepois]::after {
+	content: attr(iconedepois);
+	font-family: attr(fontedepois), serif;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+	background-color: #DDD;
+	background-image: linear-gradient(top, #EEE, #DDD);
+	background-image: -webkit-linear-gradient(top, #EEE, #DDD);
+	background-image: -moz-linear-gradient(top, #EEE, #DDD);
+	background-image: -o-linear-gradient(top, #EEE, #DDD);
+	background-image: -ms-linear-gradient(top, #EEE, #DDD);
+	cursor: pointer;
+}
+
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+	background-color: #EEE;
+	background-image: linear-gradient(bottom, #EEE, #DDD);
+	background-image: -webkit-linear-gradient(bottom, #EEE, #DDD);
+	background-image: -moz-linear-gradient(bottom, #EEE, #DDD);
+	background-image: -o-linear-gradient(bottom, #EEE, #DDD);
+	background-image: -ms-linear-gradient(bottom, #EEE, #DDD);
+}
+
+button.perigo,
+input[type="submit"].perigo,
+input[type="reset"].perigo,
+input[type="button"].perigo,
+button.aviso,
+input[type="submit"].aviso,
+input[type="reset"].aviso,
+input[type="button"].aviso,
+button.informacao,
+input[type="submit"].informacao,
+input[type="reset"].informacao,
+input[type="button"].informacao,
+button.seguro,
+input[type="submit"].seguro,
+input[type="reset"].seguro,
+input[type="button"].seguro {
+	border-color: transparent;
+	color: #FFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+button.perigo,
+input[type="submit"].perigo,
+input[type="reset"].perigo,
+input[type="button"].perigo {
+	background-color: #B32;
+	background-image: linear-gradient(top, #F65, #B32);
+	background-image: -webkit-linear-gradient(top, #F65, #B32);
+	background-image: -moz-linear-gradient(top, #F65, #B32);
+	background-image: -o-linear-gradient(top, #F65, #B32);
+	background-image: -ms-linear-gradient(top, #F65, #B32);
+}
+
+button.perigo:hover,
+input[type="submit"].perigo:hover,
+input[type="reset"].perigo:hover,
+input[type="button"].perigo:hover {
+	background-color: #910;
+	background-image: linear-gradient(top, #D43, #910);
+	background-image: -webkit-linear-gradient(top, #D43, #910);
+	background-image: -moz-linear-gradient(top, #D43, #910);
+	background-image: -o-linear-gradient(top, #D43, #910);
+	background-image: -ms-linear-gradient(top, #D43, #910);
+}
+
+button.perigo:active,
+input[type="submit"].perigo:active,
+input[type="reset"].perigo:active,
+input[type="button"].perigo:active {
+	background-image: none;
+}
+
+button.aviso,
+input[type="submit"].aviso,
+input[type="reset"].aviso,
+input[type="button"].aviso {
+	background-color: #D73;
+	background-image: linear-gradient(top, #F92, #D73);
+	background-image: -webkit-linear-gradient(top, #F92, #D73);
+	background-image: -moz-linear-gradient(top, #F92, #D73);
+	background-image: -o-linear-gradient(top, #F92, #D73);
+	background-image: -ms-linear-gradient(top, #F92, #D73);
+}
+
+button.aviso:hover,
+input[type="submit"].aviso:hover,
+input[type="reset"].aviso:hover,
+input[type="button"].aviso:hover {
+	background-color: #B51;
+	background-image: linear-gradient(top, #E81, #B51);
+	background-image: -webkit-linear-gradient(top, #E81, #B51);
+	background-image: -moz-linear-gradient(top, #E81, #B51);
+	background-image: -o-linear-gradient(top, #E81, #B51);
+	background-image: -ms-linear-gradient(top, #E81, #B51);
+}
+
+button.aviso:active,
+input[type="submit"].aviso:active,
+input[type="reset"].aviso:active,
+input[type="button"].aviso:active {
+	background-image: none;
+}
+
+button.informacao,
+input[type="submit"].informacao,
+input[type="reset"].informacao,
+input[type="button"].informacao {
+	background-color: #39B;
+	background-image: linear-gradient(top, #5CD, #39B);
+	background-image: -webkit-linear-gradient(top, #5CD, #39B);
+	background-image: -moz-linear-gradient(top, #5CD, #39B);
+	background-image: -o-linear-gradient(top, #5CD, #39B);
+	background-image: -ms-linear-gradient(top, #5CD, #39B);
+}
+
+button.informacao:hover,
+input[type="submit"].informacao:hover,
+input[type="reset"].informacao:hover,
+input[type="button"].informacao:hover {
+	background-color: #179;
+	background-image: linear-gradient(top, #3AB, #179);
+	background-image: -webkit-linear-gradient(top, #3AB, #179);
+	background-image: -moz-linear-gradient(top, #3AB, #179);
+	background-image: -o-linear-gradient(top, #3AB, #179);
+	background-image: -ms-linear-gradient(top, #3AB, #179);
+}
+
+button.informacao:active,
+input[type="submit"].informacao:active,
+input[type="reset"].informacao:active,
+input[type="button"].informacao:active {
+	background-image: none;
+}
+
+button.seguro,
+input[type="submit"].seguro,
+input[type="reset"].seguro,
+input[type="button"].seguro {
+	background-color: #5A5;
+	background-image: linear-gradient(top, #6C6, #5A5);
+	background-image: -webkit-linear-gradient(top, #6C6, #5A5);
+	background-image: -moz-linear-gradient(top, #6C6, #5A5);
+	background-image: -o-linear-gradient(top, #6C6, #5A5);
+	background-image: -ms-linear-gradient(top, #6C6, #5A5);
+}
+
+button.seguro:hover,
+input[type="submit"].seguro:hover,
+input[type="reset"].seguro:hover,
+input[type="button"].seguro:hover {
+	background-color: #383;
+	background-image: linear-gradient(top, #4A4, #383);
+	background-image: -webkit-linear-gradient(top, #4A4, #383);
+	background-image: -moz-linear-gradient(top, #4A4, #383);
+	background-image: -o-linear-gradient(top, #4A4, #383);
+	background-image: -ms-linear-gradient(top, #4A4, #383);
+}
+
+button.seguro:active,
+input[type="submit"].seguro:active,
+input[type="reset"].seguro:active,
+input[type="button"].seguro:active {
+	background-image: none;
+}
+
+button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+input[type="button"]:disabled,
+button[class]:disabled,
+input[type="submit"][class]:disabled,
+input[type="reset"][class]:disabled,
+input[type="button"][class]:disabled {
+	background-color: #BBB;
+	background-image: none;
+	border-color: #BBB;
+	box-shadow: none;
+	color: #777;
+	text-shadow: none;
+}
+
+button:disabled:hover,
+input[type="submit"]:disabled:hover,
+input[type="reset"]:disabled:hover,
+input[type="button"]:disabled:hover {
+	cursor: default;
+}
+
+button:disabled:hover::before,
+button:disabled:hover::after {
+	opacity: 0.2;
+}
+

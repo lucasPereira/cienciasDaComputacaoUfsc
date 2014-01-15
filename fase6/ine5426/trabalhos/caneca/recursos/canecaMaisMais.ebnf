@@ -1,0 +1,88 @@
+programa ::= cabecalho classe (cabecalho classe | cabecalho interface)*
+
+cabecalho ::= pacote importacao
+pacote ::= "pacote" identificador ";"
+importacao ::= ("importe" identificador ";")*
+
+classe ::= assinaturaDeClasse (interfaceDaClasse)? "inicio" corpoDaClasse "fim"
+assinaturaDeClasse ::= "classe" modificadorDeAcessoFeminino identificadorDeClasse
+interfaceDaClasse ::= "implementa" listaDeIdentificadoresDeInterface
+corpoDaClasse ::= (atributo)* (construtor)+ (metodo)*
+interface ::= "interface" modificadorDeAcessoFeminino identificadorDeInterface "inicio" corpoDaInterface "fim"
+corpoDaInterface ::= (assinaturaDeMetodo ";")*
+
+metodo ::= assinaturaDeMetodo blocoDeInstrucoes
+assinaturaDeMetodo ::= "metodo" estatico? modificadorDeAcessoMasculino identificador ("[" "]")* identificador "(" listaDeArgumentos ")"
+construtor ::= assinaturaDeConstrutor blocoDeInstrucoes
+assinaturaDeConstrutor ::= "construtor" modificadorDeAcessoMasculino identificador "(" listaDeArgumentos ")"
+atributo ::= "atributo" estatico? modificadorDeAcessoMasculino (declaracao | declaracaoComAtribuicao) ";"
+
+modificadorDeAcessoMasculino ::= "publico" | "privado" | "protegido"
+modificadorDeAcessoFeminino ::= "publica" | "privada" | "protegida"
+estatico ::= "estatico"
+
+listaDeParametros ::= (valor)? ("," valor)*
+listaDeArgumentos ::= (identificador identificador)? ("," identificador identificador)*
+listaDeIdentificadoresDeInterface ::= identificadorDeInterface ("," identificadorDeInterface)*
+
+declaracao ::= identificador ("[" constanteInteira "]")* identificador
+atribuicao ::= ((esse | identificador) "." | identificador ":")? identificador ("[" constanteInteira "]")* "=" valor
+declaracaoComAtribuicao ::= declaracao "=" valor
+
+chamadaDeMetodo ::= chamadaDeMetodoDireta | chamadaDeMetodoLocal
+chamadaDeMetodoDireta ::= (identificador | esse) "." chamadaDeMetodoLocal
+chamadaDeMetodoEstatica ::= identificador ":" chamadaDeMetodoLocal
+chamadaDeMetodoLocal ::= identificador "(" listaDeParametros ")"
+instanciacao ::= novo identificadorDeClasse "(" listaDeParametros ")"
+novo ::= "novo" | "nova"
+esse ::= "esse" | "essa"
+retorno ::= "retorne" valor
+
+operacao ::= operacaoAritmetica | operacaoLogica
+operacaoAritmetica ::= valor operadorAritmetico valor | valor operadorAritmetico operacaoAritmetica | valor | "-" operacaoAritmetica
+operacaoLogica ::= valor operadorLogico valor | valor operadorLogico operacaoLogica | valor | "~" operacaoLogica
+operadorAritmetico ::= "+" | "-" | "*" | "/" | "%"
+operadorLogico ::= ">" | "<" | "==" | "!=" | ">=" | "<=" | "&&" | "||"
+
+se ::= "se" "(" valor ")" blocoDeInstrucoes ("senao" blocoDeInstrucoes)?
+para ::= "para" "(" atribuicao ";" valor ";" operacaoAritmetica ")" blocoDeInstrucoes
+enquanto ::= "enquanto" "(" valor ")" blocoDeInstrucoes
+tente ::= "tente" blocoDeInstrucoes "capture" "(" declaracao ")" blocoDeInstrucoes
+lance ::= "lance" valor
+
+valor ::=
+	"(" valor ")"
+	| valorBooleano
+	| constanteInteira
+	| constanteReal
+	| literalCaractere
+	| literalTexto
+	| literalArranjo
+	| chamadaDeMetodo
+	| instanciacao
+	| operacao
+	| esse
+	| ((esse | identificador) "." | identificador ":")? identificador ("[" constanteInteira "]")*
+
+instrucao ::= 
+	valor ";"
+	| declaracao ";"
+	| declaracaoComAtribuicao ";"
+	| atribuicao ";"
+	| retorno ";"
+	| lance ";"
+	| se
+	| para
+	| enquanto
+	| tente
+blocoDeInstrucoes ::= "inicio" (instrucao)* "fim"
+
+identificador ::= [a-Z] ([a-Z] | [0-9] | "_")* ("." identificador)?
+
+valorBooleano ::= "verdadeiro" | "falso"
+constanteInteira ::= ("-")? ([0-9])+
+constanteReal ::= ("-")? ([0-9])+ "." ([0-9])+
+literalCaractere ::= "'" ([a-Z] | [0-9] | " " | "\n" | "\t" | "\s" | "\r") "'"
+literalTexto ::= '"' (literalCaractere)* '"'
+literalArranjo ::= "[" (valor ("," valor)*)? "]"
+

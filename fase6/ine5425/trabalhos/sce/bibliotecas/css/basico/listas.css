@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+nav ul > li,
+nav ol > li {
+	list-style-type: none;
+}
+
+nav ul > li::after,
+nav ol > li::after {
+	content: none;
+}
+
+ul > li {
+	list-style-type: square;
+	list-style-position: inside;
+}
+
+ol > li {
+	list-style-type: decimal;
+}
+
+ul > li::after,
+ol > li::after {
+	/* content: ";"; */
+}
+
+ul > li:last-of-type::after,
+ol > li:last-of-type::after {
+	/* content: "."; */
+}
+

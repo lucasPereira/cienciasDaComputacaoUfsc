@@ -1,0 +1,28 @@
+pacote @caneca.exemplos;
+classe publica Principal inicio
+	construtor publico Principal() inicio
+		Secundaria segunda = nova Secundaria(10, esse);
+		segunda.imprimirNome(20);
+	fim
+	destrutor publico Principal() inicio fim
+fim
+
+pacote @caneca.exemplos;
+classe publica Secundaria inicio
+	atributo publico Inteiro meuValor;
+	atributo publico Principal primeira;
+	atributo publico Inteiro maisValor;
+	construtor publico Secundaria(Inteiro valor, Principal outraPrimeira) inicio
+		valor;
+		imprimir;
+		outraPrimeira;
+		imprimir;
+		primeira = outraPrimeira;
+		primeira;
+		imprimir;
+	fim
+	destrutor publico Secundaria() inicio fim
+	metodo publico Nada imprimirNome(Inteiro parametro) inicio
+		depurar;
+	fim
+fim

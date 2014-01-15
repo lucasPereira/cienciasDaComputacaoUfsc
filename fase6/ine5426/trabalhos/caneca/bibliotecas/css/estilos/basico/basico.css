@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+@import url("textuais.css");
+@import url("listas.css");
+@import url("botoes.css");
+@import url("formulario.css");
+@import url("tabela.css");
+
+@font-face {
+	font-family: entypo;
+	src: url("../../../recursos/fontes/entypo/entypo.eot");
+	src:
+		url("../../../recursos/fontes/entypo/entypo.eot") format('embedded-opentype'),
+		url("../../../recursos/fontes/entypo/entypo.woff") format('woff'),
+		url("../../../recursos/fontes/entypo/entypo.ttf") format('truetype'),
+		url("../../../recursos/fontes/entypo/entypo.svg") format('svg');
+}
+
+@font-face {
+	font-family: fontAwesome;
+	src: url("../../../recursos/fontes/fontAwesome/fontAwesome.eot");
+	src:
+		url("../../../recursos/fontes/fontAwesome/fontAwesome.eot") format('embedded-opentype'),
+		url("../../../recursos/fontes/fontAwesome/fontAwesome.woff") format('woff'),
+		url("../../../recursos/fontes/fontAwesome/fontAwesome.ttf") format('truetype'),
+		url("../../../recursos/fontes/fontAwesome/fontAwesome.svg") format('svg');
+}
+
+@font-face {
+	font-family: iconic;
+	src: url("../../../recursos/fontes/iconic/iconic.eot");
+	src:
+		url("../../../recursos/fontes/iconic/iconic.eot") format('embedded-opentype'),
+		url("../../../recursos/fontes/iconic/iconic.woff") format('woff'),
+		url("../../../recursos/fontes/iconic/iconic.ttf") format('truetype'),
+		url("../../../recursos/fontes/iconic/iconic.svg") format('svg');
+}
+
+@font-face {
+	font-family: typicons;
+	src: url("../../../recursos/fontes/typicons/typicons.eot");
+	src:
+		url("../../../recursos/fontes/typicons/typicons.eot") format('embedded-opentype'),
+		url("../../../recursos/fontes/typicons/typicons.woff") format('woff'),
+		url("../../../recursos/fontes/typicons/typicons.ttf") format('truetype'),
+		url("../../../recursos/fontes/typicons/typicons.svg") format('svg');
+}
+
+@font-face {
+	font-family: modernPictograms;
+	src: url("../../../recursos/fontes/modernPictograms/modernPictograms.eot");
+	src:
+		url("../../../recursos/fontes/modernPictograms/modernPictograms.eot") format('embedded-opentype'),
+		url("../../../recursos/fontes/modernPictograms/modernPictograms.woff") format('woff'),
+		url("../../../recursos/fontes/modernPictograms/modernPictograms.ttf") format('truetype'),
+		url("../../../recursos/fontes/modernPictograms/modernPictograms.svg") format('svg');
+}
+
+:root {
+	font-size: 16px;
+}
+
+* {
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5em;
+}
+
+a[accesskey]::after,
+button[accesskey]::after {
+	font-family: entypo;
+	content: " \2328  [" attr(accesskey) "]";
+}
+
+/*
+	comum
+	grego
+	latim
+*/
+
+/*
+	!$%©(® registred)ℜℜ±µ¶§%‰‱⌚⌨⁋᜵᜶ℕℝℚ(℗ published)(℠ service mark)(™ trade mark)
+	℉℃(ℇ euler constante)(ℎ altura)(ℑ imaginary part)(ℜ real part)ℤ(℧ conductance)
+	(ℬ funcao de bernoulli)(ℰ força eletromotriz)(ℱ transformada de fourier)(ℳ matriz)
+	√∝∞∟∠∡∢∩∪∫∬∭∼(∿corrente alternada)(≅≆≇aproximado)(≈≉≠quase)(≟≠diferente)(≡≢identico)
+	⊂⊃⊄⊅⊆⊇⊈⊉⊊⊋⊌⊍⊎⊕⊖⊗⊘⊙⊚⊛⊜⊝⊞⊟⊡⋯⋮⋰⋱⋷⌦⌧⌫⎗⎘⋈⋉⋊⎙⎙⎚⏚⏜⏝☈☕☤☭☮☯☢☣☤
+	♔♕♖♗♘♙♚♛♝♞♟♠♡♢♣♤♥♦♧♨☎☏☫☪☺☹☻☻☿♀♂♁♩♪♫♬♭♲♳♴♵♶♷♸♹♺♻♼♽♿⚒⚓⚔⚕⚖⚗⚘⚙⚚⚛⚜⚡
+	⚢⚣⚤⚥⚦⚧⚨⚩⚪⚬⚭⚮⚯✁✂〄㎏㎐㎑㎒㎓㎔㎕㎖㎗㎘㎈㎉㎅㎆㎇㎇㎀㎁㎂㎃㎄㎅㎊㎋㎌㎍㎎㎏㎙㎚㎛㎜㎝㎞㎟㎠㎡㎢㎣㎤㎥㎦㎧㎨
+	㎩㎪㎫㎬㎭㎮㎯㎰㎱㎲㎳㎴㎵㎶㎷㎸㎹㎺㎻㎼㎽㎾㎿㏀㏁㏂㏃㏄㏅㏆㏇㏈㏉㏊㏋㏌㏍㏎㏏㏐㏑㏒㏓㏔㏕㏖㏗㏘㏙㏚㏛㏜㏝
+	￼‘’“”‚‛„‟․‥…❝❞❜❛
+*/
+
+/*
+	#FFF;
+	#DDD;
+	#CCC;
+	#BBB;
+	#999;
+	#777;
+	#000;
+	#E43;
+	#36F;
+	#C00;
+	#0A0;
+	#EA0;
+	rgba(31, 255, 31, 0.5);
+	#0A0;
+*/
+
+/*
+	paginacao
+	breadcrumb
+	drop down com divisor
+	drop down com divisor (botão)
+	abas
+	navegacao vertical
+	navegacao horizontal
+	rótulozinhos
+	quadro de erro, aviso, informacao, sucesso
+	barras de progresso
+	comando vertical
+	borda nos botões do comando
+*/
+
+/*
+	#FFF
+		botao::[after, before].texto
+		botao.[perigo, aviso, informacao, sucesso].texto
+		formulario comando.span::before.texto.sombra
+		entradaTextual.fundo
+		teclado.texto
+		tempo::after.texto
+		.sucesso.texto
+		.erro.texto
+		.informacao.texto
+		.aviso.texto
+	#F5F5F5
+		formulario.div:hover.fundo
+		formulario.div.comandos.fundo
+		codigo.fundo
+		saida.fundo
+	#EEE
+		formulario comando.span::before.fundo
+		entradaTextual:disabled.fundo
+		citacao.fundo
+	#DDD
+		formulario.div.comandos.borda
+		codigo.borda
+		saida.borda
+	#CCC
+		formulario comando.span::before.borda
+		botao.borda
+		entradaTextual.borda
+		entradaTextual:disabled.borda
+	#BBB
+		botao:disabled.fundo
+		botao:disabled.borda
+	#999
+		entradaTextual::placeholder.texto
+	#777
+		botao:disabled.texto
+		entradaTextual:disabled.texto
+	#333
+		botao.texto
+		botao::[after, before].fundo
+		formulario comando.span::before.texto
+		entradaTextual.texto
+		sigla.borda
+		teclado.fundo
+		tempo.borda
+		tempo.texto
+		tempo::after.fundo
+		citacao.texto
+		citacao.borda
+	#FFF~#EEE (#EEE)
+		botao.fundo
+	#EEE~#DDD (#DDD)
+		botao:hover.fundo
+	#DDD~#EEE (#EEE)
+		botao:active.fundo
+	#F65~#B32 (#B32)
+		botao.perigo.fundo
+		entradaTextual.erro.borda
+		entradaTextual.erro:hover.borda.fundo
+		entradaTextual.erro:hover.borda.fundo.sombra
+	#D43~#910 (#910)
+		botao.perigo:hover.fundo
+	#F92~#D73 (#D73)
+		botao.aviso.fundo
+		entradaTextual.aviso.borda
+		entradaTextual.aviso:hover.borda.fundo
+		entradaTextual.aviso:hover.borda.fundo.sombra
+	#E81~#B51 (#B51)
+		botao.aviso:hover.fundo
+	#5CD~#39B (#39B)
+		botao.informacao.fundo
+		entradaTextual.informacao.borda
+		entradaTextual.informacao:hover.borda.fundo
+		entradaTextual.informacao:hover.borda.fundo.sombra
+	#3AB~#179 (#179)
+		botao.informacao:hover.fundo
+	#6C6~#5A5 (#5A5)
+		botao.seguro.fundo
+		entradaTextual.sucesso.borda
+		entradaTextual.sucesso:hover.borda.fundo
+		entradaTextual.sucesso:hover.borda.fundo.sombra
+	#4A4~#383 (#383)
+		botao.seguro:hover.fundo
+	#6C6
+		.sucesso.fundo
+	#F65
+		.erro.fundo
+	#5CD
+		.informacao.fundo
+	#F92
+		.aviso.fundo
+	#36F
+		entradaTextual.borda
+		entradaTextual:hover.borda
+		entradaTextual:hover.borda.sombra
+	#36F
+		enlace.texto
+	#E43
+		enlace:active.texto
+	#D14
+		codigo.texto
+	#2A9
+		saida.texto
+	#0A0
+		inserido.borda
+		inserido.texto
+		iserido::after.fundo
+		marcacao.texto
+	#090
+		variavel.texto
+	#C00
+		removido.borda
+		removido.texto
+		removido::after.fundo
+	#FFF
+		inserido::after.texto
+		removido::after.texto
+*/
+
+/*
+	serif
+	sans-serif
+	cursive
+	fantasy
+	monospace
+*/
+

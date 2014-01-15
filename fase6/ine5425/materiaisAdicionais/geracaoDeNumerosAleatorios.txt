@@ -1,0 +1,27 @@
+* Geração de números aleatórios de forma determinístca possui um período.
+* O período é a quantidade de números que se pode gerar até a sequência se repetir.
+* Funções geradoras de números aleatórios são recursivas e precisam de uma semente.
+* A semente é o X0 da função.
+* Alguns geradores não repetem a fase inicial do período que é chamada de cauda.
+* O perído de um gerador é dado pela cauda + o comprimento do ciclo.
+* Um gerador deve ser computacionalmente eficiente, deve ter um período longo e deve ser estatistícamente aleatório.
+
+* Método congruente linear.
+* Xn = (a^n) mod m.
+* Xn+1 = (a*Xn) mod m.
+* Xn = ((a*Xn-1)+b) mod m.
+* a = multiplicador, m = módulo.
+* Se b = 0, o método é chamado de congruente multiplicativo e se b != 0, o método é chamado de congruente misto.
+* Gera valores entre 0 e m-1.
+* Para gerar entre 0 e 1 faz-se Xi/m.
+
+* Método congruente linear multiplicativo.
+* Xn = (a*Xn-1) mod m.
+* b = 0.
+* m = 2^k.
+* a = (8*k)+3 ou (8*k)+5.
+* X0 (semente) = ímpar.
+* Como b = 0, o perdíodo máximo P = m/4.
+* É desejável que a folga seja pequena e a densidade grande.
+* Folga = Xn/m - Xn-1/m.
+

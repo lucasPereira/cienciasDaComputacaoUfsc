@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<link href="../../bibliotecas/css/basico/basico.css" type="text/css" rel="stylesheet" />
+		<link href="../../bibliotecas/css/limpo/limpo.css" type="text/css" rel="stylesheet" />
+		<link href="../css/estilo.css" type="text/css" rel="stylesheet" />
+		<script src="../../bibliotecas/js/linda.js" type="text/javascript"></script>
+		<script src="../js/aleatorio.js" type="text/javascript"></script>
+		<script src="../js/modelo.js" type="text/javascript"></script>
+		<script src="../js/simulacao.js" type="text/javascript"></script>
+		<script src="../js/constrole.js" type="text/javascript"></script>
+		<title>Simulador de correio eletrônico</title>
+	</head>
+	<body>
+		<header>
+			<h1 id="topo">Simulador de correio eletrônico</h1>
+			<nav class="principal">
+				<ul>
+					<li><a href="#simulacao">Simulação</a></li>
+					<li><a href="#configuracao">Configuração</a></li>
+					<li><a href="#gna">GNA</a></li>
+					<li><a href="#monteCarlo">Monte Carlo</a></li>
+					<li><a href="#distribuicoes">Distribuições</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<h1 id="simulacao">Simulação</h1>
+			<section>
+				<h2>Controle</h2>
+				<p>Passe o mouse sobre os botões e campos para ver mais detalhes.</p>
+				<div class="formulario naoRotulado">
+					<div>
+						<label>controles</label>
+						<div class="horizontal comEspaco">
+							<button class="seguro iniciarSimulacao" title="Inicia a simulação.">Iniciar</button>
+							<button class="simularContinuamente" title="Realiza a simulação disparando os próximos eventos automaticamente. A simulação só irá parar caso for utilizado o botão Finalizar ou Parar.">Simular continuamente</button>
+							<button class="simularProximo" title="Realiza a simulação disparando apenas o próximo evento. A simulação irá parar assim que o próximo evento for simulado.">Simular próximo</button>
+							<div class="comando">
+								<button class="simularAteOTempo" title="Realiza a simulação disparando os próximos eventos automaticamente. A simulação irá parar assim que alcansar o tempo fornecido ou for utilizado o botão Finalizar ou Parar.">Simular até o tempo</button>
+								<input name="tempoFinalDaSimulacao" class="pequeno" type="text" title="Tempo no relógio em que a simulação deve ser encerrada." placeholder="encerrar em" />
+							</div>
+							<button class="pararSimulacao" title="Pára a simulação que pode ser reiniciada utilizando os botões Simular continuamente, Simular próximo e Simular até o tempo.">Parar</button>
+							<button class="perigo finalizarSimulacao" title="Finaliza a simulação que não poderá mais ser reiniciada.">Finalizar</button>
+						</div>
+					</div>
+					<div>
+						<label>Velocidade</label>
+						<div class="horizontal comEspaco">
+							<label for="velocidadeDaSimulacao" title="Velocidade da simulação. A velocidade é dada em eventos por minuto.">Velocidade (em eventos por minuto):</label>
+							<input class="pequeno" name="velocidadeDaSimulacao" type="range" min="1" max="6000" value="50" title="Velocidade da simulação. A velocidade é dada em eventos por minuto." />
+							<label for="velocidadeDaLuz" title="Dispara os eventos utilizando a maior velocidade possível. É recomendável que se utilize a opção Histórico limitado quando for executar na velocidade da luz. Como existirão muitas mensagens, guardar o histórico de todas elas pode consumir muita memória do seu computador.">Velocidade da luz:</label>
+							<input type="checkbox" name="velocidadeDaLuz" title="Dispara os eventos utilizando a maior velocidade possível. É recomendável que se utilize a opção Histórico limitado quando for executar na velocidade da luz. Como existirão muitas mensagens, guardar o histórico de todas elas pode consumir muita memória do seu computador." />
+							<label for="historicoLimitado" title="Utiliza um histórico limitado de eventos, mensagens e variáveis para melhorar a performance. Sem essa opção, a quantidade consumida de memória será diretamente proporcional a quantidade de mensagens recebidas.">Histórico limitado (melhor performance):</label>
+							<input type="checkbox" name="historicoLimitado" title="Utiliza um histórico limitado de eventos, mensagens e variáveis para melhorar a performance. Sem essa opção, a quantidade consumida de memória será diretamente proporcional a quantidade de mensagens recebidas." />
+						</div>
+					</div>
+				</div>
+			</section>
+			<p>Clique no evento para mostrar o estado das variáveis e os dados da mensagem em um dado momento do relógio.</p>
+			<div class="variaveisEventosEMensagens">
+				<section class="variaveis">
+					<h2>Variáveis</h2>
+					<div class="variaveis">
+						<table>
+							<thead>
+								<tr>
+									<th>Variável</th>
+									<th>Valor</th>
+								</tr>
+							</thead>
+							<tbody class="variaveis">
+								<tr>
+									<td><strong>Mensagens recebidas</strong></td>
+									<td class="mensagensRecebidas"></td>
+								</tr>
+								<tr>
+									<td><strong>Mensagens no sistema</strong></td>
+									<td class="mensagensNoSistema"></td>
+								</tr>
+								<tr>
+									<td>Mínimo de mensagens no sistema</td>
+									<td class="minimoDeMensagensNoSistema"></td>
+								</tr>
+								<tr>
+									<td>Máximo de mensagens no sistema</td>
+									<td class="maximoDeMensagensNoSistema"></td>
+								</tr>
+								<tr>
+									<td><strong>Taxa média de mensagens no sistema</strong></td>
+									<td class="taxaMediaDeMensagensNoSistema"></td>
+								</tr>
+								<tr class="divisor">
+									<td>Ocupação dos servidores do CDS local</td>
+									<td class="ocupacaoDosServidoresDoCdsLocal"></td>
+								</tr>
+								<tr>
+									<td>Ocupação dos servidores do CDS remoto</td>
+									<td class="ocupacaoDosServidoresDoCdsRemoto"></td>
+								</tr>
+								<tr>
+									<td><strong>Taxa de ocupação do CDS local</strong></td>
+									<td class="taxaDeOcupacaoDosServidoresDoCdsLocal"></td>
+								</tr>
+								<tr>
+									<td><strong>Taxa de ocupação do CDS remoto</strong></td>
+									<td class="taxaDeOcupacaoDosServidoresDoCdsRemoto"></td>
+								</tr>
+								<tr class="divisor">
+									<td><strong>Tempo médio de trânsito</strong></td>
+									<td class="tempoMedioDeTransito"></td>
+								</tr>
+								<tr>
+									<td>Tempo mínimo de trânsito</td>
+									<td class="tempoMinimoDeTransito"></td>
+								</tr>
+								<tr>
+									<td>Tempo máximo de trânsito</td>
+									<td class="tempoMaximoDeTransito"></td>
+								</tr>
+								<tr class="divisor">
+									<td>Mensagens no CDR</td>
+									<td class="mensagensNoCdr"></td>
+								</tr>
+								<tr>
+									<td>Mensagens no CDS local</td>
+									<td class="mensagensNoCdsLocal"></td>
+								</tr>
+								<tr>
+									<td>Mensagens no CDS remoto</td>
+									<td class="mensagensNoCdsRemoto"></td>
+								</tr>
+								<tr>
+									<td>Mensagens no CDD sucesso</td>
+									<td class="mensagensNoCddSucesso"></td>
+								</tr>
+								<tr>
+									<td>Mensagens no CDD fracasso</td>
+									<td class="mensagensNoCddFracasso"></td>
+								</tr>
+								<tr class="divisor">
+									<td>Mensagens com sucesso</td>
+									<td class="mensagensComSucesso"></td>
+								</tr>
+								<tr>
+									<td>Mensagens com fracasso</td>
+									<td class="mensagensComFracasso"></td>
+								</tr>
+								<tr>
+									<td>Adiamentos</td>
+									<td class="adiamentos"></td>
+								</tr>
+								<tr class="divisor">
+									<td>Mensagens LL</td>
+									<td class="mensagensLl"></td>
+								</tr>
+								<tr>
+									<td>Mensagens LR</td>
+									<td class="mensagensLr"></td>
+								</tr>
+								<tr>
+									<td>Mensagens RL</td>
+									<td class="mensagensRl"></td>
+								</tr>
+								<tr>
+									<td>Mensagens RR</td>
+									<td class="mensagensRr"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+				<section class="eventos">
+					<h2>Eventos</h2>
+					<div class="eventos">
+						<table>
+							<thead>
+								<tr>
+									<th>Mensagem</th>
+									<th>Relógio</th>
+									<th>Tipo</th>
+								</tr>
+							</thead>
+							<tbody class="eventos"></tbody>
+						</table>
+					</div>
+				</section>
+				<section class="mensagem">
+					<h2>Mensagem</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Variável</th>
+								<th>Valor</th>
+							</tr>
+						</thead>
+						<tbody class="mensagem">
+							<tr>
+								<td>Identificador</td>
+								<td class="identificador"></td>
+							</tr>
+							<tr>
+								<td><strong>Tipo de tráfego</strong></td>
+								<td class="tipoDeTrafego"></td>
+							</tr>
+							<tr>
+								<td><strong>Tipo</strong></td>
+								<td class="tipo"></td>
+							</tr>
+							<tr class="divisor">
+								<td>Adiamentos</td>
+								<td class="adiamentos"></td>
+							</tr>
+							<tr>
+								<td><strong>Tempo de trânsito</strong></td>
+								<td class="tempoDeTransito"></td>
+							</tr>
+							<tr class="divisor">
+								<td>Entrada no CDR</td>
+								<td class="entradaNoCdr"></td>
+							</tr>
+							<tr>
+								<td>Entrada no CDS</td>
+								<td class="entradaNoCds"></td>
+							</tr>
+							<tr>
+								<td>Entrada no CDD</td>
+								<td class="entradaNoCdd"></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+		</section>
+		<section>
+			<h1 id="configuracao">Configuração</h1>
+			<div class="formulario rotulado">
+				<h2>GNA</h2>
+				<div>
+					<label>Semente</label>
+					<div class="vertical">
+						<div class="comando">
+							<input type="text" name="semente" placeholder="Semente" class="pequeno" />
+							<button type="button" class="salvarSemente">Salvar</button>
+						</div>
+					</div>
+				</div>
+				<div>
+					<label>Estratégia de geração</label>
+					<div class="horizontal">
+						<div class="comando">
+							<span icone="a"></span>
+							<input type="text" name="a" placeholder="a" class="pequeno" />
+						</div>
+						<div class="comando">
+							<span icone="b"></span>
+							<input type="text" name="b" placeholder="b" class="pequeno" />
+						</div>
+						<div class="comando">
+							<span icone="m"></span>
+							<input type="text" name="m" placeholder="m" class="pequeno" />
+						</div>
+						<button type="button" class="salvarEstrategiaDeGeracao">Salvar</button>
+					</div>
+				</div>
+				<h2>Centro de serviço</h2>
+				<div>
+					<label>Quantidade de servidores</label>
+					<div class="horizontal">
+						<div class="comando">
+							<span icone="CDS 1"></span>
+							<input type="text" name="quantidadeDeServidoresDoCds1" placeholder="# de servidores" class="medio" />
+						</div>
+						<div class="comando">
+							<span icone="CDS 2"></span>
+							<input type="text" name="quantidadeDeServidoresDoCds2" placeholder="# de servidores" class="medio" />
+						</div>
+						<button type="button" class="salvarQuantidadeDeServidores">Salvar</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h1 id="gna">GNA</h1>
+			<div class="gna">
+				<table>
+					<thead>
+						<tr>
+							<th>R</th>
+							<th>Entre 0 e 1</th>
+						</tr>
+					</thead>
+					<tbody class="gna"><tbody>
+				</table>
+			</div>
+		</section>
+		<section class="monteCarlo">
+			<h1 id="monteCarlo">Monte Carlo</h1>
+			<section>
+				<h2>Tipo de tráfego de mensagem</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Classe</th>
+							<th>Frquência</th>
+							<th>Frquência acumulada</th>
+							<th>Intervalo</th>
+						</tr>
+					</thead>
+					<tbody class="monteCarloTipoDeTrafegoDeMensagem"></tbody>
+				</table>
+			</section>
+			<section class="monteCarloTipoDeMensagem">
+				<h2>Tipo de mensagem</h2>
+				<section>
+					<h3>LL</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Classe</th>
+								<th>Frquência</th>
+								<th>Frquência acumulada</th>
+								<th>Intervalo</th>
+							</tr>
+						</thead>
+						<tbody class="monteCarloTipoDeMensagemLl"></tbody>
+					</table>
+				</section>
+				<section>
+					<h3>LR</h3>
+					<table>
+							<thead>
+							<tr>
+								<th>Classe</th>
+								<th>Frquência</th>
+								<th>Frquência acumulada</th>
+								<th>Intervalo</th>
+							</tr>
+						</thead>
+						<tbody class="monteCarloTipoDeMensagemLr"></tbody>
+					</table>
+				</section>
+				<section>
+					<h3>RL</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Classe</th>
+								<th>Frquência</th>
+								<th>Frquência acumulada</th>
+								<th>Intervalo</th>
+							</tr>
+						</thead>
+						<tbody class="monteCarloTipoDeMensagemRl"></tbody>
+					</table>
+				</section>
+				<section>
+					<h3>RR</h3>
+					<table>
+						<thead>
+							<tr>
+								<th>Classe</th>
+								<th>Frquência</th>
+								<th>Frquência acumulada</th>
+								<th>Intervalo</th>
+							</tr>
+						</thead>
+						<tbody class="monteCarloTipoDeMensagemRr"></tbody>
+					</table>
+				</section>
+			</section>
+		</section>
+		<section class="distribuicoes">
+			<h1 id="distribuicoes">Distribuições</h1>
+			<section>
+				<h2>Tempo entre chegadas</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Tipo de tráfego de mensagem</th>
+							<th>Distribuição</th>
+						</tr>
+					</thead>
+					<tbody class="distribuicaoTempoEntreChegadas"></tbody>
+				</table>
+			</section>
+			<section>
+				<h2>Tempo de recepção</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Tipo de tráfego de mensagem</th>
+							<th>Distribuição</th>
+						</tr>
+					</thead>
+					<tbody class="distribuicaoTempoDeRecepcao"></tbody>
+				</table>
+			</section>
+			<section>
+				<h2>Tempo de serviço</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Tipo de tráfego de mensagem</th>
+							<th>Distribuição</th>
+						</tr>
+					</thead>
+					<tbody class="distribuicaoTempoDeServico"></tbody>
+				</table>
+			</section>
+		</section>
+		<p class="caixaDeMensagem"></p>
+		<a href="#topo" class="topo">Menu</a>
+	</body>
+</html>
+

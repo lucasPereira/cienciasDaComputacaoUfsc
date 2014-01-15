@@ -1,0 +1,10 @@
+pacote @qualquer;
+classe publica Classe[T] inicio
+	construtor publico Classe() inicio fim
+	destrutor publico Classe() inicio fim
+	metodo publico Nada teste() inicio
+		Inteiro numero = 10 * (2 + 4);
+		Texto texto = "Caneca++";
+	fim
+fim
+

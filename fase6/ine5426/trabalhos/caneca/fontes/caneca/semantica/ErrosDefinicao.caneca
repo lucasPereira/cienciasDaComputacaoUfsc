@@ -1,0 +1,31 @@
+pacote @pacoteQualquer;
+classe publica MinhaClasse inicio
+	atributo publico Real pi = 3.14;
+	atributo publico Inteiro pi = 3;
+	construtor publico MinhaClasse() inicio fim
+	construtor publico MinhaClasse() inicio fim
+	construtor publico Minha(Texto argumento) inicio fim
+	destrutor publico Minha() inicio fim
+	metodo publico Real pi(Booleano parametro, Real parametro) inicio
+		retorne esse.pi;
+	fim
+	metodo publico Nada naoExisteSobrecarga() inicio fim
+	metodo publico Texto naoExisteSobrecarga() inicio fim
+	metodo publico Nada naoExisteSobrecarga(Texto texto) inicio fim
+	metodo publico Nada naoPodeVariavelRepetida() inicio
+		Texto codigo = "123456";
+		Inteiro codigo = 123456;
+	fim
+fim
+
+pacote @pacoteQualquer;
+classe publica ClasseRepetida inicio
+	construtor publico ClasseRepetida() inicio fim
+	destrutor publico ClasseRepetida() inicio fim
+fim
+
+pacote @pacoteQualquer;
+classe publica ClasseRepetida inicio
+	construtor publico ClasseRepetida() inicio fim
+	destrutor publico ClasseRepetida() inicio fim
+fim

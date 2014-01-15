@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8" />
+		<title>Documentação do Caneca++</title>
+		<link rel="stylesheet" type="text/css" href="../bibliotecas/css/estilos/limpo/limpo.css" />
+		<link rel="stylesheet" type="text/css" href="../bibliotecas/css/estilos/basico/basico.css" />
+		<style>
+			h1 {
+				font-weight: bold;
+			}
+			
+			section + section {
+				margin-top: 50px;
+			}
+			
+			section > * + * {
+				margin-top: 10px;
+			}
+			
+			body {
+				padding: 20px 20px 50px 20px;
+			}
+			
+			ul,
+			ol,
+			dl {
+				margin-left: 40px;
+			}
+			
+			.topo {
+				background-color: #EEE;
+				bottom: 0;
+				display: block;
+				right: 0;
+				padding: 10px;
+				position: fixed;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h1 id="sumario">Sumário</h1>
+			<ol>
+				<li><a href="#estrutura">Estrutura</a></li>
+				<li><a href="#antlr">Antlr</a></li>
+				<li><a href="#construcao">Construção</a>
+					<ol>
+						<li><a href="#construcaoExecucao">Execução</a></li>
+					</ol>
+				</li>
+				<li><a href="#analiseLexica">Análise léxica</a>
+					<ol>
+						<li><a href="#analiseLexicaPalavrasChaveOperadoresESimbolosAuxiliares">Palavras-chave, operadores e símbolos auxiliares</a></li>
+						<li><a href="#analiseLexicaIdentificadoresEIdentificadoresDePacote">Identificadores e identificadores de pacote</a></li>
+						<li><a href="#analiseLexicaValoresConstantesELiterais">Valores, constantes e literais</a></li>
+						<li><a href="#analiseLexicaEspacosEmBracoEComentarios">Espaços em branco e comentários</a></li>
+					</ol>
+				</li>
+				<li><a href="#analiseSintatica">Análise sintática</a>
+					<ol>
+						<li><a href="#analiseSintaticaGramaticasLlk">Gramáticas LL(k)</a></li>
+						<li><a href="#analiseSintaticaExpressoes">Expressões</a></li>
+						<li><a href="#analiseSintaticaNaoFatoracaoEntreDeclaracoesEExpressoes">Não fatoração entre declarações e expressões</a></li>
+					</ol>
+				</li>
+				<li><a href="#tratamentoDeErros">Tratamento de erros</a></li>
+				<li><a href="#arvoreSintatica">Árvore sintática</a></li>
+				<li><a href="#analiseSemantica">Análise semântica</a></li>
+				<li><a href="#geracaoDeCodigo">Geração de código</a></li>
+				<li><a href="#execucao">Execução</a></li>
+			</ol>
+		</section>
+		<section>
+			<h1 id="estrutura">Estrutura</h1>
+			<p>O projeto segue a estrutura de <strong>diretórios</strong> descrita abaixo:</p>
+			<ul>
+				<li>
+					<code>fontes</code>: arquivos fontes do projeto.
+					<ul>
+						<li><code>fontes/java</code>: arquivos fontes do <b>Java</b>.</li>
+						<li><code>fontes/g</code>: gramáticas do <b>Antlr</b>.</li>
+						<li><code>fontes/caneca</code>: arquivos fontes da nossa linguagem.</li>
+					</ul>
+				</li>
+				<li><code>bibliotecas</code>: bibliotecas utilizadas no projeto.</li>
+				<li><code>binarios</code>: arquivos binários resultantes da compilação dos arquivos fontes.</li>
+				<li><code>construcao</code>: arquivos temporários gerados na construção.</li>
+				<li><code>recursos</code>: arquivos extras como imagens, documentos, apresentações e outros utilizados no projeto.</li>
+				<li><code>documentacao</code>: arquivos de documentação.</li>
+				<li><code>gerados</code>: arquivos gerados a partir da execução do <strong>Compilador</strong>.</li>
+			</ul>
+			<p>Vale destacar alguns <strong>arquivos</strong> importantes do projeto:</p>
+			<ul>
+				<li><code>fontes/java/.../Compilador.java</code>: classe responsável por compilar um arquivo <strong>Caneca</strong> passado como parâmetro.</li>
+				<li><code>fontes/g/CanecaLexico.g</code>: gramática contendo a especificação léxica da linguagem.</li>
+				<li><code>fontes/g/CanecaSintatico.g</code>: gramática contendo a especificação sintática da linguagem.</li>
+				<li><code>fontes/g/CanecaArvore.g</code>: gramática contendo a especificação sintática da linguagem utilizando regras de reescrita para geração da árvore.</li>
+				<li><code>fontes/java/.../antlr/CanecaLexico.java</code>: analisador léxico gerado pelo <b>Antlr</b> com base no arquivo <code>fontes/g/CanecaLexico.g</code>.</li>
+				<li><code>fontes/java/.../antlr/CanecaSintatico.java</code>: analisador sintático gerado pelo <b>Antlr</b> com base no arquivo <code>fontes/g/CanecaSintatico.g</code>.</li>
+				<li><code>fontes/java/.../antlr/CanecaArvore.java</code>: analisador sintático com regras de reescrita gerado pelo <b>Antlr</b> com base no arquivo <code>fontes/g/CanecaArvore.g</code>.</li>
+			</ul>
+		</section>
+		<section>
+			<h1 id="antlr">Antlr</h1>
+			<p>No projeto foi utilizado o <b>Antlr</b> para gerar os analisadores. O <b>Antlr</b> recebe como entrada uma gramática e a partir dela gera os analisadores léxicos e sintáticos. É possível especificar em qual linguagem o <b>Antlr</b> irá gerar os analisadores. No nosso caso optamos pela linguagem <b>Java</b>. Para utilizar o <b>Antlr</b> e gerar um analisador, basta digitar o seguinte comando no terminal:</p>
+			<p><samp>java -classpath bibliotecas/jar/atlr.jar org.antlr.Tool fontes/g/CanecaLexico.g -fo fontes/java/br/ufsc/inf/ine5426/caneca/antlr/</samp>.</p>
+			<p>Ou, de forma genérica:</p>
+			<p><samp>java -classpath <strong>&lt;bibliotecaDoAntlr&gt;</strong> org.antlr.Tool <strong>&lt;gramatica&gt;</strong> -fo <strong>&lt;destinoDoAnalisadorGerado&gt;</strong></samp>.</p>
+			<p>Como utilizaremos analisadores geradores na linguagem <b>Java</b> pelo <b>Antlr</b>, é importante conhecer as principais classes da <abbr title="Application Programming Interface">API</abbr>:</p>
+			<ul>
+				<li><code>CharStream</code>: Abstração de um fluxo de caracteres que é utilizado pelo <code>Lexer</code>.</li>
+				<li><code>ANTLRFileStream</code>: Extensão de <code>CharStream</code> que representa um fluxo de caracteres proveniente de um arquivo.</li>
+				<li><code>TokenStream</code>: Abstração de um fluxo de símbolos que é utilizado pelo <code>Parser</code>.</li>
+				<li><code>CommonTokenStream</code>: Extensão de <code>TokenStream</code> que representa um fluxo de símbolos proveniente de um analisador léxico.</li>
+				<li><code>TreeNodeStream</code>: Abstração de um fluxo de nodos que é utilizado pelo <code>TreeParser</code>.</li>
+				<li><code>CommonTreeNodeStream</code>: Extensão de <code>TreeNodeStream</code> que representa um fluxo de nodos proveniente de um analisador sintático.</li>
+				<li><code>Lexer</code>: Abstração de um analisador léxico que é estendido pelo analisador léxico gerado pelo <b>Antlr</b>.</li>
+				<li><code>Parser</code>: Abstração de um analisador sintático que é estendido pelo analisador sintático gerado pelo <b>Antlr</b>.</li>
+				<li><code>TreeParser</code>: Abstração de um analisador sintático que permite a reescrita de regras e é extendido pelo analisador sintático árvore gerado pelo <b>Antlr</b>.</li>
+				<li><code>BaseRecognizer</code>: Abstração de um analisador básico que é estendido pelo <code>Lexer</code>, <code>Parser</code> e <code>TreeParser</code>.</li>
+			</ul>
+		</section>
+		<section>
+			<h1 id="construcao">Construção</h1>
+			<p>O projeto possui em sua pasta raiz o arquivo <code>construir.sh</code>. Esse arquivo é um <i lang="en">script</i> criado para realizar a compilação do código fonte e a geração dos analisadores do <b>Antlr</b>. Para executá-lo basta digitar no terminal <samp>$ ./construir.sh</samp> (em ambiente <b>Linux</b>).</p>
+			<p>Após a execução do arquivo <code>construir.sh</code> os arquivos fontes são compilados e os analisadores do <b>Antlr</b> são gerados. Para ver detalhes sobre como os analisadores do <b>Antlr</b> são gerados você pode ver a seção <a href="#antlr">Antlr</a> deste documento.</p>
+			<h2 id="construcaoExecucao">Execução</h2>
+			<p>Para a execução do projeto foi criado o arquivo <code>executar.sh</code> na pasta raiz do projeto. O <i lang="en"> script</i> executa o <strong>Compilador</strong> que por sua vez recebe como parâmetros arquivos fontes a serem compilados. Assim, você poderá utilizar o <i lang="en">script</i> através do seguinte comando:</p>
+			<p><samp>$ ./executar.sh <strong>&lt;classeCanecaASerCompilada&gt;</strong> <strong>&lt;opcaoDoCompilador&gt;</strong></samp>.</p>
+			<p>O <i lang="en">script</i> <code>executar.sh</code> irá realizar a construção do projeto e posteriormente irá executar o <strong>Compilador</strong> através do seguinte comando:</p>
+			<p><samp>$ java -classpath binarios/class:bibliotecas/jar/antlr br.ufsc.inf.ine5426.caneca.Compilador <strong>&lt;classeCanecaASerCompilada&gt;</strong> <strong>&lt;opcaoDoCompilador&gt;</strong> </samp>.</p>
+			<p><del>Nesse primeiro momento o <strong>Compilador</strong> realiza apenas a análise léxica e imprime os símbolos e lexemas na tela.</del> <del>A medida que o projeto for avançando as tarefas de análise sintática, análise semântica e geração de código serão adicionadas ao <strong>Compilador</strong>.</del></p>
+			<p><ins>Foram adicionadas opções ao <strong>Compilador</strong></ins>. <ins>Agora, ao executar o <strong>Compilador</strong> é necessário informar a oção desejada.</ins> <ins>As opções disponíveis são as que seguem:</ins></p>
+			<ul>
+				<li><code>lexica</code>: Realiza a análise léxica do arquivo fonte e imprime na tela os erros léxicos, caso existam.</li>
+				<li><code>sintatica</code>: Realiza a análise léxica e sintática do arquivo fonte e imprime na tela os erros léxicos e sintáticos, caso existam.</li>
+				<li><code>simbolos</code>: Realiza a análise léxica do arquivo fonte, gera o arquivo <code>gerados/simbolos.html</code> que contém os símbolos reconhecidos na análise e imprime na tela os erros léxicos, caso existam.</li>
+				<li><code>arvore</code>: Realiza a análise léxica e sintática do arquivo fonte e gera o arquivo <code>gerados/arvore.html</code> que contém a árvore sintática resultante da análise. Caso haja algum erro de compilação, então a árvore não é gerada.</li>
+				<li><code>semantica</code>: Análise semântica com exibição dos erros no console.</li>
+				<li><code>geracaoDeCodigo</code>: Geração de código de máquina.</li>
+				<li><code>execucao</code>: Geração de código de máquina e execução do código gerado.</li>
+			</ul>
+		</section>
+		<section>
+			<h1 id="analiseLexica">Análise léxica</h1>
+			<p>A gramática léxica da nossa linguagem pode ser encontrada em <code>fontes/g/CanecaLexico.g</code>. A partir da gramática léxica foi gerado através do <b>Antlr</b> o analisador léxico que pode ser encontrado em <code>fontes/java/.../antlr/CanecaLexico.java</code>.</p>
+			<h2 id="analiseLexicaPalavrasChaveOperadoresESimbolosAuxiliares">Palavras-chave, operadores e símbolos auxiliares</h2>
+			<p>Para a criação da gramática léxica primeiramente definimos os símbolos que são <strong>palavras-chave</strong> da nossa linguagem como por exemplo, <code>classe</code>, <code>metodo</code>, <code>enquanto</code>, <code>importe</code> e outros. Também foram definidos os <strong>operadores aritméticos</strong> como soma <code>+</code> e multiplicação <code>*</code>, e os <strong>operadores lógicos</strong> como negação <code>~</code>, e lógico <code>&&</code> e  maior igual <code>&gt;=</code>. Definimos também outros tipos de <strong>símbolos auxiliares</strong> para a linguagem como os parenteses <code>(</code> e <code>)</code>, os colchetes <code>[</code> e <code>]</code>, símbolo de atribuição <code>=</code> e outros. Também foi especificados o símbolo ponto <code>.</code> para o uso de métodos e atributos de <strong>objetos</strong> e o símbolo dois pontos <code>:</code> para uso de métodos e atributos de <strong>classe</strong>.</p>
+			<h2 id="analiseLexicaIdentificadoresEIdentificadoresDePacote">Identificadores e identificadores de pacote</h2>
+			<p>Os <i lang="en">tokens</i> descritos anteriormente são construções fixas particulares da nossa linguagem. O nosso segundo passo foi definir os <i lang="en">tokens</i> variáveis como <strong>identificadores</strong> que são iniciados por uma letra e são seguidos por zero ou mais letras, números ou sublinhados. Os <strong>identificadores</strong> são usados pelo programador da linguagem para definir nomes de: classes, variáveis, métodos e atributos.</p>
+			<p>Temos também os <strong>identificadores de pacote</strong> que são prefixados com o arroba <code>@</code> e são formados por um ou mais <strong>identificadores</strong> separados por ponto <code>.</code>. Eles são usados para declarar o pacote que uma dada classe pertence e para explicitar o pacote de uma classe utilizada. A utilização de pacotes na linguagem é útil caso você utilize no seu código duas classes diferentes, porém com o mesmo nome. Por exemplo, suponha que você utilize no seu código uma classe chamada <strong>Lista</strong> que faz parte do pacote de estruturas de dados e utilize também uma classe <strong>Lista</strong> que faz parte do pacote de interface gráfica. Sem explicitar o pacote não seria possível definir qual classe <strong>Lista</strong> está sendo utilizada em um determinado momento do código.</p>
+			<h2 id="analiseLexicaValoresConstantesELiterais">Valores, constantes e literais</h2>
+			<p>O próximo passo foi realizar a definição dos valores primitivos que poderão ser utilizados em nossa linguagem. Definimos o <strong>valor <code>nulo</code></strong> e os <strong>valores booleanos</strong> <code>verdadeiro</code> e <code>falso</code>. Definimos também as <strong>constantes inteiras</strong> que são uma sequência de números com o prefixo opcional sinal negativo <code>-</code> e as <strong>constantes reais</strong> que são sequências de números com o prefixo opcional sinal negativo <code>-</code> seguidos pelo separador decimal obrigatório ponto <code>.</code> e seguido por uma sequência de números.</p>
+			<p>O <strong>literal caractere</strong> e o <strong>literal texto</strong> também foram definidos nessa terceira etapa. O <strong>literal caractere</strong> é composto por aspas simples <code>'</code> seguido por um <strong>caractere</strong> ou um <strong>caractere de escape</strong> e finalizado por aspas simples <code>'</code>. Já o <strong>literal texto</strong> é iniciado por aspas duplas <code>"</code>, seguido por uma sequência de <Strong>caracteres</strong> e <strong>caracteres de escape</strong> e finalizado por aspas duplas <code>"</code>.</p>
+			<p>É interessante mencionar que nessa parte utilizamos um recurso do <b>Antlr</b> que é o <code>fragment</code>. O <code>fragment</code> permite que seja definido um <i lang="en">token</i> que nunca será enviado ao analisador léxico, pois esse <i lang="en">token</i> será utilizado na construção de outros <i lang="en">tokens</i>. Por exemplo, os <i lang="en">tokens</i> <strong>literal caractere</strong> e <strong>literal texto</strong> possuem em sua regra de sintaxe a utilização do <i lang="en">token</i> <strong>caractere</strong>. Isso é possível através do uso do <code>fragment</code>, pois com ele o <b>Antlr</b> saberá que ao encontrar um <strong>caractere</strong> ele deverá encaixá-lo em um <strong>literal caractere</strong> ou em um <strong>literal texto</strong>, mas não deverá nunca transformá-lo em um <i lang="en">token</i> próprio.</p>
+			<p>Uma importante observação a respeito do <strong>literal caractere</strong> e do <strong>literal texto</strong> é  que neles podem ser usados caracteres especiais como o <code>\n</code> que representa quebra de linha e o <code>\t</code> que representa tabulação. Em contrapartida não é possível utilizar esses caracteres escapados como componentes dos literais. Ou seja, ao iniciar um <strong>literal texto</strong> é possível definir, por exemplo, <code>\n</code>, mas não é possível usar a quebra de linha propriamente dita. A utilização desses caracteres especiais traz um problema que é a impossibilidade de utilizar o caractere barra invertida <code>\</code> já que ele é utilizado como prefixo de um caractere especial. Por isso, é preciso ter uma sequência de escape para o barra invertida, que no casso é <code>\\</code>.</p>
+			<p>Outros caracteres que precisam ser "escapados" em um literal são as aspas. Isso é necessário, pois as aspas são delimitadores dos literais e uma forma de fazer com que o analisador saiba que uma aspas é apenas um caractere que compõe um texto e não um delimitador é escapando as aspas: <code>\'</code> e <code>\"</code>. Os caracteres que podem ser escapados com barra invertida <code>\</code> são <code>n</code>, <code>r</code>, <code>t</code>, <code>f</code>, <code>\</code>, <code>'</code>, <code>"</code>, <code>a</code>, <code>b</code>, <code>e</code> e <code>v</code>.</p>
+			<h2 id="analiseLexicaEspacosEmBracoEComentarios">Espaços em branco e comentários</h2>
+			<p>A última etapa na definição da nossa gramática léxica foram os <strong>comentários</strong> e <strong>espaços em branco</strong>. Os <strong>comentários</strong> podem ser em bloco ou em linha. Um <strong>comentário em linha</strong> será prefixado pelo símbolo interrogação <code>?</code> e será composto por qualquer coisa que não seja uma quebra de linha. Já um <strong>comentário em bloco</strong> é iniciado por sustenido e interrogação <code>#?</code> e finalizado por interrogação e sustenido <code>?#</code>. Para o <strong>comentário em bloco</strong> utilizamos uma opção do <b>Antlr</b> que é <code>(options {greedy=false;} ...)</code>. O que essa opção faz é dizer para o analisador léxico não ser "guloso" e formar o <i lang="en">token</i> <strong>comentário em bloco</strong> assim que possível. Exemplificando, a opção <code>(options {greedy=false;} ...)</code> faz com que o código <code>#? identificadorA ?# identificadorB #? identificadoC ?#</code> possua três <i lang="en">tokens</i>: o primeiro e o último um <strong>comentário em bloco</strong> e o segundo um  <strong>identificador</strong>. Se essa opção não tivesse sido utilizada o analisador iria reconhecer apenas um <i lang="en">token</i> que seria o <strong>comentário em bloco</strong>.</p>
+			<p>A diretiva <code>{$channel=HIDDEN;}</code> foi utilizada nos comentários e o que ela faz é adicionar o <i lang="en">token</i> a um "canal não visível" de forma que <em>por padrão</em> o analisador sintático não enxergue esse <i lang="en">token</i>.</p>
+			<p>Os espaços em branco são compostos por <strong>espaços</strong>, <strong>tabulações</strong> e <strong>quebras de linha</strong>. Para esse tipo de <i lang="en">token</i> foi utilizada a diretiva <code>{skip();}</code> do <b>Antlr</b>. Essa diretiva faz com que o <i lang="en">token</i> seja reconhecido e ignorado. Repare que o comportamento do <code>{skip();}</code> é diferente do <code>{$channel=HIDDEN;}</code>, pois no caso deste último, o <i lang="en">token</i>, embora escondido por padrão, ainda é enviado ao analisador sintático que pode solicitar o <i lang="en">token</i> de forma explicita. No caso do <code>{skip();}</code> o <i lang="en">token</i> sequer é enviado ao analisador léxico.</p>
+		</section>
+		<section>
+			<h1 id="analiseSintatica">Análise sintática</h1>
+			<p>Logo na primeira semana do desenvolvimento deste trabalho a gramática sintática foi definida através da notação <abbr title="Extended Backus–Naur Form">EBNF</abbr>. A definição inicial da gramática foi relativamente fácil, porém em geral, os geradores de analisadores sintáticos possuem algumas restrições quanto a gramática de entrada e isso fez com que nossa gramática inicial precisasse ser modificada. Antes de comentar os problemas que encontramos ao realizar as modificações na gramática convém explicar alguns mecanismos do <b>Antlr</b>.</p>
+			<p>O <b>Antlr</b> possui mais de um modo para gerar analisadores sintáticos:</p>
+			<ol>
+				<li>Analisador descendente recursivo com <i lang="en"><strong>backtracking</strong></i>.</li>
+				<li>Analisador descendente recursivo preditivo <strong>LL(k)</strong> com o <var>k</var> definido pelo usuário.</li>
+				<li>Analisador descendente recursivo preditivo <strong>LL(*)</strong> onde não é restringido o valor de <var>k</var>, mas as não fatorações devem ser uma gramática regular.</li>
+			</ol>
+			<p>A primeira ou a terceira opção seriam suficientes para gerar um analisador sintático para o nossa primeira gramática que foi definida logo no começo deste trabalho sem que houvesse necessidade de maiores modificações. Porém, não queríamos usar nem a opção do <i lang="en"><strong>backtracking</strong></i> nem a opção <strong>LL(*)</strong> pois, estas duas são muito onerosas (principalmente o <i lang="en"><strong>backtracking</strong></i>) em termos de processamento. Devido a isso, o nosso objetivo foi gerar uma gramática <strong>LL(k)</strong> tendo em vista alcançar o menor <var>k</var> possível.</p>
+			<p>A gramática sintática que críamos pode ser encontrada em <code>fontes/g/CanecaSintatico.g</code> e o analisador gerado pelo <b>Atnlr</b> a partir desta gramática se encontra em <code>fontes/java/.../antlr/CanecaSintatico.java</code>.</p>
+			<h2 id="analiseSintaticaGramaticasLlk">Gramáticas LL(k)</h2>
+			<p>Uma gramática LL(k) deve seguir algumas restrições conforme abaixo:</p>
+			<ul>
+				<li>Não possuir recursão à esquerda.</li>
+				<li>Possuir no máximo <var>k-1</var> <i lang="en">tokens</i> não fatorados.</li>
+				<li>Não ser ambígua.</li>
+			</ul>
+			<h2 id="analiseSintaticaExpressoes">Expressões</h2>
+			<p>A primeira mudança necessária em nossa gramática inicial foi a remoção da recursão à esquerda. Mais precisamente, as <strong>expressões</strong> foram definidas contendo recursão à esquerda: <code>expressao : expressao (SOMA | SUBTRACAO | ... | MENOR) expressao ;</code>. A remoção desse tipo de recursão à esquerda foi facilmente realizada através da definição de uma <strong>expressão primária</strong> contendo apenas símbolos terminais: <code>expressaoPrimaria : VALOR_BOOLEANO | VALOR_NULO | ... | LITERAL_TEXTO ;</code>. Dessa forma, a nossa <strong>expressão</strong> passou a ser <code>expressao : expressaoPrimaria (SOMA | SUBTRACAO | ... | MENOR) expressao ;</code>.</p>
+			<p>Também fizemos algumas modificações para definir a ordem de precedência dos operadores. Para isso, definimos uma cadeia de <strong>expressões</strong> de forma que aquelas de menor precedência possuem em sua composição a <strong>expressão</strong> seguinte de maior precedência, por exemplo:</p>
+			<ol>
+				<li><code>expressaoAditiva : expressaoMultiplicativa ((SOMA | SUBTRACAO) expressaoMultiplicativa)*</code></li>
+				<li><code>expressaoMultiplicativa : expressaoUnaria ((MULTIPLICACAO | DIVISAO | RESTO_DA_DIVISAO) expressaoUnaria)*</code></li>
+			</ol>
+			<p>E assim por diante, até chegar na <strong>expressão primária</strong>. A ordem completa de precedência (do menos precedente para o mais precedente) é a que segue:</p>
+			<ol>
+				<li>atribuição: <code>=</code>.</li>
+				<li>ou lógico: <code>||</code>.</li>
+				<li>e lógico: <code>&amp;&amp;</code>.</li>
+				<li>comparação lógica: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code> <code>&lt;=</code>.</li>
+				<li>aditiva: <code>+</code>, <code>-</code>.</li>
+				<li>multiplicativa: <code>*</code>, <code>/</code>, <code>%</code>.</li>
+				<li>unária: <code>~</code>, <code>-</code>.</li>
+				<li>primária: <code>(expressao)</code>, <code>VALOR_BOOLEANO</code>, <code>VALOR_NULO</code>, <code>CONSTANTE_INTEIRA</code>, <code>CONSTANTE_REAL</code>, <code>LITERAL_CARACTERE</code>, <code>LITERAL_TEXTO</code>, <code>selecao</code>, <code>chamada</code>.</li>
+			</ol>
+			<p>É importante dizer que podem existir algumas inconsistências semânticas, como por exemplo: <code>3 + 2 = esse.metodo();</code>. Para esses e outros casos de inconsistência ficará a cargo do analisador semântico realizar a verificação. Nesse casso especificamente, o analisador semântico precisará verificar se o lado esquerdo de uma <strong>expressão de atribuição</strong> é uma variável.</p>
+			<h2 id="analiseSintaticaNaoFatoracaoEntreDeclaracoesEExpressoes">Não fatoração entre declarações e expressões</h2>
+			<p>Com as modificações realizadas na nossa gramática inicial conseguimos transformá-la em uma <strong>LL(2)</strong>. Tentamos reduzi-la para <strong>LL(1)</strong> porém, não conseguimos realizar a fatoração entre <strong>declarações</strong> e <strong>expressões</strong>. A não fatoração está no fato de quem ambos podem começar com um <code>IDENTIFICADOR</code>. No caso de uma <strong>declaração</strong>, o <code>IDENTIFICADOR</code> é o tipo da variável e no casso de <strong>expressões</strong> ele pode ser o nome de uma variável ou de um método.</p>
+			<p>Como não conseguimos fatorar o <code>IDENTIFICADOR</code> das <strong>declarações</strong> e <strong>expressões</strong> analisamos uma outra solução que consiste em adicionar o prefixo <code>declare</code> para as <strong>declarações</strong>. Com isso, removeríamos a não fatoração e a gramática se tornaria <strong>LL(1)</strong>. Entretanto, chegamos a conclusão de que não valeria a pena pagar o preço do programador ter que utilizar um prefixo toda vez que for declarar uma variável em troca de uma análise levemente mais rápida com uma gramática <strong>LL(1)</strong>.</p>
+			<p>Uma opção interessante fornecida pelo <b>Antlr</b> é especificar valores diferentes do <var>k</var> para diferentes locais da gramática. No nosso caso, utilizamos como <var>k</var> global o valor 1, porém dentro da produção <code>instrucao</code>, na subprodução <code>expressao TERMINADOR | declaracao TERMINADOR</code>, modificamos o valor de <var>k</var> para 2. Para modificar localmente o valor de <var>k</var> utilizamos a diretiva <code>(options {k = 2;}: ...)</code>.</p>
+		</section>
+		<section>
+			<h1 id="tratamentoDeErros">Tratamento de erros</h1>
+			<p>O <b>Antlr</b> já possui um tratamento de erros padrão. Ao encontrar um símbolo inválido o <b>Antlr</b> elimina o símbolo em questão e passa a eliminar todos os símbolos seguintes até encontrar um <i lang="en">follow</i> do símbolo inválido. Além disso, o <b>Antlr</b> trata de forma especial dois casos: <code>UnwantedTokenException</code> e <code>MissingTokenException</code>. Ambas exceções estendem <code>MismatchedTokenException</code>.</p>
+			<p>Para os casos de <code>UnwantedTokenException</code> o <b>Antlr</b> utiliza a estratégia de tratamento por remoção. Ao encontrar um símbolo não desejado é verificado se o próximo símbolo era o que estava sendo procurado. Caso seja, então o símbolo indesejado é eliminado e a análise continua. Por exemplo, ao encontrar o código <code>10 * (2 + 4));</code> verifica-se que há um parêntese sobrando. O <b>Antlr</b> verifica que o símbolo após o indesejado é o símbolo esperado e com isso, elimina o parêntese extra.</p>
+			<p>No caso de <code>MissingTokenException</code> será utilizada a estratégia de tratamento por inserção, onde o símbolo faltante é inserido. No exemplo <code>10 * (2 + 4;</code> o <b>Antlr</b> detecta que o símbolo esperado era o parêntese e insere o símbolo para que a análise prossiga.</p>
+			<p>O <b>Antlr</b> utiliza os métodos abaixo para realizar o tratamento de erros. Assim, sobrescrevemos esses métodos no <code>fontes/g/CanecaSintatico.g</code> para modificar o tratamento de erros padrão que é dado pelo <b>Antlr</b>. Para tanto, é utilizada a diretiva <code>@members { ... }</code> que permite modificar elementos da classe que será gerada pelo <b>Antlr</b> e desta forma sobrescrever os métodos de tratamento.</p>
+			<ul>
+				<li><code>void recover(IntStream entrada, RecognitionException erro)</code></li>
+				<li><code>Object recoverFromMismatchedToken(IntStream entrada, int tipoDoSimbolo, BitSet conjuntoDeFollows)</code></li>
+				<li><code>Object recoverFromMismatchedSet(IntStream entrada, RecognitionException erro, BitSet conjuntoDeFollows)</code></li>
+			</ul>
+			<p>Optamos por utilizar apenas o tratamento de erros que elimina os símbolos até encontrar um <i lang="en">follow</i> do símbolo inválido. Por isso, desabilitamos os casos especiais de tratamento do <b>Antlr</b> através da sobrescrita dos dois últimos métodos acima. Na sobrescrita apenas lançamos uma exceção. Para capturar as exceções que são lançadas no processo de reconhecimento é utilizada a diretiva <code>@rulecatch { ... }</code> do <b>Antlr</b>. A exceção lançada nos dois últimos métodos de recuperação será capturada e duas ações serão tomadas: reportar o erro e chamar o método <code>recover</code> para que seja dado o tratamento de erros padrão.</p>
+			<p>Para os erros léxicos o tratamento de erros consiste apenas em consumir o símbolo inválido e reportar o erro. O método para tratamento de erros léxicos é o <code>void recover(RecognitionException erro)</code>.</p>
+			<p>Também realizamos modificações para melhorar as mensagens de erros dadas pelo <b>Antlr</b>. Para isso, bastou sobrescrever o método <code>String getErrorMessage(RecognitionException erro, String[])</code>.</p>
+		</section>
+		<section>
+			<h1 id="arvoreSintatica">Árvore sintática</h1>
+			<p>Para a geração da árvore sintática criamos um novo arquivo, o <code>fontes/g/CanecaArvore.g</code>. Essa gramática possui as mesmas regras sintáticas do <code>fontes/g/CanecaSintatico.g</code>, porém possui a diferença de utilizar o modo de reescrita do <b>Antlr</b>. O modo de reescrita permite manipular os símbolos já reconhecidos e realizar ações como: modificar, reordenar, omitir, duplicar entre outras. É importante dizer que o modo de reescrita não altera a linguagem ou a gramática reconhecida, ela altera apenas a saída que no nosso caso vai ser uma árvore.</p>
+			<p>Para definir que a saída gerada a partir de um reconhecimento será uma árvore, colocamos dentro da diretiva <code>options { ... }</code> do <b>Antlr</b>, a opção <code>output = AST;</code>. A menos que se especificado algo contrário, a árvore gerada pelo <b>Antlr</b> será uma <i lang="en">flat tree</i>. Ou seja, será um árvore que terá um nodo pai e todos os demais nodos estarão no mesmo nível (como se fosse uma lista). Para criar uma árvore mais adequada é preciso especificar quais são os nodos raiz das sub-regras. O <b>Antlr</b> permite fazer isso através do modo de reescrita com a utilização do operador <code>^</code>.</p>
+			<p>Por exemplo, na sub-regra <code>listaDeParametros : PARENTESE_ESQUERDO (expressao (SEPARADOR expressao)*)? PARENTESE_DIREITO <strong>-&gt; ^(PARAMETROS_ (expressao)*) ;</strong></code> utilizamos o modo de reescrita para manipular a árvore sintática gerada. É a partir dos símbolos <code>-&gt;</code> que é iniciado o modo de reescrita. O operador <code>^</code> indica que o primeiro item dos que seguem será o nodo raiz da sub-regra. Repare também que na reescrita da sub-regra foram omitidos os parenteses e separadores. Isso foi feito, pois não existe a necessidade de incluir estes símbolos na árvore sintática já que eles apenas se fazem necessário para dar mais clareza a linguagem.</p>
+		</section>
+		<section>
+			<h1 id="analiseSemantica">Análise semântica</h1>
+			<p>Através da árvore sintática gerada na etapa anterior, partimos para a etapa de análise semântica. O <b>Atnlr</b> permite percorrer pela árvore gerada e realizar algumas operações com os nodos, como eliminar nodos desnecessários, duplucar alguns, alterar a posição e assim por diante. Essas operações são importantes, pois permitem que seja feita a decoração da árvore.</p>
+			<p>No <b>Antlr</b> é possível caminhar pela árvore sintática através de duas regras que são especificadas na própria gramática. Nas regras <code>bottomup</code> e <code>topdown</code> (pré-definidas pelo <b>Antlr</b>) você coloca outras regras que serão percorridas na decoração da árvore. Essas outras regras por sua vez poderão conter código <b>Java</b> e dessa forma é possível criar uma estrutura de dados própria. A diferença entre <code>bottomup</code> e <code>topdown</code> é que na primeira a árvore é percorrida de baixo para cima e na segunda de cima para baixo.</p>
+			<p>O que fizemos então, foi devidir a análise samântica em várias etapas e caminhar pela árvore em cada uma dessas etapas. A primeira etapa é a de <strong>definição</strong> e nela montamos a nossa tabela de símbolos obtendo as classes, variáveis, atributos, métodos, etc. Na etapa da <strong>resolução</strong> são resolvidas as referências a variávies, classes e métodos. A terceira esta consiste da <strong>verificação estática das expressões</strong> e por fim, na quarta etapa, são feitas verificações extras como <strong>checagem de parâmetros</strong> e <strong>chamadas</strong>.</p>
+			<p>Na nossa linguagem, pelo menos duas passadas (etapas são necessárias), pois existe a possíbilidade de realizar referências avançadas. No entanto, decidimos relaizar o processo todo em quatro etapas, para facilitar a escrita e manutenção do código.</p>
+			<p>Na parte da definição, utilizamos o conceito de tabela de símbolos e de escopo. Definimos que a tabela de símbolos será simplesmente um escopo global. Os escopos conterão outros escopos e também conterão a definição de variáveis, métodos, classes, etc. Classes, métodos, blocos, construtores e destrutores também são escopos. A tabela de símbolos possui em seu escopo apenas classes. As classes possuem em seu escopo atributos e métodos. Enquanto que os métodos possuem em seu escopo os argumentos e os blocos de instruções. Os blocos de instruções possuem em seu escopo variáveis e outros blocos de instruções. O processo de resolução consiste em verificar se determinada classe, atributo, método ou variável se encontra nos escopos superiores.</p>
+			<p>Para a verificaçõa estática dos tipos foi utilizado um conceito semelhante ao conceito dos escopos. No nosso caso, cada expressão possui um ou dois operandos sendo que estes podem ser elementos da linguagem ou até mesmo outras expressões. Cada tipo de expressão é reponsável por verificar se os seus operandos respeitam os símbolos exigidos.</p>
+			<p>Após a realização das análises anteriores, a verificação de parâmetros de chamadas de métodos e de instaciações se tornou mais simples. Cada expressão sabe determinar o seu tipo. A lista de parâmetros é formada por expressões. Com isso, basta verificar se os tipos dos parâmetros combinam com a assinatura do método ou do construtor que se deseja invocar.</p>
+		</section>
+		<section>
+			<h1 id="geracaoDeCodigo">Geração de código</h1>
+			<p>O primeiro passo para a geração de código foi a criação de uma estrutura de dados própria, para representar os elementos da nossa linguagem. Fizemos isso para não ficar acoplado as estruturas de dados do <b>Antlr</b>. Assim, através da arvore sintática, passamos por cada nodo desta árvore e fomos adicionando os nodos à nossa estrutura da dados. Por exemplo, ao percorrer um <code>atributo</code>, adicionamos esse <code>atributo</code> em um elemento pai, que é a <code>classe</code>.</p>
+			<p>Tendo criado uma classe <b>Java</b> para cada elemento da nossa linguagem, adicionamos um método a esses elementos, e esse método é <code>gerarCodigo</code>. Ou seja, cada elemento sintático da nossa linguagem sabe gerar o próprio código.</p>
+			<p>O próximo passo foi decidir a linguagem alvo para o qual a nossa linguagem será traduzida. Decidimos então criar a nossa própria linguagem de máquina e, desta forma, a nosssa própria máquina virtual para interpretar a linguagem de máquina.</p>
+			<p>As instruções disponíveis para a <code>MaquinaCaneca</code> são as que seguem:</p>
+			<ul>
+				<li><code>abrirContexto</code>: abre o contexto para blocos de instruções. Isso permite criar uma hierarquia de blocos aninhados onde é possível ter símbolos definidos com o mesmo nome em vários níveis. O contexto pai do contexto aberto será aquele que estiver no topo da <code>pilhaDeContextos</code>.</li>
+				<li><code>abrirContextoDeProcedimento</code>: abre um contexto para um procedimento que será executado. O pai do novo contexto será o objeto <code>esse</code>.</li>
+				<li><code>atribuir</code>: obtém o valor e a referência na <code>pilhaDeDados</code> e atualiza a referencia no contexto que está no topo da <code>pilhaDeContextos</code>.</li>
+				<li><code>chamar {nomeDoProcedimento} {pontoDeRetorno}</code>: adiciona o ponto de retorno na <code>pilhaDeExecucao</code> e busca no contexto que está no topo da <code>pilhaDeContextos</code> o ponto de entrada do procedimento desejado.</li>
+				<li><code>definirSimbolo {nome}</code>: define um símbolo no contexto do topo da <code>pilhaDeContextos</code>. O valor da definição será buscado na <code>pilhaDeDados</code>.</li>
+				<li><code>depurar</code>: imprime na tela informações de depuração.</li>
+				<li><code>desempilhar</code>: desempilha um valor da <code>pilhaDeDados</code>.</li>
+				<li><code>desviar {pontoDeDesvio}</code>: desvio incondicional que manipula o <code>contadorDePrograma</code> para que a próxima instrução seja buscada no ponto de desvio fornecido.</li>
+				<li><code>desviarSeFalso {pontoDeDesvio}</code>: faz o mesmo que o desviar, porém busca na <code>pilhaDeDados</code> o próximo valor. Se este valor for falso, então o desvio será realizado.</li>
+				<li><code>desviarSeFalso {pontoDeDesvio}</code>: faz o mesmo que o <code>desviarSeFalso</code>, porém só desvia se o próximo valor na <code>pilhaDeDados</code> for verdadeiro.</li>
+				<li><code>dividirI</code>, <code>dividirR</code>, <code>somarI</code>, <code>somarR</code>, <code>multiplicarI</code>, <code>multiplicarR</code>, <code>subtrairI</code>, <code>subtrairR</code>: operações aritméticas de inteiros e números reais obtidos na <code>pilhaDeDados</code>, onde o resultado é colocado na <code>pilhaDeDados</code>.</li>
+				<li><code>imprimir</code>: imprime na tela o valor no topo da <code>pilhaDeDados</code>.</li>
+				<li><code>duplicar</code>: duplica o valor disponível no topo da <code>pilhaDeDados</code>.</li>
+				<li><code>extrairContexto</code>: extraí o contexto da referência no tipo da <code>pilhaDeDados</code> e coloca no topo da <code>pilhaDeContextos</code>.</li>
+				<li><code>fecharContexto</code>: fecha o contexto aberto, removedo-o da <code>pilhaDeContextos</code>.</li>
+				<li><code>igual</code>, <code>diferente</code>, <code>maior</code>, <code>menor</code>, <code>maiorQue</code>, <code>menorQue</code>: operador relacionais que buscam dois operandos na pilhaDeDados e deixam o resultado na mesma <code>pilhaDeDados</code>.</li>
+				<li><code>instanciar {nomeDaClasse}</code>: instancia um objeto da classe desejada criando um contexto para o objeto e colocando-o na <code>pilhaDeContextos</code>.</li>
+				<li><code>resolverSimbolo {nome}</code>: busca o símbolo no contexto do topo da <code>pilhaDeContextos</code> e adiciona o valor do símbolo na <code>pilhaDeDados</code>.</li>
+				<li><code>retornar</code>: busca ponto de retorno na <code>pilhaDeExecucao</code> e altera o <code>contadorDePrograma</code> com o endereço obtido.</li>
+				<li><code>sair</code>: encerra e execução da <code>MaquinaCaneca</code>.</li>
+			</ul>
+		</section>
+		<section>
+			<h1 id="execucao">Execução</h1>
+			<p>A execução se dá através da <code>MaquinaCaneca</code> que foi implementada por nós. A máquina segue a arquitetura baseada em pilha. Nessa arquitetura cada operação deixa no topo da pilha o resultado. Por exemplo, considerando a seguinte operação: <code>3 + 4</code>. O <code>3</code> é um operação que coloca o próprio 3 no topo da pilha. O mesmo acontecerá com o número 4. Por fim, o <code>+</code> é uma operação que consumirá dois operandos da pilha e deixará no topo dela o resultado, que neste caso é 7. O código de máquina gerado para a operação anterior será:</p>
+			<ul>
+				<li><code>empurar 3</code></li>
+				<li><code>empurar 4</code></li>
+				<li><code>somar</code></li>
+			</ul>
+			<p>A <code>MaquinaCaneca</code> possui alguns elementos básicos, sendo eles:</p>
+			<ul>
+				<li><strong>pilhaDeDados</strong>: Onde são colocados os dados das expressões. Os operandos de uma adição, por exemplo, são colocados na <strong>pilhaDeDados</strong> e posteriormente são consumidos pelo comando <code>somar</code>.</li>
+				<li><strong>pilhaDeContextos</strong>: São empilhados os diversos contextos, incluindo contextos de objetos e de métodos. Cada vez que um método ou objeto é chamado, o seu contexto é empilhado. Os contextos são responsáveis por guardar símbolos (atributos e variáveis) e até mesmo outros contextos. Uma classe, por exemplo, guarda os pontos de entrada dos seus métodos. Os contextos também possuem uma hierarquia, da mesma forma que existe nos escopos, que foram utilizados na etapa da análise semântica.</li>
+				<li><strong>pilhaDeExecucao</strong>: Onde são empilhados os pontos de retorno dos procedimentos executados. Cada vez que um procedimento é chamado, é empilhado um ponto de retorno. Quando houver o retorno do procedimento, o ponto de retorno será desempilhado e a execução passará a apontar para a instrução imediatamente após a chamada.</li>
+				<li><strong>areaDeDados</strong>: É nessa área que serão colocados os atributos, objetos e outros símbolos. A <strong>areaDeDados</strong> nada mais é do que um contexto global. Dentro dela existe uma hierarquia de outros contextos onde cada um é responsável pelos seus símbolos.</li>
+				<li><strong>areaDeCodigo</strong>: Local onde é carregado todo o código do programa. A <strong>areaDeCodigo</strong> é apenas um vetor onde cada posição contém uma instrução de máquina.</li>
+			</ul>
+			<p>A <code>MaquinaCaneca</code> também possui um <code>contadorDePrograma</code> que aponta para a próxima instrução de máquina a ser executada. A execução é tipicamente sequencial, de tal forma que as instruções são executadas na mesma ordem que foram definidas na <code>areaDeCodigos</code>. Entretanto, existem instruções de máquina que manipulam o <code>contadorDePrograma</code> e dessa forma realizam o controle de fluxo de execução.<p>
+			<p>O <i lang="en">entry point</i> de uma programa Caneca é o construtor de uma classe passada como parâmetro no momento da compilação. Na Caneca não existe o método <code>main</code>, por isso <code>main</code> o ponto de entrada é o construtor de uma classe. A definição do ponto de entrada estará no inicio da <code>areaDeCodigos</code>. A execução de um programa Caneca irá durar enquanto o construtor do ponto de entrada estiver ativo.</p>
+			<p>Após terminar a execução do construtor do ponto de entrada, será desempilhado o ponto de retorno da <code>pilhaDeExecucao</code>. A execução será então direcionada para esse ponto de retorno que aponta para uma instrução de máquina responsável por encerrar a execução da <code>MaquinaCaneca</code>.</p>
+			<p>O coração da MaquinaCaneca consiste de um simples método:</p>
+			<ul>
+				<li><code>public void executar() {</code></li>
+				<li><code>Integer fimDoCodigo = areaDeCodigo.size();</code></li>
+				<li><code>pilhaDeContextos.push(areaDeDados);</code></li>
+				<li><code>while (contadorDePrograma &lt; fimDoCodigo) {</code></li>
+				<li><code>Codigo codigo = areaDeCodigo.get(contadorDePrograma);</code></li>
+				<li><code>contadorDePrograma++;</code></li>
+				<li><code>codigo.executar(this);</code></li>
+				<li><code>}</code></li>
+				<li><code>}</code></li>
+			</ul>
+			<p>Todo o resto é realizado por implementações da classe Codigo. O código, quando for executado terá acesso à: <code>areaDeDados</code>, <code>areaDeCodigo</code>, <code>pilhaDeDados</code>, <code>pilhaDeExecucao</code>, <code>pilhaDeContextos</code> e <code>contadorDePrograma</code>.</p>
+		</section>
+		<a class="topo" href="#sumario">Sumário</a>
+	</body>
+</html>
+

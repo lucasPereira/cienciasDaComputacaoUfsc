@@ -1,0 +1,79 @@
+pacote @caneca.subpacote;
+
+importe @caneca;
+importe FluxoDeSaida@canceca.es;
+importe FluxoDeEntrada@canceca.es;
+importe Texto@caneca.linguagem;
+importe Texto@meu.pacoteQualquer como MeuTexto;
+
+classe publica ClasseDeExemplo[T implementa Comparavel[T]][V implementa Comparavel[V]] implementa InterfaceQualquer, OutraInterface inicio
+	atributo publico FluxoDeSaida saidaPadrao;
+	atributo publico estatico FluxoDeSaida saidaDeErroPadrao;
+	atributo publico estatico FluxoDeEntrada entradaPadrao;
+	
+	construtor publico Caneca() inicio
+		ClasseDeExemplo:saidaParado = novo FluxoDeSaida();
+		esse.comoTexto();
+		ClasseDeExemplo:imprimir("Olá Marilene!");
+		textosECaracteres();
+		capturarPokemon();
+	fim
+	
+	destrutor publico Caneca(Texto destrutorPodeReceberParametros) inicio
+		destrua this.objetoQualquer();
+		? usando algumas expressões:
+		Inteiro a = 2;
+		Inteiro b = 3;
+		Inteiro c = 4;
+		Inteiro resultado = a + b * c;
+		? resultado = 14
+		chamarMetodo(temUmaChamadaDentro() + resultado, novo ObjetoQualquer());
+		Booleano executar;
+		executar = c / a != 2 || b <= c && a + 2 == 4 && ~(falso && verdadeiro);
+		? outras
+		Real multiplicacao = a * 3.14;
+		Booleano negacao = ~verdadeiro;
+		Inteiro restoDaDivisao = 2 % (a + c);
+		Texto concatenacao = "texto" + 'Q' + "ualquer";
+		? sintáticamente válido, porém semanticamente errado:
+		3 + 4 = 2 * 5;
+		"multiplicar número por texto" * 32;
+	fim
+	
+	metodo publico estatico Texto imprimir(Texto mensagem) inicio
+		Tipo:facaAlgumaCoisa();
+		objeto.facaOutraCoisa();
+		this.objeto.jacare().encadeando.seletores.meuDeus();
+		Inteiro numero = 10;
+		Real pi = 3.14;
+		Booleano valor = verdadeiro;
+		Texto variavelDeTexto = "Textão malucão com acentos doidos e coração.";
+		se (valor) inicio
+			Caneca:saidaPadrao.imprir(mensagem);
+			ClasseQualquer identificadorA = nulo;
+			ClasseQualquer identificadorB;
+		fim
+		#?
+			Comentário em bloco. É possível escrever várias coisas em comentários em bloco.
+			O diferencial do comentário em bloco é que você pode pular linha.
+			Sensacional, não?
+		?#
+		retorne nova Mensagem("Oi").comoTexto();
+	fim
+	
+	metodo publico Nada capturarPokemon() inicio
+		tente inicio
+			? Comentário qualquer em linha. O comentário acabará quando esta linha for quebrada.
+			jogarPokebola();
+		fim capture(Pokemom magikarp) inicio
+			Lista[Pokemon] meusPokemons;
+			meusPokemons.adicionar(magikarp);
+			saidaPadrao.imprimir("Magikarp capturado :-)");
+		fim
+	fim
+	
+	metodo publico estatico Nada jogarPokebola() inicio
+		lance novo Pokemon("Magikarp");
+	fim
+fim
+

@@ -1,0 +1,16 @@
+* Verificação de público, privado e protegido.
+* Verificação de referencias avançadas.
+* Definição de atributos.
+* Símbolos que já existem no mesmo escopo.
+
+* Eliminação de importação e apelidos de importação.
+* Eliminação dos pacotes.
+* Eliminação dos genéricos.
+* Eliminação de privado e protegido.
+* Eliminação de estático.
+* Eliminação de interface.
+* Eliminação de parâmetros.
+
+* [Resolvido] Problema: referenciar métodos como se fossem atributos.
+* Problema: referenciar métodos e atributos estáticos.
+* Problema: construtores com assinaturas equivalentes.

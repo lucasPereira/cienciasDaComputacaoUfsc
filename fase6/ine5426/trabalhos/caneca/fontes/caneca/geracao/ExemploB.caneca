@@ -1,0 +1,19 @@
+pacote @caneca.exemplos;
+classe publica Principal inicio
+	construtor publico Principal() inicio
+		Somadora s = nova Somadora();
+		s.somarDoisNumeros(10, 15);
+	fim
+	destrutor publico Principal() inicio fim
+fim
+
+pacote @caneca.exemplos;
+classe publica Somadora inicio
+	construtor publico Somadora() inicio fim
+	destrutor publico Somadora() inicio fim
+	metodo publico Nada somarDoisNumeros(Inteiro a, Inteiro b) inicio
+		Inteiro resultado = a + b;
+		resultado;
+		imprimir;
+	fim
+fim

@@ -1,0 +1,136 @@
+tree grammar CanecaSemantico options {ASTLabelType=CommonTree; tokenVocab=CanecaArvore; filter=true; } ;
+topdown : ( classe | atributo | construtor | destrutor | metodo | declaracao | bloco | imprimir | depurar | se | para | repita | enquanto | tente | capture | lance | destruicao | retorno | expressaoAtribuicao | expressaoOu | expressaoE | expressaoIgual | expressaoDiferente | expressaoMaior | expressaoMaiorIgual | expressaoMenor | expressaoMenorIgual | expressaoAdicao | expressaoSubtracao | expressaoMultiplicacao | expressaoDivisao | expressaoRestoDaDivisao | expressaoNegativacao | expressaoNegacao | expressaoPrimaria | comando | referencia | referenciaDeMetodo | instanciacao | chamada | chamadaDeMetodo );
+bottomup : ( terminaClasse | terminarConstrutor | terminarDestrutor | terminarMetodo | terminarBloco | terminarSe | terminarPara | terminarRepita | terminarEnquanto | terminarTente | terminarCapture | terminarLance | terminarDestruicao | terminarRetorno | terminarExpressaoAtribuicao | terminarExpressaoOu | terminarExpressaoE | terminarExpressaoIgual | terminarExpressaoDiferente | terminarExpressaoMaior | terminarExpressaoMaiorIgual | terminarExpressaoMenor | terminarExpressaoMenorIgual | terminarExpressaoAdicao | terminarExpressaoSubtracao | terminarExpressaoMultiplicacao | terminarExpressaoDivisao | terminarExpressaoRestoDaDivisao | terminarExpressaoNegativacao | terminarExpressaoNegacao | terminarComando | terminarReferenciaDeMetodo | terminarInstanciacao | terminarChamadaDeMetodo );
+programa : ^( PROGRAMA_ ( unicadeDeCompilacao )+ ) ;
+unicadeDeCompilacao : ( ^( UNIDADE_ cabecalho classe ) | ^( UNIDADE_ cabecalho interfaces ) );
+cabecalho : ^( CABECALHO_ pacote importacoes ) ;
+pacote : ^( PACOTE_ IDENTIFICADOR_DE_PACOTE ) ;
+importacoes : ^( IMPORTACOES_ ( importacao )* ) ;
+importacao : ( ^( IMPORTACAO_ IDENTIFICADOR IDENTIFICADOR_DE_PACOTE ( IDENTIFICADOR )? ) | ^( IMPORTACAO_ IDENTIFICADOR_DE_PACOTE ) );
+classe : ^( CLASSE_ modificadorDeAcessoFeminino IDENTIFICADOR listaDeTiposGenericos listaDeInterfaces . ) ;
+terminaClasse : ^( CLASSE_ modificadorDeAcessoFeminino IDENTIFICADOR listaDeTiposGenericos listaDeInterfaces . ) ;
+interfaces : ^( INTERFACE_ modificadorDeAcessoFeminino IDENTIFICADOR listaDeTiposGenericos listaDeInterfaces corpoDaInterface ) ;
+corpoDaClasse : ^( CORPO_ atributos construtores destrutor metodos ) ;
+corpoDaInterface : ^( CORPO_ atributos assinaturasDeMetodos ) ;
+atributos : ^( ATRIBUTOS_ ( atributo )* ) ;
+construtores : ^( CONSTRUTORES_ ( construtor )+ ) ;
+metodos : ^( METODOS_ ( metodo )* ) ;
+assinaturasDeMetodos : ^( ASSINATURAS_DE_METODOS_ ( ^( ASSINATURA_ modificadorDeAcessoMasculino ( ESTATICO )? tipo IDENTIFICADOR . ) )* ) ;
+atributo : ^( ATRIBUTO_ modificadorDeAcessoMasculino ( ESTATICO )? tipo IDENTIFICADOR ( . )? ) ;
+construtor : ^( CONSTRUTOR_ ^( ASSINATURA_ modificadorDeAcessoMasculino IDENTIFICADOR . ) . ) ;
+terminarConstrutor : ^( CONSTRUTOR_ ^( ASSINATURA_ modificadorDeAcessoMasculino IDENTIFICADOR . ) . ) ;
+destrutor : ^( DESTRUTOR_ ^( ASSINATURA_ modificadorDeAcessoMasculino IDENTIFICADOR . ) . ) ;
+terminarDestrutor : ^( DESTRUTOR_ ^( ASSINATURA_ modificadorDeAcessoMasculino IDENTIFICADOR . ) . ) ;
+metodo : ^( METODO_ ^( ASSINATURA_ modificadorDeAcessoMasculino ( ESTATICO )? tipo IDENTIFICADOR . ) . ) ;
+terminarMetodo : ^( METODO_ ^( ASSINATURA_ modificadorDeAcessoMasculino ( ESTATICO )? tipo IDENTIFICADOR . ) . ) ;
+modificadorDeAcessoMasculino : ( PUBLICO | PRIVADO | PROTEGIDO );
+modificadorDeAcessoFeminino : ( PUBLICA | PRIVADA | PROTEGIDA );
+listaDeParametros : ^( PARAMETROS_ ( . )* ) ;
+listaDeArgumentosVazia : ARGUMENTOS_ ;
+listaDeArgumentos : ^( ARGUMENTOS_ ( . )* ) ;
+listaDeInterfaces : ^( INTERFACES_ ( tipo )* ) ;
+listaDeTiposGenericos : ^( TIPOS_GENERICOS_ ( tipoGenerico )* ) ;
+listaDeTipos : ^( TIPOS_ ( tipo )* ) ;
+listaDeCapturas : ^( CAPTURAS_ ( capture )+ ) ;
+tipoGenerico : ^( TIPO_GENERICO_ IDENTIFICADOR listaDeInterfaces ) ;
+tipo returns [Tipo tipo] : ^( TIPO_ IDENTIFICADOR listaDeTipos ) ;
+declaracao : ^( DECLARACAO_ tipo IDENTIFICADOR ) ;
+expressaoAtribuicao : ^( ATRIBUIDOR . . ) ;
+terminarExpressaoAtribuicao : ^( ATRIBUIDOR . . ) ;
+expressaoOu : ^( OU . . ) ;
+terminarExpressaoOu : ^( OU . . ) ;
+expressaoE : ^( E . . ) ;
+terminarExpressaoE : ^( E . . ) ;
+expressaoIgual : ^( IGUAL . . ) ;
+terminarExpressaoIgual : ^( IGUAL . . ) ;
+expressaoDiferente : ^( DIFERENTE . . ) ;
+terminarExpressaoDiferente : ^( DIFERENTE . . ) ;
+expressaoMaior : ^( MAIOR . . ) ;
+terminarExpressaoMaior : ^( MAIOR . . ) ;
+expressaoMaiorIgual : ^( MAIOR_IGUAL . . ) ;
+terminarExpressaoMaiorIgual : ^( MAIOR_IGUAL . . ) ;
+expressaoMenor : ^( MENOR . . ) ;
+terminarExpressaoMenor : ^( MENOR . . ) ;
+expressaoMenorIgual : ^( MENOR_IGUAL . . ) ;
+terminarExpressaoMenorIgual : ^( MENOR_IGUAL . . ) ;
+expressaoAdicao : ^( SOMA . . ) ;
+terminarExpressaoAdicao : ^( SOMA . . ) ;
+expressaoSubtracao : ^( SUBTRACAO . . ) ;
+terminarExpressaoSubtracao : ^( SUBTRACAO . . ) ;
+expressaoMultiplicacao : ^( MULTIPLICACAO . . ) ;
+terminarExpressaoMultiplicacao : ^( MULTIPLICACAO . . ) ;
+expressaoDivisao : ^( DIVISAO . . ) ;
+terminarExpressaoDivisao : ^( DIVISAO . . ) ;
+expressaoRestoDaDivisao : ^( RESTO_DA_DIVISAO . . ) ;
+terminarExpressaoRestoDaDivisao : ^( RESTO_DA_DIVISAO . . ) ;
+expressaoNegativacao : ^( NEGATIVACAO_ . ) ;
+terminarExpressaoNegativacao : ^( NEGATIVACAO_ . ) ;
+expressaoNegacao : ^( NEGACAO . ) ;
+terminarExpressaoNegacao : ^( NEGACAO . ) ;
+expressaoPrimaria : ( VALOR_BOOLEANO | VALOR_NULO | CONSTANTE_INTEIRA | CONSTANTE_REAL | LITERAL_CARACTERE | LITERAL_TEXTO );
+comando : ^( COMANDO_ . ( . )* ) ;
+terminarComando : ^( COMANDO_ . ( . )* ) ;
+referencia : ( ^( REFERENCIA_ ESSE ) | ^( REFERENCIA_ ESSA ) | ^( REFERENCIA_ IDENTIFICADOR ) );
+referenciaDeMetodo : ^( REFERENCIA_ IDENTIFICADOR ( . )+ ) ;
+terminarReferenciaDeMetodo : ^( REFERENCIA_ IDENTIFICADOR ( . )+ ) ;
+instanciacao : ^( INSTANCIACAO_ tipo . ) ;
+terminarInstanciacao : ^( INSTANCIACAO_ tipo . ) ;
+chamada : ^( ( CHAMADA_DE_CLASSE | CHAMADA_DE_OBJETO ) IDENTIFICADOR ) ;
+chamadaDeMetodo : ^( ( CHAMADA_DE_CLASSE | CHAMADA_DE_OBJETO ) IDENTIFICADOR ( . )+ ) ;
+terminarChamadaDeMetodo : ^( ( CHAMADA_DE_CLASSE | CHAMADA_DE_OBJETO ) IDENTIFICADOR ( . )+ ) ;
+destruicao : ^( DESTRUICAO_ . ) ;
+terminarDestruicao : ^( DESTRUICAO_ . ) ;
+retorno : ^( RETORNO_ . ) ;
+terminarRetorno : ^( RETORNO_ . ) ;
+se : ^( SE_ . . ( . )? ) ;
+terminarSe : ^( SE_ . . ( . )? ) ;
+para : ^( PARA_ . . . . ) ;
+terminarPara : ^( PARA_ . . . . ) ;
+repita : ^( REPITA_ . . . ) ;
+terminarRepita : ^( REPITA_ . . . ) ;
+enquanto : ^( ENQUANTO_ . . ) ;
+terminarEnquanto : ^( ENQUANTO_ . . ) ;
+tente : ^( TENTE_ . . ) ;
+terminarTente : ^( TENTE_ . . ) ;
+capture : ^( CAPTURE_ . . ) ;
+terminarCapture : ^( CAPTURE_ . . ) ;
+lance : ^( LANCE_ . ) ;
+terminarLance : ^( LANCE_ . ) ;
+imprimir : IMPRIMIR ;
+depurar : DEPURAR ;
+bloco : ^( INSTRUCOES_ ( . )* ) ;
+terminarBloco : ^( INSTRUCOES_ ( . )* ) ;
+CanecaSemantico.topdown:91:1 decision 1: k=4
+CanecaSemantico.bottomup:135:1 decision 2: k=1
+CanecaSemantico.programa:172:35 decision 3: k=1
+CanecaSemantico.unicadeDeCompilacao:176:1 decision 4: cyclic
+CanecaSemantico.importacoes:189:29 decision 5: k=1
+CanecaSemantico.importacao:193:55 decision 6: k=1
+CanecaSemantico.importacao:193:1 decision 7: k=3
+CanecaSemantico.atributos:228:25 decision 8: k=1
+CanecaSemantico.construtores:232:30 decision 9: k=1
+CanecaSemantico.metodos:236:21 decision 10: k=1
+CanecaSemantico.assinaturasDeMetodos:240:73 decision 11: k=1
+CanecaSemantico.assinaturasDeMetodos:240:106 decision 12: k=1
+CanecaSemantico.atributo:244:44 decision 13: k=1
+CanecaSemantico.atributo:244:75 decision 14: k=1
+CanecaSemantico.metodo:289:56 decision 15: k=1
+CanecaSemantico.terminarMetodo:299:56 decision 16: k=1
+CanecaSemantico.listaDeParametros:319:19 decision 17: k=1
+CanecaSemantico.listaDeArgumentos:327:19 decision 18: k=1
+CanecaSemantico.listaDeInterfaces:331:22 decision 19: k=1
+CanecaSemantico.listaDeTiposGenericos:335:35 decision 20: k=1
+CanecaSemantico.listaDeTipos:339:17 decision 21: k=1
+CanecaSemantico.listaDeCapturas:343:23 decision 22: k=1
+CanecaSemantico.expressaoPrimaria:655:1 decision 23: k=1
+CanecaSemantico.comando:688:18 decision 24: k=1
+CanecaSemantico.terminarComando:698:18 decision 25: k=1
+CanecaSemantico.referencia:707:1 decision 26: k=3
+CanecaSemantico.referenciaDeMetodo:731:31 decision 27: k=1
+CanecaSemantico.terminarReferenciaDeMetodo:742:31 decision 28: k=1
+CanecaSemantico.chamadaDeMetodo:779:59 decision 29: k=1
+CanecaSemantico.terminarChamadaDeMetodo:790:59 decision 30: k=1
+CanecaSemantico.se:834:13 decision 31: k=1
+CanecaSemantico.terminarSe:844:13 decision 32: k=1
+CanecaSemantico.bloco:978:19 decision 33: k=1
+CanecaSemantico.terminarBloco:988:19 decision 34: k=1

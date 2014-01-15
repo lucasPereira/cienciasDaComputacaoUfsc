@@ -1,0 +1,19 @@
+pacote @caneca.exemplos;
+classe publica Principal inicio
+	construtor publico Principal() inicio
+		OutraClasse outra = nova OutraClasse();
+		outra.imprimirTexto("Caneca");
+		outra.imprimirTexto("Caneca++");
+	fim
+	destrutor publico Principal() inicio fim
+fim
+
+pacote @caneca.exemplos;
+classe publica OutraClasse inicio
+	construtor publico OutraClasse() inicio	fim
+	destrutor publico OutraClasse() inicio fim
+	metodo publico Nada imprimirTexto(Texto texto) inicio
+		texto;
+		imprimir;
+	fim
+fim

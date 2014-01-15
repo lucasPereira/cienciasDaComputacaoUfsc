@@ -1,0 +1,256 @@
+@charset "utf-8";
+
+body {
+	padding: 10px;
+}
+
+nav.principal > ul {
+	/*
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-itens: stretch;
+	*/
+	display: box;
+	box-align: stretch;
+	box-orient: horizontal;
+	box-pack: start;
+	display: -webkit-flex;
+	-webkit-flex-wrap: wrap;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: flex-start;
+	-webkit-align-itens: stretch;
+	display: -moz-box;
+	-moz-box-align: stretch;
+	-moz-box-orient: horizontal;
+	-moz-box-pack: start;
+	display: -o-box;
+	-o-box-align: stretch;
+	-o-box-orient: horizontal;
+	-o-box-pack: start;
+	display: -ms-box;
+	-ms-box-align: stretch;
+	-ms-box-orient: horizontal;
+	-ms-box-pack: start;
+	/*
+	display: -moz-flex;
+	-moz-flex-wrap: wrap;
+	-moz-flex-direction: row;
+	-moz-justify-content: flex-start;
+	-moz-align-itens: stretch;
+	display: -o-flex;
+	-o-flex-wrap: wrap;
+	-o-flex-direction: row;
+	-o-justify-content: flex-start;
+	-o-align-itens: stretch;
+	display: -ms-flex;
+	-ms-flex-wrap: wrap;
+	-ms-flex-direction: row;
+	-ms-justify-content: flex-start;
+	-ms-align-itens: stretch;
+	*/
+}
+
+nav.principal > ul > li:not(:first-child) > a {
+	border-color: #F00;
+	border-left: 1px;
+	border-style: solid;
+}
+
+nav.principal > ul > li > a,
+a.topo {
+	background-color: #07A;
+	display: block;
+	color: #FFF;
+	padding: 10px;
+}
+
+nav.principal > ul > li > a:hover,
+a.topo:hover {
+	background-color: #C92127;
+}
+
+nav.principal > ul > li > a:active,
+a.topo:active {
+	color: #FFF;
+}
+
+a.topo {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+div.eventos,
+div.gna {
+	display: inline-block;
+	max-height: 500px;
+	overflow-y: scroll;
+}
+
+body > section + section,
+body > header + section {
+	margin-top: 20px;
+}
+
+p {
+	margin: 15px 0;
+}
+
+table > thead > tr {
+	background-color: #7D9900;
+}
+
+table > tbody > tr:hover {
+	background-color: #9C3;
+}
+
+table > tbody > tr > th:not(:first-child),
+table > tbody > tr > td:not(:first-child),
+table > thead > tr > th:not(:first-child),
+table > thead > tr > td:not(:first-child) {
+	border-color: #9C3;
+}
+
+table > tbody > tr.divisor {
+	border-top-color: #C92127;
+	border-top-style: solid;
+	border-top-width: 2px;
+}
+
+h1 {
+	color: #C92127;
+}
+
+h1:first-letter {
+	font-weight: bold;
+}
+
+h2 {
+	color: #07A;
+}
+
+h2:first-letter {
+	font-weight: bold;
+}
+
+h3 {
+	color: #07A;
+}
+
+tbody.eventos > tr > td:hover {
+	cursor: pointer;
+}
+
+tbody.eventos > tr.selecionado > td {
+	color: #C92127;
+	font-weight: bold;
+}
+
+div.variaveisEventosEMensagens {
+	/*
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	*/
+	display: box;
+	box-orient: horizontal;
+	box-align: start;
+	box-pack: start;
+	display: -webkit-flex;
+	-webkit-flex-wrap: nowrap;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: flex-start;
+	-webkit-align-items: flex-start;
+	display: -moz-box;
+	-moz-box-orient: horizontal;
+	-moz-box-align: start;
+	-moz-box-pack: start;
+	/*
+	display: -moz-flex;
+	-moz-flex-wrap: nowrap;
+	-moz-flex-direction: row;
+	-moz-justify-content: flex-start;
+	-moz-align-items: flex-start;
+	display: -o-flex;
+	-o-flex-wrap: nowrap;
+	-o-flex-direction: row;
+	-o-justify-content: flex-start;
+	-o-align-items: flex-start;
+	display: -ms-flex;
+	-ms-flex-wrap: nowrap;
+	-ms-flex-direction: row;
+	-ms-justify-content: flex-start;
+	-ms-align-items: flex-start;
+	*/
+}
+
+section.mensagem,
+section.eventos {
+	margin-left: 50px;
+}
+
+section.monteCarloTipoDeMensagem {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+	display: -webkit-flex;
+	-webkit-flex-wrap: wrap;
+	-webkit-flex-direction: row;
+	-webkit-justify-content: flex-start;
+	-webkit-align-items: flex-start;
+	-webkit-align-content: flex-start;
+	display: -moz-flex;
+	-moz-flex-wrap: wrap;
+	-moz-flex-direction: row;
+	-moz-justify-content: flex-start;
+	-moz-align-items: flex-start;
+	-moz-align-content: flex-start;
+	display: -o-flex;
+	-o-flex-wrap: wrap;
+	-o-flex-direction: row;
+	-o-justify-content: flex-start;
+	-o-align-items: flex-start;
+	-o-align-content: flex-start;
+	display: -ms-flex;
+	-ms-flex-wrap: wrap;
+	-ms-flex-direction: row;
+	-ms-justify-content: flex-start;
+	-ms-align-items: flex-start;
+	-ms-align-content: flex-start;
+}
+
+section.monteCarloTipoDeMensagem > h2 {
+	width: 100%;
+}
+
+section.monteCarlo > section,
+section.monteCarloTipoDeMensagem > section {
+	visibility: collapse;
+}
+
+section.monteCarloTipoDeMensagem > section {
+	margin-right: 50px;
+}
+
+p.caixaDeMensagem {
+	padding: 10px;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+p.caixaDeMensagem:hover {
+	cursor: crosshair;
+}
+
+p.caixaDeMensagem:hover::after {
+	content: none;
+}
+
