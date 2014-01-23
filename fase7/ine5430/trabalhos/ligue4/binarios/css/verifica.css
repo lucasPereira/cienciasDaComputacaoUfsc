@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+div.verificaJs * {
+	font-family: sans-serif;
+}
+
+div.verificaJs li {
+	list-style: none;
+	margin-top: 5px;
+}
+
+div.verificaJs span {
+	display: inline-block;
+	padding: 5px;
+}
+
+div.verificaJs span.linha {
+	background-color: #C32;
+	color: #FFF;
+}
+
+div.verificaJs span.razao {
+	color: #C32;
+}
+
+div.verificaJs span.evidencia {
+	background-color: #444;
+	color: #FFF;
+	font-family: monospace;
+}

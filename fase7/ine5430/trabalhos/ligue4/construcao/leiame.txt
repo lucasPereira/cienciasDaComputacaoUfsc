@@ -1,0 +1,9 @@
+Alunos:
+	André Camargo
+	Lucas Pereira
+
+* O relatório está em recursos/documentos/relatorio.pdf.
+* O jogo pode ser acessado e executado através do arquivo fontes/html/ligue4.html.
+* O jogo somente foi testado no navegador Chrome/Chromium e provavelmente apresentará erros na interface gráfica se for executado em outros navegadores.
+* O código fonte (JavaScript) está em fontes/js/.
+* Uma boa ilustração de como funciona a heurística está em recursos/documentos/apresentacao.pdf.

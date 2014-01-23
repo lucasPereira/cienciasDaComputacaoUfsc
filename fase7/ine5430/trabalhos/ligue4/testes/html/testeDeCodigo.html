@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head lang="pt-br">
+		<meta charset="utf-8" />
+		<title>Testes de código</title>
+		<link href="../css/verifica.css" type="text/css" rel="stylesheet" />
+		<script src="../js/linda.js" type="application/javascript"></script>
+		<script src="../js/jsHint.js" type="application/javascript"></script>
+		<script src="../js/verifica.js" type="application/javascript"></script>
+		<script defer type="application/javascript">
+			new TratadorDePagina().paraCarregamento(function () {
+				var arquivos = [
+					"../js/controle.js",
+					"../js/ia.js",
+					"../js/ligue4.js",
+					"../js/modelo.js",
+					"../js/visao.js",
+				];
+				var verificacao = new Verifica(arquivos);
+				verificacao.verificar();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="verificaJs"></div>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+>> x;
+>> t;
+>> xn = mapminmax(x, -0.9, 0.9);
+>> neuronios = 10;
+>> funcaoDeSaida = {'tansig'};
+>> algoritmoDeTreinamento = 'traingdm';
+>> rede = newff(xn, t, neuronios, funcaoDeSaida, algoritmoDeTreinamento);
+
+>> rede.trainParam.epochs = 10000;
+>> rede.trainParam.goal = 0.01;
+>> rede.trainParam.lr = 0.05;
+>> rede.trainParam.mc = 0.85;
+
+>> rede.divideParam.trainRatio = 0.7;
+>> rede.divideParam.valRatio = 0.15;
+>> rede.divideParam.testRatio = 0.15;
+>> redeTreinada = train(rede, xn, t);
+
+>> simulacao = sim(redeTreinada, xn);
+>> plotconfusion(t, simulacao);
+
+>> simulacaoNormalizada = {}
+>> for i=1:size(simulacao, 2)
+>> maximo = max(simulacao(:, i));
+>> if maximo == simulacao(1, i)
+>> simulacaoNormalizada{i} = 'Vinícola 1';
+>> elseif maximo == simulacao(2, i)
+>> simulacaoNormalizada{i} = 'Vinícola 2';
+>> elseif maximo == simulacao(3, i);
+>> simulacaoNormalizada{i} = 'Vinícola 3';
+>> end
+>> end
+>> simulacaoNormalizada
+
+>> x;
+>> t;
+>> xn = mapminmax(x, 0.1, 0.9);
+>> neuronios = 10;
+>> funcaoDeSaida = {'logsig'};
+>> algoritmoDeTreinamento = 'traingdm';
+>> rede = newff(xn, t, neuronios, funcaoDeSaida, algoritmoDeTreinamento);
+
+>> rede.trainParam.epochs = 10000;
+>> rede.trainParam.goal = 0.01;
+>> rede.trainParam.lr = 0.05;
+>> rede.trainParam.mc = 0.85;
+
+>> rede.divideParam.trainRatio = 0.7;
+>> rede.divideParam.valRatio = 0.15;
+>> rede.divideParam.testRatio = 0.15;
+>> redeTreinada = train(rede, xn, t);
+
+>> simulacao = sim(redeTreinada, xn);
+>> plotconfusion(t, simulacao);
+
+>> simulacaoNormalizada = {}
+>> for i=1:size(simulacao, 2)
+>> maximo = max(simulacao(:, i));
+>> if maximo == simulacao(1, i)
+>> simulacaoNormalizada{i} = 'Vinícola 1';
+>> elseif maximo == simulacao(2, i)
+>> simulacaoNormalizada{i} = 'Vinícola 2';
+>> elseif maximo == simulacao(3, i);
+>> simulacaoNormalizada{i} = 'Vinícola 3';
+>> end
+>> end
+>> simulacaoNormalizada

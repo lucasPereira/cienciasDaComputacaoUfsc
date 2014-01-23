@@ -1,0 +1,7 @@
+MAS mundoWumpus {
+	infrastructure: Centralised
+
+	environment: AmbienteWumpus
+
+	agents: guerreiro;
+}

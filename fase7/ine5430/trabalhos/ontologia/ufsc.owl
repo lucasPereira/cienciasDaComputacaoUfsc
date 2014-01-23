@@ -1,0 +1,589 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/lucas/ontologies/2013/3/ufsc"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/lucas/ontologies/2013/3/ufsc">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>file:/Users/horrocks/Work/latex/teaching/Dresden2005/Ontologies/people+pets.owl</Import>
+    <Import>http://xmlns.com/foaf/0.1/</Import>
+    <Declaration>
+        <Class IRI="#Aluno"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlunoDeGraduacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlunoDeMestrado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AlunoIntercambista"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Brasileiro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Centro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CentroAcademico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Curriculo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Curso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Curso_Presencial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Curso_a_Distância"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Departamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Disciplina"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Funcionario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Laboratório"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nacionalidade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#País"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Portugues"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Professor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Servidor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ufsc"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eDoCurso"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eDoDepartamento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#eLecionada"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#leciona"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#nasceuEm"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#pertence"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#possuiCurso"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#possuiDisciplina"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temAluno"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temChefe"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temCoordenador"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temCurriculo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temCurso"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temDisciplina"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#temProfessor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#trabalhaPara"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Andre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Brasil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CCS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CTC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ciências_da_Computação"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#DAS"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Elder"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Engenharia_Civil"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Física"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#INE"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ilhas_Virgens"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Informática_e_Sociedade"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Inteligencia_Artificial"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Matemática"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Matemática_Discreta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Medicina"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MinimaxComPoda"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sistemas_de_Informação"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#UFSC"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AlunoIntercambista"/>
+        <ObjectComplementOf>
+            <Class IRI="#Brasileiro"/>
+        </ObjectComplementOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Curriculo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#temDisciplina"/>
+            <Class IRI="#Disciplina"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Curso"/>
+        <ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#temCurriculo"/>
+                    <Class IRI="#Curriculo"/>
+                </ObjectSomeValuesFrom>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#temProfessor"/>
+                    <Class IRI="#Professor"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#pertence"/>
+                <Class IRI="#Departamento"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temCoordenador"/>
+                <Class IRI="#Professor"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temDisciplina"/>
+                <Class IRI="#Disciplina"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Departamento"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#pertence"/>
+                <Class IRI="#Centro"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temChefe"/>
+                <Class IRI="#Professor"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temCurso"/>
+                <Class IRI="#Curso"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temProfessor"/>
+                <Class IRI="#Professor"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Disciplina"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#eLecionada"/>
+                <Class IRI="#Professor"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#pertence"/>
+                <Class IRI="#Departamento"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Funcionario"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#trabalhaPara"/>
+            <Class IRI="#Ufsc"/>
+        </ObjectAllValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Laboratório"/>
+        <ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <ObjectUnionOf>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#eDoCurso"/>
+                        <Class IRI="#Curso"/>
+                    </ObjectSomeValuesFrom>
+                    <ObjectSomeValuesFrom>
+                        <ObjectProperty IRI="#eDoDepartamento"/>
+                        <Class IRI="#Departamento"/>
+                    </ObjectSomeValuesFrom>
+                </ObjectUnionOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectProperty IRI="#temProfessor"/>
+                    <Class IRI="#Professor"/>
+                </ObjectSomeValuesFrom>
+            </ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#temAluno"/>
+                <Class IRI="#Aluno"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Nacionalidade"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#nasceuEm"/>
+            <Class IRI="#País"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Professor"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#leciona"/>
+                <Class IRI="#Disciplina"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://xmlns.com/foaf/0.1/publications"/>
+                <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Aluno"/>
+        <Class IRI="http://cohse.semanticweb.org/ontologies/people#person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlunoDeGraduacao"/>
+        <Class IRI="#Aluno"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlunoDeMestrado"/>
+        <Class IRI="#Aluno"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AlunoIntercambista"/>
+        <Class IRI="#AlunoDeGraduacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brasileiro"/>
+        <Class IRI="#Nacionalidade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Centro"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Organization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Curso"/>
+        <Class IRI="http://purl.org/vocab/aiiso/schema#KnowledgeGrouping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Curso_Presencial"/>
+        <Class IRI="#Curso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Curso_a_Distância"/>
+        <Class IRI="#Curso"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Funcionario"/>
+        <Class IRI="http://cohse.semanticweb.org/ontologies/people#person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Funcionario"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Portugues"/>
+        <Class IRI="#Nacionalidade"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Professor"/>
+        <Class IRI="#Funcionario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Servidor"/>
+        <Class IRI="#Funcionario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ufsc"/>
+        <Class IRI="http://purl.org/vocab/aiiso/schema#Institution"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Professor"/>
+        <Class IRI="#Servidor"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#País"/>
+        <NamedIndividual IRI="#Brasil"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#País"/>
+        <NamedIndividual IRI="#Ilhas_Virgens"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Disciplina"/>
+        <NamedIndividual IRI="#Informática_e_Sociedade"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Disciplina"/>
+        <NamedIndividual IRI="#Matemática_Discreta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://xmlns.com/foaf/0.1/Document"/>
+        <NamedIndividual IRI="#MinimaxComPoda"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pertence"/>
+        <NamedIndividual IRI="#Andre"/>
+        <NamedIndividual IRI="#Ciências_da_Computação"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pertence"/>
+        <NamedIndividual IRI="#CTC"/>
+        <NamedIndividual IRI="#UFSC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pertence"/>
+        <NamedIndividual IRI="#Ciências_da_Computação"/>
+        <NamedIndividual IRI="#CTC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://xmlns.com/foaf/0.1/publications"/>
+        <NamedIndividual IRI="#Elder"/>
+        <NamedIndividual IRI="#MinimaxComPoda"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pertence"/>
+        <NamedIndividual IRI="#INE"/>
+        <NamedIndividual IRI="#CTC"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pertence"/>
+        <NamedIndividual IRI="#Informática_e_Sociedade"/>
+        <NamedIndividual IRI="#INE"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#eLecionada"/>
+        <NamedIndividual IRI="#Inteligencia_Artificial"/>
+        <NamedIndividual IRI="#Elder"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#pertence"/>
+        <NamedIndividual IRI="#Inteligencia_Artificial"/>
+        <NamedIndividual IRI="#INE"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#eLecionada"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#nasceuEm"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#pertence"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#leciona"/>
+        <ObjectProperty IRI="#eLecionada"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#temAluno"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#temChefe"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#temCurso"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#temProfessor"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#trabalhaPara"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#eLecionada"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#pertence"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eDoCurso"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#eDoCurso"/>
+            <Class IRI="#Disciplina"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eDoDepartamento"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#eDoDepartamento"/>
+            <Class IRI="#Curso"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eDoDepartamento"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#eDoDepartamento"/>
+            <Class IRI="#Disciplina"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#eLecionada"/>
+        <Class IRI="#Disciplina"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#leciona"/>
+        <Class IRI="#Professor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#possuiCurso"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#possuiCurso"/>
+            <Class IRI="#Departamento"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#possuiDisciplina"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#possuiDisciplina"/>
+            <Class IRI="#Curso"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temAluno"/>
+        <Class IRI="#Disciplina"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temChefe"/>
+        <Class IRI="#Departamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temCoordenador"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temCurriculo"/>
+        <Class IRI="#Curso"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temCurso"/>
+        <Class IRI="#Departamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temDisciplina"/>
+        <Class IRI="#Departamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#temProfessor"/>
+        <Class IRI="#Departamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#trabalhaPara"/>
+        <Class IRI="#Ufsc"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#eDoCurso"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#eDoCurso"/>
+            <Class IRI="#Curso"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#eDoDepartamento"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#eDoDepartamento"/>
+            <Class IRI="#Departamento"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#possuiCurso"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#possuiCurso"/>
+            <Class IRI="#Curso"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#possuiDisciplina"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#possuiDisciplina"/>
+            <Class IRI="#Disciplina"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

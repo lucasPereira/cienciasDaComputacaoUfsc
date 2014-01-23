@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Ligue4</title>
+		<meta charset="utf-8" />
+		<link href="../../bibliotecas/css/limpo.css" type="text/css" rel="stylesheet" />
+		<link href="../css/ligue4.css" type="text/css" rel="stylesheet" />
+		<script defer src="../../bibliotecas/js/linda.js" type="application/javascript"></script>
+		<script defer src="../js/visao.js" type="application/javascript"></script>
+		<script defer src="../js/controle.js" type="application/javascript"></script>
+		<script defer src="../js/ia.js" type="application/javascript"></script>
+		<script defer src="../js/modelo.js" type="application/javascript"></script>
+		<script defer src="../js/ligue4.js" type="application/javascript"></script>
+	</head>
+	<body>
+		<section class="mensagem">
+			<template class="mensagem">
+				<p class="mensagem"></p>
+			</template>
+		</section>
+		<section class="jogo">
+			<table class="tabuleiro">
+				<template class="linhaDoTabuleiro">
+					<tr class="linhaDoTabuleiro">
+						<template class="celulaDoTabuleiro">
+							<td class="celulaDoTabuleiro"></td>
+						</template>
+					</tr>
+				</template>
+			</table>
+			<section class="informacoesDoJogo">
+				<ul class="jogadores">
+					<li class="humano">Humano</li>
+					<li class="computador">Computador</li>
+				</ul>
+				<p class="ultimaJogada">Última jogada: <span class="ultimaJogada">nenhuma</span>.</p>
+				<section class="estatisticas">
+					<ul>
+						<li>Nodos processados: <span class="nodosProcessados">0</li>
+						<li>Nodos podados: <span class="nodosPodados">0</span></li>
+						<li>Nodos folhas processados: <span class="nodosFolhasProcessados">0</span></li>
+						<li>Total de nodos processados: <span class="totalDeNodosProcessados">0</span></li>
+						<li>Total de nodos podados: <span class="totalDeNodosPodados">0</span></li>
+						<li>Total de nodos folhas processados: <span class="totalDeNodosFolhasProcessados">0</span></li>
+					</dl>
+				</section>
+			</section>
+		</section>
+		<section class="configuracoes">
+			<div>
+				<label><input name="estrategiaMinimax" value="minimax" type="radio" />Minimax</label>
+				<label><input name="estrategiaMinimax" value="minimaxComPoda" type="radio" />Minimax com poda</label>
+				<label><input name="estrategiaMinimax" value="minimaxComHeuristicaA" checked type="radio" />Minimax com heuristica A e poda</label>
+				<label><input name="estrategiaMinimax" value="minimaxComHeuristicaB" type="radio" />Minimax com heuristica B e poda</label>
+				<label><input name="estrategiaMinimax" value="minimaxComHeuristicaC" type="radio" />Minimax com heuristica C e poda</label>
+			</div>
+			<label>Profundidade: <input name="profundidade" type="text" value="9" /></label>
+			<label><button type="button" class="iniciarIa">Iniciar IA</button>
+		</section>
+		<section class="arvore">
+			<template class="nodo">
+				<div class="nodo">
+					<table class="tabuleiro">
+						<template class="linhaDoTabuleiro">
+							<tr class="linhaDoTabuleiro">
+								<template class="celulaDoTabuleiro">
+									<td class="celulaDoTabuleiro"></td>
+								</template>
+							</tr>
+						</template>
+					</table>
+					<p class="alfaBeta"></p>
+					<p class="jogador"></p>
+				</div>
+			</template>
+		</section>
+	</body>
+</html>

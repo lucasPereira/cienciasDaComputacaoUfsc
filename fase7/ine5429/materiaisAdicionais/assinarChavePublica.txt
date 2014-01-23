@@ -1,0 +1,4 @@
+gpg --keyserver keyserver.cais.rnp.br --recv-key EDB079BF
+gpg -u 72E5E082 --keyserver keyserver.cais.rnp.br --sign-key EDB079BF
+gpg --keyserver keyserver.cais.rnp.br --send-key EDB079BF
+gpg -u 72E5E082 --keyserver keyserver.cais.rnp.br --sign-key EDB079BF

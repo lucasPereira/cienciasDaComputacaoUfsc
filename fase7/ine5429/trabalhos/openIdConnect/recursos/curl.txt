@@ -1,0 +1,4 @@
+curl -i -u {usuario}:{senha} -X GET https://api.github.com/authorizations
+curl -i -X GET https://api.github.com/user/emails?access_token={tokenDeAcesso}
+curl -i -u {usuario}:{senha} -X DELETE https://api.github.com/authorizations/{identificador}
+
