@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="650" height="250">
+	<title>Jogo ComeSome</title>
+	<desc>Mapa de teclas para o jogo ComeSome</desc>
+
+
+	<rect x="0" y="0" width="50" height="50" fill="#CCC" stroke="#000" />
+
+	<rect x="50" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="55" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">1</text>
+
+	<rect x="100" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="105" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">2</text>
+
+	<rect x="150" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="155" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">3</text>
+
+	<rect x="200" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="205" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">4</text>
+
+	<rect x="250" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="255" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">5</text>
+
+	<rect x="300" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="305" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">6</text>
+
+	<rect x="350" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="355" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">7</text>
+
+	<rect x="400" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="405" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">8</text>
+
+	<rect x="450" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="455" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">9</text>
+
+	<rect x="500" y="0" width="50" height="50" fill="#AB5" stroke="#000" />
+	<text x="505" y="25" style="font-family: Sans-serif; font-size: 20; fill: #FFF">0</text>
+
+	<rect x="550" y="0" width="50" height="50" fill="#A95" stroke="#000" />
+
+	<rect x="600" y="0" width="50" height="50" fill="#CCC" stroke="#000" />
+
+
+	<rect x="25" y="50" width="50" height="50" fill="#CCC" stroke="#000" />
+
+	<text x="80" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">Q</text>
+
+	<rect x="75" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="80" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">Q</text>
+
+	<rect x="125" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="130" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">W</text>
+
+	<rect x="175" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="180" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">E</text>
+
+	<rect x="225" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="230" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">R</text>
+
+	<rect x="275" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="280" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">T</text>
+
+	<rect x="325" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="330" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">Y</text>
+
+	<rect x="375" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="380" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">U</text>
+
+	<rect x="425" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="430" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">I</text>
+
+	<rect x="475" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="480" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">O</text>
+
+	<rect x="525" y="50" width="50" height="50" fill="#AC5" stroke="#000" />
+	<text x="530" y="75" style="font-family: Sans-serif; font-size: 20; fill: #FFF">P</text>
+
+	<rect x="575" y="50" width="50" height="50" fill="#CCC" stroke="#000" />
+
+
+	<rect x="50" y="100" width="50" height="50" fill="#CCC" stroke="#000" />
+
+	<rect x="100" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="105" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">A</text>
+
+	<rect x="150" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="155" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">S</text>
+
+	<rect x="200" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="205" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">D</text>
+
+	<rect x="250" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="255" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">F</text>
+
+	<rect x="300" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="305" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">G</text>
+
+	<rect x="350" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="355" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">H</text>
+
+	<rect x="400" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="405" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">J</text>
+
+	<rect x="450" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="455" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">K</text>
+
+	<rect x="500" y="100" width="50" height="50" fill="#AD5" stroke="#000" />
+	<text x="505" y="125" style="font-family: Sans-serif; font-size: 20; fill: #FFF">L</text>
+
+	<rect x="550" y="100" width="50" height="50" fill="#CCC" stroke="#000" />
+
+
+	<rect x="75" y="150" width="50" height="50" fill="#CCC" stroke="#000" />
+
+	<rect x="125" y="150" width="50" height="50" fill="#AE5" stroke="#000" />
+	<text x="130" y="175" style="font-family: Sans-serif; font-size: 20; fill: #FFF">Z</text>
+
+	<rect x="175" y="150" width="50" height="50" fill="#AE5" stroke="#000" />
+	<text x="180" y="175" style="font-family: Sans-serif; font-size: 20; fill: #FFF">X</text>
+
+	<rect x="225" y="150" width="50" height="50" fill="#AE5" stroke="#000" />
+	<text x="230" y="175" style="font-family: Sans-serif; font-size: 20; fill: #FFF">C</text>
+
+	<rect x="275" y="150" width="50" height="50" fill="#AE5" stroke="#000" />
+	<text x="280" y="175" style="font-family: Sans-serif; font-size: 20; fill: #FFF">V</text>
+
+	<rect x="325" y="150" width="50" height="50" fill="#AE5" stroke="#000" />
+	<text x="330" y="175" style="font-family: Sans-serif; font-size: 20; fill: #FFF">B</text>
+
+	<rect x="375" y="150" width="50" height="50" fill="#AE5" stroke="#000" />
+	<text x="380" y="175" style="font-family: Sans-serif; font-size: 20; fill: #FFF">N</text>
+
+	<rect x="425" y="150" width="50" height="50" fill="#AE5" stroke="#000" />
+	<text x="430" y="175" style="font-family: Sans-serif; font-size: 20; fill: #FFF">M</text>
+
+	<rect x="475" y="150" width="50" height="50" fill="#A95" stroke="#000" />
+
+	<rect x="525" y="150" width="50" height="50" fill="#CCC" stroke="#000" />
+
+	<rect x="225" y="200" width="200" height="50" fill="#AAA" stroke="#000" />
+	<circle cx="325" cy="225" r="30" fill="#F00" />
+	<text x="295" y="230" style="font-family: Sans-serif; font-size: 20; fill: #FFF">COMe</text>
+</svg>

@@ -1,0 +1,355 @@
+@import url("../limpo/limpo.css");
+
+:root {
+	font-size: 12pt;
+}
+
+* {
+	font-size: 12pt;
+	font-size: 1rem;
+	line-height: 1.5em;
+}
+
+body > * {
+	display: none;
+}
+
+section.capa,
+section.preTextual,
+section.textual,
+section.posTextual {
+	display: block;
+}
+
+section.capa {
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+	-webkit-flex-wrap: nowrap;
+	-webkit-align-items: center;
+	-webkit-justify-content: space-between;
+	page-break-inside: avoid;
+}
+
+section.capa > header > p {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+section.capa > hgroup > h1 {
+	font-size: 16pt;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+section.capa > hgroup > h2 {
+	font-size: 16pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+section.capa > section > p {
+	text-align: center;
+	text-indent: 0;
+}
+
+section.capa > footer > address,
+section.capa > footer > time {
+	text-align: center;
+}
+
+section.preTextual > h1,
+section.posTextual > h1 {
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+section.preTextual > ol {
+	counter-reset: primario secundario terciario quartenario quinario;
+}
+
+section.preTextual > ol h1 {
+}
+
+section.preTextual > ol h2 {
+	margin-left: 20px;
+}
+
+section.preTextual > ol h3 {
+	margin-left: 40px;
+}
+
+section.preTextual > ol h4 {
+	margin-left: 60px;
+}
+
+section.preTextual > ol h5 {
+	margin-left: 80px;
+}
+
+section.preTextual > ol h1::before {
+	content: counter(primario) ". ";
+	counter-increment: primario;
+	counter-reset: secundario;
+}
+
+section.preTextual > ol h2::before {
+	content: counter(primario) "." counter(secundario) ". ";
+	counter-increment: secundario;
+	counter-reset: terciario;
+}
+
+section.preTextual > ol h3::before {
+	content: counter(primario) "." counter(secundario) "." counter(terciario) ". ";
+	counter-increment: terciario;
+	counter-reset: quartenario;
+}
+
+section.preTextual > ol h4::before {
+	content: counter(primario) "." counter(secundario) "." counter(terciario) "." counter(quartenario) ". ";
+	counter-increment: quartenario;
+	counter-reset: quinario;
+}
+
+section.preTextual > ol h5::before {
+	content: counter(primario) "." counter(secundario) "." counter(terciario) "." counter(quartenario) "." counter(quinario) ". ";
+	counter-increment: quinario;
+}
+
+body {
+	counter-reset: primaria secundaria terciaria quartenaria quinaria pagina;
+}
+
+section.textual > h1::before {
+	content: counter(primaria) ". ";
+	counter-increment: primaria;
+	counter-reset: secundaria;
+}
+
+section.textual > h2::before {
+	content: counter(primaria) "." counter(secundaria) ". ";
+	counter-increment: secundaria;
+	counter-reset: terciaria;
+}
+
+section.textual > h3::before {
+	content: counter(primaria) "." counter(secundaria) "." counter(terciaria) ". ";
+	counter-increment: terciaria;
+	counter-reset: quartenaria;
+}
+
+section.textual > h4::before {
+	content: counter(primaria) "." counter(secundaria) "." counter(terciaria) "." counter(quartenaria) ". ";
+	counter-increment: quartenaria;
+	counter-reset: quinaria;
+}
+
+section.textual > h5::before {
+	content: counter(primaria) "." counter(secundaria) "." counter(terciaria) "." counter(quartenaria) "." counter(quinaria) ". ";
+	counter-increment: quinaria;
+}
+
+section.preTextual > ol h1.naoNumerado::before {
+	content: none;
+	counter-increment: none;
+	counter-reset: none;
+}
+
+section.preTextual > ol h1,
+section.textual > h1 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+section.preTextual > ol h2,
+section.textual >  h2 {
+	text-transform: uppercase;
+}
+
+section.preTextual > ol h3,
+section.textual > h3 {
+	font-weight: bold;
+}
+
+section.preTextual > ol h4,
+section.textual > h4 {
+}
+
+section.preTextual > ol h5,
+section.textual > h5 {
+	font-style: italic;
+}
+
+section.preTextual > p,
+section.textual > p {
+	text-align: justify;
+	text-indent: 2cm;
+}
+
+section.posTextual > p {
+	text-align: left;
+	text-indent: 0;
+}
+
+p[id^="referencia"] + p[id^="referencia"] {
+	margin-top: 1rem;
+}
+
+p[id^="referencia"] a::before {
+	content: "<";
+}
+
+p[id^="referencia"] a::after {
+	content: ">";
+}
+
+i {
+	font-style: italic;
+}
+
+a {
+	border-color: rgba(11, 83, 148, 1);
+	border-style: solid;
+	border-width: 2px;
+	font: inherit;
+	text-transform: inherit;
+}
+
+cite a {
+	border-color: rgba(11, 148, 83, 1);
+}
+
+cite {
+	text-transform: uppercase;
+}
+
+cite.parenteses time::before,
+cite.parenteses time::after {
+	content: none;
+}
+
+cite.parenteses::before,
+cite time::before,
+dfn abbr::before {
+	content: "(";
+}
+
+cite.parenteses::after,
+cite time::after,
+dfn abbr::after {
+	content: ")";
+}
+
+abbr[title]:hover {
+	cursor: help;
+}
+
+strong {
+	font-weight: bold;
+}
+
+table.quadro td,
+table.quadro th {
+	border-color: #000;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align:center;
+	vertical-align: middle;
+}
+
+table.quadro th {
+	background-color: #EEE;
+}
+
+table.quadro td.marcado {
+	background-color: #DDD;
+}
+
+table.quadro > thead th,
+table.quadro > tfoot th {
+	font-weight: bold;
+
+}
+section.textual > ul {
+	margin-left: 2cm;
+}
+
+section.textual > ul > li {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+section.preTextual > h1,
+section.textual > h1,
+section.posTextual > h1 {
+	margin-bottom: 24pt;
+}
+
+section.textual > h2,
+section.textual > h3,
+section.textual > h4,
+section.textual > h5 {
+	margin-bottom: 24pt;
+	margin-top: 48pt;
+}
+
+body > section {
+	background-color: #FFF;
+	page-break-after: always;
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+@page {
+	counter-increment: pagina;
+	margin: 3cm 2cm 2cm 3cm;
+	size: A4 portrait;
+	/*@top-right-corner {
+		content: counter(pagina) " de " counter(pages);
+	}*/
+}
+
+@media print {
+	body > section.capa {
+		height: 267mm;
+		/*box-sizing: border-box;*/
+		/*-webkit-box-sizing: border-box;*/
+	}
+	
+	a {
+		border: none;
+	}
+}
+
+@media screen {
+	body {
+		background-color: #EEE;
+		padding: 30px 0;
+	}
+	
+	body > section.capa {
+		height: 297mm;
+	}
+	
+	body > section {
+		border-color: #AAA;
+		border-style: solid;
+		border-width: 1px;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-shadow: 3px 6px 9px 0 #CCC;
+		margin: auto;
+		min-height: 297mm;
+		padding: 3cm 2cm 2cm 3cm;
+		width: 21cm;
+	}
+	
+	body > section + section {
+		margin-top: 30px;
+	}
+}

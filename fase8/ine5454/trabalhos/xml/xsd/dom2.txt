@@ -1,0 +1,23 @@
+<HTML>
+<HEAD><TITLE>Exemplo de Navegação DOM</TITLE></HEAD>
+<BODY>
+<SCRIPT LANGUAGE="javascript">
+     var doc = new ActiveXObject("Microsoft.XMLDOM");
+     doc.async = false;
+     doc.load("livros.xml");
+     if (doc.parseError != 0)  alert(doc.parseError.reason);
+     else {
+         var raiz = doc.documentElement;
+         var livros = raiz.childNodes;
+	 for (var i = 0, tamanho = livros.length; i < tamanho; i++) {
+		var livro = livros.item(i);
+		var isbn = livro.getAttribute("isbn");
+		var preco = livro.getElementsByTagName("preco").item(0).firstChild.data;
+		if(preco < 100){
+         		document.write("livro " + isbn + "<BR>");
+		}
+	 }
+     }
+</SCRIPT>
+</BODY>
+</HTML>

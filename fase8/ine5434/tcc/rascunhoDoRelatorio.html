@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+	<head>
+		<link href="estilos/limpo.css" type="text/css" media="all" rel="stylesheet" />
+		<link href="estilos/documento.css" type="text/css" media="all" rel="stylesheet" />
+		<meta charset="utf-8" />
+		<title>Webis: Linguagem e ambiente Web acessível de programação</title>
+	</head>
+	<body>
+		<section class="capa">
+			<header>
+				<p>Universidade Federal de Santa Catarina</p>
+				<p>Centro Tecnológico</p>
+				<p>Departamento de Informática e Estatística</p>
+				<p>Curso de Ciências da Computação</p>
+			</header>
+			<hgroup>
+				<h1>Webis:</h1>
+				<h2>Linguagem e ambiente Web acessível de programação</h2>
+			</hgroup>
+			<section>
+				<p>Lucas Pereira da Silva</p>
+			</section>
+			<footer>
+				<address>Florianópolis</address>
+				<time datetime="2012-12">Julho de 2012</time>
+			</footer>
+		</section>
+		<section class="preTextual">
+			<h1 id="sumario">Sumário</h1>
+			<ol>
+				<h1><a href="#introducao">Introdução</a></h1>
+				<h2><a href="#objetivoGeral">Objetivo geral</a></h2>
+				<h2><a href="#objetivosEspecificos">Objetivos específicos</a></h2>
+				<h1><a href="#definicaoDaLinguagem">Definição da linguagem baseada em Telis</a></h1>
+				<h2><a href="#gramatica">Gramática</a></h2>
+				<h2><a href="#geracaoDeCodigo">Geração de código JavaSCript</a></h2>
+				<h1><a href="#maquinaWebis">Máquina Webis</a></h1>
+				<h2><a href="#excecoes">Exceções<a></h2>
+				<h1 class="naoNumerado"><a href="#referencias">Referências bibliográficas</a></h1>
+			</ol>
+		</section>
+		<section class="textual">
+			<h1 id="introducao"><a href="#sumario">Introdução</a></h1>
+			<p>A facilidade no aprendizado de uma primeira linguagem de programação está relacionada com a própria linguagem que é objeto de estudo e também com o ambiente de programação a ser utilizado. Boa parte das linguagens não possuem regras sintáticas e semânticas simples e tão pouco oferecem um ambiente de programação simplificado e intuitivo. Isso ocorre, pois na maioria dos casos, as linguagens de programação são desenvolvidas para serem ferramentas profissionais e não de aprendizado <cite class="parenteses"><a href="#referencia1">Gomes; Mendes, <time>2012</time></a></cite>. Em decorrência desse fato, o primeiro contato com uma linguagem de programação pode ser muitas vezes traumático, fazendo com que o programador iniciante perca o interesse.</p>
+			<p>A linguagem Telis, desenvolvida no <dfn>Laboratório de Software Educacional <abbr title="Laboratório de Software Educacional">Edugraf</abbr></dfn>, possui regras sintáticas e semânticas simples que podem ser facilmente assimiladas. Telis também é o nome do ambiente de programação oferecido para a linguagem. Um programa Telis pode ser executado em um navegador Web através do uso de <i lang="en">applets</i> Java <cite class="parenteses"><a href="#referencia2">PIERI <i lang="la"> et al</i>,  <time>2009</time></a></cite>.</p>
+			<p><cite><a href="#referencia3">Saviski <time>2010</time></a></cite>, propôs o porte da linguagem Telis para execução nativa em navegadores Web sem a necessidade da utilização de <i lang="en">applets</i>. A abordagem adotada foi a de gerar em JavaScript (linguagem interpretada nativamente pelos navegadores) o código escrito em Java da já existente máquina Telis.</p>
+			<p>O presente projeto terá embasamento no projeto desenvolvido por <cite><a href="#referencia3">Saviski <time>2010</time></a></cite> e consistirá do desenvolvimento de uma linguagem baseada em Telis e de uma máquina de execução escrita diretamente em JavaScript. O projeto também deverá ter grande foco no ambiente de programação que deverá ser executado nativamente por navegadores Web. O novo ambiente e a nova linguagem de programação a serem desenvolvidos serão chamados doravante de Webis.</p>
+			<p>A importância de um ambiente de programação acessível está no fato de possibilitar que qualquer pessoa possa aprender uma primeira linguagem de programação de maneira fácil e sem ter que se deparar com barreiras de acessibilidade. Garantir a acessibilidade é permitir que uma pessoa cega, por exemplo, possa utilizar o ambiente sem maiores dificuldades.</p>
+			<p>Projetos como o Eclipse Orion mostram que é possível realizar o desenvolvimento de um ambiente de programação que execute diretamente nos navegadores. O Eclipse Orion é um editor de texto para o desenvolvimento de aplicações Web escritas em <abbr lang="en" title="Hypertext Markup Language">HTML</abbr>, JavaScript e <abbr lang="en" title="Cascading Style Sheet">CSS</abbr>. Uma de suas principais ideias é fazer com que não só as aplicações executem na Web, mas também o próprio ambiente de programação.</p>
+			<p>A utilização da Web como plataforma se encaixa muito bem nos requisitos de um ambiente acessível. Além de ser um sistema distribuído de baixo acoplamento, a Web se mostra uma ótima plataforma para a execução de aplicações, pois permite a manipulação de recursos <i lang="en">online</i> e gera independência da aplicação para com o sistema operacional. A <dfn>Linguagem de Marcação de Hipertexto 5 <abbr lang="en" title="Hypertext Markup Language 5">HTML5</abbr></dfn> introduz de maneira acessível novos recursos essenciais que ainda não eram suportados de forma padronizada pela Web. Isso garante ao usuário uma acessibilidade adequada e permite que ele se familiarize desde os primeiros passos no aprendizado de uma linguagem de programação com o desenvolvimento de aplicações que executem na Web.</p>
+			<h2 id="objetivoGeral"><a href="#sumario">Objetivo geral</a></h2>
+			<p>Desenvolver uma linguagem de programação baseada em Telis e um ambiente acessível de programação. Tanto o ambiente de programação quanto os programas gerados pela linguagem deverão executar nativamente em navegadores Web sem a necessidade da utilização de extensões. A linguagem deverá priorizar a acessibilidade de programadores e usuários cegos possibilitando a utilização e manipulação de sons 3D que poderão ser usados  para a criação de aplicações mais ricas e acessíveis.</p>
+			<h2 id="objetivosEspecificos"><a href="#sumario">Objetivos específicos</a></h2>
+			<ul>
+				<li>Definir uma linguagem de programação com sintaxe e semântica baseada em Telis.</li>
+				<li>Desenvolver o ambiente Web de execução para a linguagem definida.</li>
+				<li>Desenvolver o ambiente Web de programação para a linguagem definida.</li>
+				<li>Garantir a acessibilidade dos ambientes de execução e de programação desenvolvidos.</li>
+				<li>Disponibilizar na linguagem elementos que permitam a utilização e manipulação de sons 3D.</li>
+			</ul>
+		</section>
+		<section class="textual">
+			<h1 id="definicaoDaLinguagem"><a href="#sumario">Definição da linguagem baseada em Telis</a></h1>
+			<p>A linguagem Telis que vem sendo desenvolvida desde <time>1988</time> <cite class="parenteses"><a href="#referencia4">Pieri <time>2007</time></a></cite> pelo <abbr title="Laboratório de Software Educacional">Edugraf</abbr>, permite, através de construções sintáticas e semânticas simples, que o programador tenha um grande poder de expressão e possa expor de forma natural conceitos avançados como orientação a objetos, paralelismo, programação distribuída, programação de eventos e outros.</p>
+			<p>A linguagem Webis será criada a partir da linguagem Telis. As construções léxicas e sintáticas da nova linguagem serão muito semelhantes as mesmas existentes em Telis e a diferença entre as duas linguagens estará principalmente relacionada com os novos requisitos da linguagem Webis. Por exemplo, como Webis deverá ter suporte a manipulação de sons 3D, será necessário que esses recursos sejam incorporados a nova linguagem.</p>
+			<p>Outra diferença entre a linguagem Telis e Webis estará na forma de comunicação utilizada. Em Telis é possível realizar a comunicação direta e imperativa da mesma forma que existe na orientação a objetos. É possível também realizar a comunicação através de estímulos baseados em tuplas. Webis usará apenas a segunda forma de comunicação.</p>
+			<p>A linguagem Webis, portanto, deverá ser constituída pela junção de um subconjunto de funcionalidades da linguagem Telis com um conjunto de novas funcionalidades específicas para a linguagem Webis. A sintaxe das duas linguagens, entretanto, será praticamente a mesma, tendo apenas algumas pequenas diferenças.</p>
+			<h2 id="gramatica"><a href="#sumario">Gramática</a></h2>
+			<p>A linguagem Webis pode ser expressa através de uma gramática livre de contexto do tipo LL. Gramáticas do tipo LL possuem um conjunto adicional de restrições que permitem que a gramática possa ser analisada por um <i lang="en">parser</i> preditivo determinístico, ou seja, sem <i lang="en">backtracking</i>. Analisadores do tipo LL possuem ainda um parâmetro <var>k</var> chamado de <i lang="en">lookahed</i>. Esse parâmetro indica a quantidade de símbolos que serão levados em consideração em um passo do algoritmo. Quanto maior é o valor de <var>k</var> mais lento é o processo de análise e, em contra partida, menor é o número de não fatorações que uma produção da gramática pode conter. Uma gramática é dita fatorada se ela não possui produções que derive sequências que inicie com o mesmo <i lang="en">token</i> por mais de um caminho.</p>
+			<p>Considerando um exemplo onde <var>k</var> é igual a um, então a gramática não pode ter nenhum símbolo não fatorado. Já se <var>k</var> é igual a dois, então a gramática pode conter apenas produções com no máximo um símbolo não fatorado.</p>
+			<p>A gramática do Webis descrita em <abbr lang="en" title="Extended Backus Normal Form">EBNF</abbr> é mostrada na <a href="#listagemGramaticaDoWebis">Listagem 2.1</a>.</p>
+			<figure class="listagem" id="listagemGramaticaDoWebis">
+				<pre>
+					<ol>
+						<li>programa ::= (palavra | lista | COMENTARIO)*</li>
+						<li>palavra ::=</li>
+						<li>    atribuicao |</li>
+						<li>    instanciacao |</li>
+						<li>    simbolo |</li>
+						<li>    texto |</li>
+						<li>    numero |</li>
+						<li>    operador |</li>
+						<li>    booleano</li>
+						<li>lista ::= "[" (palavra | lista)* "]"</li>
+						<li>simbolo ::= &lt;IDENTIFICADOR&gt;</li>
+						<li>atribuicao ::= &lt;IDENTIFICADOR&gt; "associar"</li>
+						<li>instanciacao ::= &lt;IDENTIFICADOR&gt; ("novo" | "nova")</li>
+						<li>texto ::= &lt;TEXTO&gt;</li>
+						<li>numero ::= &lt;NUMERO&gt;</li>
+						<li>operador ::= "+" | "-" | "=" | "*" | "/" | "\" | "^"</li>
+						<li>booleano ::= "verdadeiro" | "falso"</li>
+					</ol>
+				</pre>
+				<figcaption>Gramática EBNF do Webis.</figcaption>
+			</figure>
+			<p>Os itens entre parênteses angulares são definidos através de expressões regulares e foram omitidos para facilitar a leitura e diminuir o tamanho da gramática. Seus nomes são auto-explicativos e com exceção do <code>&lt;IDENTIFICADOR&gt;</code> dispensam maiores explicações. O <code>&lt;IDENTIFICADOR&gt;</code> é uma sequência de caracteres alfanuméricos que deve iniciar por uma letra e não contem espaços.</p>
+			<p>Em gramáticas do tipo LL(k), o valor mínimo de <var>k</var> é dependente da linguagem. Existem linguagens onde nem sempre é possível construir uma gramática que seja completamente fatorada, ou seja, onde <var>k</var> é igual a um. Esse é o caso do Webis que possui uma gramática do tipo LL(2). A não fatoração no Webis ocorre na produção <code>palavra</code>, pois nela é possível que um <code>&lt;IDENTIFICADOR&gt;</code> seja derivado por três caminhos diferentes: pelas produções <code>simbolo</code>, <code>atribuicao</code> e <code>instanciacao</code>.</p>
+			<p>Essa não fatoração gera um não determinismo, pois o analisador não sabe por qual caminho seguir quando encontra um <code>&lt;IDENTIFICADOR&gt;</code>. Para resolver esse problema é necessário que o algoritmo possa receber como entrada os dois próximos <i lang="en">tokens</i> e não apenas um. Com isso, ao perceber um <code>&lt;IDENTIFICADOR&gt;</code>, o analisador deverá ver qual é o próximo <i lang="en">token</i> para saber por qual produção a derivação irá seguir.</p>
+			<p>Apesar da gramática do Webis requerer um analisador do tipo LL(2) e este ser mais lento se comparado a um do tipo LL(1), isso não vem a ser um problema devido a boa performance dos computadores e analisadores atuais.</p>
+			<h2 id="geracaoDeCodigo"><a href="#sumario">Geração de código JavaScript</a></h2>
+			<p>As etapas de análise léxica, sintática e geração do código do Webis serão realizadas através da ferramenta <abbr lang="en" title="Another Tool for Language Recognition">ANTLR</abbr>. O <abbr lang="en" title="Another Tool for Language Recognition">ANTLR</abbr> é um gerador de analisador léxico e sintático que pode ser utilizado para a criação de interpretadores de linguagens, compiladores e outros tradutores <cite class="parenteses"><a href="#referencia5">Parr <time>2007</time></a></cite>. No contexto desse projeto, o <abbr lang="en" title="Another Tool for Language Recognition">ANTLR</abbr> será utilizado para gerar em JavaScript o código escrito em Webis. Nesse sentido, o <abbr lang="en" title="Another Tool for Language Recognition">ANTLR</abbr> atuará como um tradutor e o código JavaScript será então executado pela máquina Webis.</p>
+			<p>Para realizar a geração de código JavaScript a partir de um código Webis é necessário entender alguns conceitos da arquitetura da máquina Webis que processará o código gerado. A máquina Webis será explicada em detalhes mais adiante, porém por hora é necessário compreender que cada <code>palavra</code> será traduzida para um elemento JavaScript e a máquina se encarregará de executar corretamente o elemento em questão conforme o seu tipo. Por exemplo, o <code>booleano</code> do Webis definido na <a href="#listagemGramaticaDoWebis">Listagem 2.1</a> será traduzido para um elemento <code>Boolean</code> do JavaScript. O mesmo irá ocorrer com o <code>texto</code>, <code>numero</code> e <code>lista</code> do Webis que serão traduzidos para elementos JavaScript dos tipos <code>String</code>, <code>Number</code> e <code>Array</code>, respectivamente. Já o <code>simbolo</code>, a <code>atribuicao</code> e a <code>instanciacao</code>, ao contrário dos demais elementos, não serão traduzidos para tipos nativos do JavaScript, mas sim para os tipos próprios <code>Simbolo</code>, <code>Associar</code> e <code>Novo</code>, respectivamente. Por fim, um <code>operador</code> que semanticamente é tratado pela máquina Webis da mesma forma que um <code>simbolo</code>, também será traduzido para um objeto JavaScript do tipo <code>Simbolo</code>.</p>
+			<p>Ao analisar a gramática do Webis (<a href="#listagemGramaticaDoWebis">Listagem 2.1</a>), percebemos que um programa é composto por uma lista. Essa lista por sua vez é composta por palavras e listas. A geração de código apenas irá traduzir isso para JavaScript. Com isso, a entrada da máquina Webis será uma lista JavaScript composta por números, textos, booleanos, listas e objetos.</p>
+		</section>
+		<section class="textual">
+			<h1 id="maquinaWebis"><a href="#sumario">Máquina Webis</a></h1>
+			<p>A máquina Webis trata-se basicamente de uma máquina de pilha onde os parâmetros necessários para as operações são desempilhados da pilha e o resultado das operações são empilhados na mesma. A entrada da máquina Webis nada mais é do que uma lista que contém os comandos do programa, sendo que cada um desses comandos é um elemento JavaScript que saberá se executar. O coração da máquina Webis, portanto, se torna muito simples. De forma simplificada, o que o núcleo da máquina Webis faz é iterar sobre a lista de comandos e enviar a ordem para cada um dos comandos se executar. Além da ordem de execução, o coração da máquina Webis fornece ao comando a ser executado o contexto do programa. Desta forma, cada comando tem acesso a pilha de dados e ao escopo de variáveis. Com isso, cada comando poderá empilhar e desempilhar elementos da pilha de dados e poderá também alterar, remover e criar variáveis.</p>
+			<p>A máquina Webis pode executar tanto dados quanto operações e símbolos. Quando um dado é executado ele simplesmente é colocado na pilha e fica disponível para ser consumido por uma operação ou símbolo. Quando operações ou símbolos são executados, eles podem ou não consumir elementos da pilha para produzir ou não algum resultado. Caso a operação produza algum resultado, então ele é colocado na pilha de forma que possa ser consumido por uma operação ou símbolo futuro.</p>
+			<p>No Webis, um símbolo pode ser uma primitiva que é uma operação básica fornecida pela linguagem, uma agenda de um ator ou uma variável. Quando a máquina encontra um símbolo, ela tenta executá-lo para algum desses casos. Caso a máquina não consiga executar o símbolo em questão, então uma exceção é lançada e em geral isso ocorre devido a erros de programação do usuário.</p>
+			<h2 id="excecoes"><a href="#sumario">Exceções</a></h2>
+			<p>Devido ao fato da gramática Webis ser bastante simples, ocorrem poucas exceções em tempo de compilação. Em geral, a maioria das construções sintáticas são permitidas pela linguagem e os erros de compilação se limitam a: listas não fechadas, utilização de caracteres inválidos e textos não iniciados ou terminados por aspas. O código da <a href="#listagemErroDeCompilacao">Listagem 3.1</a> mostra um erro de compilação onde um texto não foi terminado por aspas.</p>
+			<figure class="listagem" id="listagemErroDeCompilacao">
+				<pre>
+					<ul>
+						<li>"texto " "qualquer concatenar</li>
+					</ul>
+				</pre>
+				<figcaption>Exemplo de erro de compilação do Webis.</figcaption>
+			</figure>
+			<p>A maioria das exceções Webis ocorrem, no entanto, na etapa de execução e são gerados pela máquina Webis. As incoerências semânticas são tratadas todas durante o processo de execução e é por isso, que apenas exceções de erros sintáticos são lançadas durante o processo de compilação. O código da <a href="#listagemErroDeExecucao">Listagem 3.2</a> mostra um erro de execução. O erro ocorre, pois na linguagem Webis o operador de exponenciação não pode ser aplicado a textos.</p>
+			<figure class="listagem" id="listagemErroDeExecucao">
+				<pre>
+					<ul>
+						<li>10 "texto" ^</li>
+					</ul>
+				</pre>
+				<figcaption>Exemplo de erro de excução do Webis.</figcaption>
+			</figure>
+		</section>
+		<section class="posTextual">
+			<h1 id="referencias"><a href="#sumario">Referências bibliográficas</a></h1>
+			<p id="referencia1">GOMES, Anabela; MENDES, A. J. <strong lang="en">Learning to program</strong>: <span lang="en">difficulties and solutions</span>. <span lang="en">International Conference on Engineering Education</span>, Coimbra, Portugal, 2007.</p>
+			<p id="referencia2">PIERI, Giovani <i lang="la">et al</i>. <strong lang="en">Telis:</strong> <span lang="en">a programming tool set for beginners</span>. <i lang="la">In</i>.: <span lang="en">INTERNATIONAL INFORMATION AND TELECOMMUNICATION TECHNOLOGIES SYMPOSIUM</span>, 8., 2009, Florianópolis, Santa Catarina, Brasil. Anais... Florianópolis: Fundação Bardal de Educação e Cultura, 2009. p. 183-186.</p>
+			<p id="referencia3">SAVISKI, Marcelo. <strong>Porte de uma linguagem de programação para execução nativa em navegadores Web</strong>. Curso de Ciências da Computação, Departamento de Informática e Estatística, Universidade Federal de Santa Catarina, Florianópolis, 2010.</p>
+			<p id="referencia4">PIERI, Giovani. <strong>Projeto e implementação de uma linguagem de programação</strong>. Curso de Ciências da Computação, Departamento de Informática e Estatística, Universidade Federal de Santa Catarina, Florianópolis, 2007.</p>
+			<p id="referencia5">PARR, Terence. <strong lang="en">The definitive ANTLR reference</strong>: <span lang="en">Building domain-specific languages</span>. <span lang="en">The Pragmatic Bookshelf</span>, 2007. 358 p.</p>
+			<p id="referencia99">CALDWELL, Ben <i lang="la">et al</i>. <strong lang="en">Web Content Accessibility Guidelines 2.0</strong>. <span lang="en">World Wide Web Consortium</span>, 2008. Disponível em: <a href="http://www.w3.org/TR/WCAG/">http://www.w3.org/TR/WCAG/</a> Acesso em: dezembro de 2012.</p>
+			<p id="referencia98">XAVIER, Marcus Vinícius Cruz. <strong>Telis ME</strong>: uma versão de Telis para dispositivos móveis. Curso de Ciências da Computação, Departamento de Informática e Estatística, Universidade Federal de Santa Catarina, Florianópolis, 2006.</p>
+		</section>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+Devido a política de origem única dos navegadores Web
+(http://en.wikipedia.org/wiki/Same-origin_policy) é necessário
+que os servidores (operadora e banco de dados) coloquem no cabeçalho da resposta HTTP
+o atributo "Access-Control-Allow-Origin" com o valor "*".
+Caso isso não aconteça, o navegador não permitirá completar
+as requisições HTTP feitas através do JavaScript. Nesse caso,
+não será nem possível cadastrar a operadora, a não ser que ela
+esteja rodando no mesmo local que a aplicação.
+
+--
+
+A aplicação pode ser executada através do protocolo HTTP ou FILE.
+
+* Para executar a aplicação utilizando o protocolo FILE, basta abrir o arquivo
+/html/canais.html em algum navegador Web. A aplicação poderá ser acessada através
+do endereço: file://[caminhoDaPastaRaizDaAplicacao]/html/canais.html
+
+* Para executar a aplicação utilizando o protocolo HTTP, basta rodar o servidor
+NodeJS disponível em /js/nodoWeb.js. A aplicação poderá ser acessada através
+do endereço: http://localhost:7000/html/canais.html.
+
+--
+
+Adicionalmente foi disponíbilizado uma operadora e um banco de dados "dummy" apenas para fins de testes.
+Para executar a operadora "dummy" basta executar o arquivo /js/operadoraDummy.js e/ou /js/operadoraDummySecundaria.js através do NodeJS.
+Para executar o banco de dados "dummy" basta executar o arquivo /js/bancoDeDadosDummy.js através do NodeJs.

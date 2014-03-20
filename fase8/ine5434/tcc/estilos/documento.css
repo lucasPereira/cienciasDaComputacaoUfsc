@@ -1,0 +1,621 @@
+@charset "utf-8";
+
+:root {
+	font-size: 12pt;
+}
+
+* {
+	color: #000;
+	font-size: 12pt;
+	font-size: 1rem;
+	line-height: 1.5;
+	print-color-adjust: exact;
+	-webkit-print-color-adjust: exact;
+	-moz-print-color-adjust: exact;
+	-o-print-color-adjust: exact;
+	-ms-print-color-adjust: exact;
+}
+
+body > * {
+	display: none;
+}
+
+body > section {
+	background-color: #FFF;
+	box-sizing: border-box;
+}
+
+@page {
+	margin: 3cm 2cm 2cm 3cm;
+	size: A4 portrait;
+	/*counter-increment: pagina;*/
+	/*@top-right {
+		content: counter(pagina);
+	}*/
+	/*orphans: 3;*/
+}
+
+@media print {
+	body > section {
+		page-break-after: always;
+	}
+
+	body > section.capa {
+		height: 100vh;
+		page-break-after: always;
+		page-break-inside: avoid;
+	}
+}
+
+@media screen {
+	body {
+		background-color: #EEE;
+		padding: 30px 0;
+	}
+
+	body > section.capa {
+		height: 297mm;
+	}
+
+	body > section {
+		border-color: #AAA;
+		border-style: solid;
+		border-width: 1px;
+		box-shadow: 3px 6px 9px 0 #CCC;
+		margin: auto;
+		min-height: 297mm;
+		padding: 3cm 2cm 2cm 3cm;
+		width: 21cm;
+	}
+
+	body > section + section {
+		margin-top: 30px;
+	}
+}
+@charset "utf-8";
+
+section.preTextual,
+section.textual,
+section.posTextual {
+	display: block;
+}
+
+section.capa {
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -o-flex;
+	display: -ms-flex;
+	flex-direction: column;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-o-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-wrap: nowrap;
+	-webkit-flex-wrap: nowrap;
+	-moz-flex-wrap: nowrap;
+	-o-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	align-items: center;
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-o-align-items: center;
+	-ms-align-items: center;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	-o-justify-content: space-between;
+	-ms-justify-content: space-between;
+}
+
+section.capa > header > p {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+section.capa > hgroup > h1 {
+	font-size: 16pt;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+section.capa > hgroup > h2 {
+	font-size: 16pt;
+	font-weight: bold;
+	text-align: center;
+}
+
+section.capa > section > p {
+	text-align: center;
+	text-indent: 0;
+}
+
+section.capa > footer > address,
+section.capa > footer > time {
+	text-align: center;
+}
+
+section.preTextual > h1,
+section.posTextual > h1 {
+	text-align: center;
+}
+
+section.preTextual > ol > li,
+section.preTextual > ol > h1,
+section.preTextual > ol > h2,
+section.preTextual > ol > h3,
+section.preTextual > ol > h4,
+section.preTextual > ol > h5 {
+	margin-top: 1em;
+}
+
+section.preTextual > h1,
+section.preTextual > ol h1,
+section.textual > h1,
+section.textual > h1 > span,
+section.textual > h1 > i,
+section.posTextual > h1 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+section.preTextual > ol h2,
+section.textual > h2,
+section.textual > h2 > span,
+section.textual > h2 > i,
+section.posTextual > h2 {
+	text-transform: uppercase;
+}
+
+section.preTextual > ol h3,
+section.textual > h3,
+section.textual > h3 > span,
+section.textual > h3 > i,
+section.posTextual > h3 {
+	font-weight: bold;
+}
+
+section.preTextual > ol h4,
+section.textual > h4,
+section.textual > h4 > span,
+section.textual > h4 > i,
+section.posTextual > h4 {
+}
+
+section.preTextual > ol h5,
+section.textual > h5,
+section.textual > h5 > span,
+section.textual > h5 > i,
+section.posTextual > h5 {
+	font-style: italic;
+}
+
+section.textual > ul,
+section.textual > ol,
+section.posTextual > ul,
+section.posTextual > ol {
+	margin-left: 2cm;
+}
+
+section.textual > ul > li,
+section.textual > ol > li,
+section.posTextual > ul > li,
+section.posTextual > ol > li {
+	list-style-position: outside;
+	text-align: justify;
+}
+
+section.textual > ul > li,
+section.posTextual > ul > li {
+	list-style-type: disc;
+}
+
+section.textual > ol > li,
+section.posTextual > ol > li {
+	list-style-type: decimal;
+}
+
+section.preTextual > h1,
+section.textual > h1,
+section.posTextual > h1 {
+	margin-bottom: 24pt;
+}
+
+section.textual > h2,
+section.textual > h3,
+section.textual > h4,
+section.textual > h5,
+section.posTextual > h2,
+section.posTextual > h3,
+section.posTextual > h4,
+section.posTextual > h5 {
+	margin-bottom: 24pt;
+	margin-top: 48pt;
+}
+
+section.posTextual > p,
+section.artigo > p.referencia,
+section.posTextual.artigo > p.referencia {
+	text-align: left;
+	text-indent: 0;
+	margin-left: 20px;
+}
+
+section.preTextual > p,
+section.textual > p,
+section.artigo > p,
+section.posTextual.artigo > p {
+	text-align: justify;
+	text-indent: 2cm;
+}
+
+section.posTextual.artigo > p.autor,
+section.artigo > p.autor {
+	text-indent: 0;
+	text-align: center;
+}
+
+section.artigo strong {
+	font-weight: bold;
+}
+
+section.posTextual.artigo > p.resumo,
+section.artigo > p.resumo {
+	margin-left: 40px;
+	margin-right: 40px;
+	margin-top: 30px;
+	text-indent: 0;
+}
+@charset "utf-8";
+
+body {
+	counter-reset: primaria secundaria terciaria quartenaria quinaria pagina figura listagem;
+}
+
+section.textual {
+	counter-reset: figura listagem;
+}
+
+section.textual > h1 {
+	counter-increment: primaria;
+	counter-reset: secundaria;
+}
+
+section.textual > h1::before {
+	content: counter(primaria) ". ";
+}
+
+section.textual > h2 {
+	counter-increment: secundaria;
+	counter-reset: terciaria;
+}
+
+section.textual > h2::before {
+	content: counter(primaria) "." counter(secundaria) ". ";
+}
+
+section.textual > h3 {
+	counter-increment: terciaria;
+	counter-reset: quartenaria;
+}
+
+section.textual > h3::before {
+	content: counter(primaria) "." counter(secundaria) "." counter(terciaria) ". ";
+}
+
+section.textual > h4 {
+	counter-increment: quartenaria;
+	counter-reset: quinaria;
+}
+
+section.textual > h4::before {
+	content: counter(primaria) "." counter(secundaria) "." counter(terciaria) "." counter(quartenaria) ". ";
+}
+
+section.textual > h5 {
+	counter-increment: quinaria;
+}
+
+section.textual > h5::before {
+	content: counter(primaria) "." counter(secundaria) "." counter(terciaria) "." counter(quartenaria) "." counter(quinaria) ". ";
+	counter-increment: quinaria;
+}
+
+section.preTextual > ol {
+	counter-reset: primario secundario terciario quartenario quinario;
+}
+
+section.preTextual > ol h1 {
+	counter-increment: primario;
+	counter-reset: secundario;
+	margin-left: 0;
+}
+
+section.preTextual > ol h1::before {
+	content: counter(primario) ". ";
+}
+
+section.preTextual > ol h2 {
+	counter-increment: secundario;
+	counter-reset: terciario;
+	margin-left: 20px;
+}
+
+section.preTextual > ol h2::before {
+	content: counter(primario) "." counter(secundario) ". ";
+}
+
+section.preTextual > ol h3 {
+	counter-increment: terciario;
+	counter-reset: quartenario;
+	margin-left: 40px;
+}
+
+section.preTextual > ol h3::before {
+	content: counter(primario) "." counter(secundario) "." counter(terciario) ". ";
+}
+
+section.preTextual > ol h4 {
+	counter-increment: quartenario;
+	counter-reset: quinario;
+	margin-left: 60px;
+}
+
+section.preTextual > ol h4::before {
+	content: counter(primario) "." counter(secundario) "." counter(terciario) "." counter(quartenario) ". ";
+}
+
+section.preTextual > ol h5 {
+	counter-increment: quinario;
+	margin-left: 80px;
+}
+
+section.preTextual > ol h5::before {
+	content: counter(primario) "." counter(secundario) "." counter(terciario) "." counter(quartenario) "." counter(quinario) ". ";
+}
+
+section.preTextual > ol h1.naoNumerado {
+	counter-increment: none;
+	counter-reset: none;
+}
+
+section.preTextual > ol h1.naoNumerado::before {
+	content: none;
+}
+
+section.artigo > h1 {
+	counter-reset: secaoartigo;
+}
+
+section.artigo > h2 {
+	counter-increment: secaoartigo;
+}
+
+section.artigo > h2::before {
+	content: counter(secaoartigo) ". ";
+}
+
+figure.figura {
+	counter-increment: figura;
+}
+
+figure.listagem {
+	counter-increment: listagem;
+}
+
+figure.figura figcaption::before {
+	content: "Figura " counter(primaria) "." counter(figura) ": ";
+}
+
+figure.listagem figcaption::before {
+	content: "Listagem " counter(primaria) "." counter(listagem) ": ";
+}
+@charset "utf-8";
+
+p[id^="referencia"] + p[id^="referencia"] {
+	margin-top: 1rem;
+}
+
+p[id^="referencia"] a::before {
+	content: "<";
+}
+
+p[id^="referencia"] a::after {
+	content: ">";
+}
+
+i {
+	font-style: italic;
+}
+
+a {
+	background-color: rgba(11, 83, 148, 0.1);
+	border-color: rgba(11, 83, 148, 1);
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	font: inherit;
+	text-transform: inherit;
+}
+
+cite > a {
+	background-color: rgba(11, 148, 83, 0.1);
+	border-color: rgba(11, 148, 83, 1);
+}
+
+a:hover {
+	border-style: dotted;
+}
+
+cite.parenteses {
+	text-transform: uppercase;
+}
+
+cite.parenteses time::before,
+cite.parenteses time::after {
+	content: none;
+}
+
+cite.parenteses::before,
+cite time::before,
+dfn > abbr::before {
+	content: "(";
+}
+
+cite.parenteses::after,
+cite time::after,
+dfn > abbr::after {
+	content: ")";
+}
+
+abbr[title]:hover {
+	background-color: rgba(255, 246, 143, 1);
+	cursor: help;
+}
+
+abbr[title] {
+	background-color: rgba(255, 246, 143, 0.5);
+	border-color: #000;
+	border-style: dotted;
+	border-width: 0 0 1px 0;
+	padding: 0 0 2px 0;
+}
+
+strong {
+	font-weight: bold;
+}
+
+var {
+	color: #D14;
+	/*color: #104E8B;*/
+	font-family: monospace;
+}
+
+code {
+	background: #F5F5F5;
+	border-color: #DDD;
+	border-radius: 0.3em;
+	border-style: solid;
+	border-width: 1px;
+	color: #666;
+	font-family: monospace;
+	font-size: 0.8em;
+	padding: 0.2em;
+}
+
+kbd {
+	background: #EEE;
+	border-color: #BBB;
+	border-style: solid;
+	border-width: 0 1px 1px 0;
+	color: #666;
+	font-family: monospace;
+	font-size: 0.8em;
+	padding: 0.2em;
+	text-transform: uppercase;
+}
+
+figure > pre {
+	color: #666;
+	font-family: monospace;
+	tab-size: 4;
+	white-space: pre-wrap;
+}
+
+figure > img {
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+figure > pre,
+figure > img,
+figure > ul,
+figure > ol,
+figure > figcaption {
+	background: #F5F5F5;
+	border-width: 1px;
+	border-color: #DDD;
+	border-radius: 0.3em;
+	border-style: solid;
+	padding: 0.2em;
+}
+
+figure > ul > li,
+figure > ol > li {
+	color: #666;
+	font-family: monospace;
+	white-space: pre;
+}
+
+figure > ol {
+	counter-reset: linha;
+}
+
+figure > ol > li {
+	list-style-type: none;
+	counter-increment: linha;
+}
+
+figure > ol > li::before {
+	background-color: #EEE;
+	border-width: 0 1px 0 0;
+	border-color: #DDD;
+	border-style: solid;
+	content: counter(linha) ".";
+	color: #888;
+	display: inline-block;
+	margin-right: 20px;
+	padding: 0 10px;
+	text-align: right;
+	width: 30px;
+}
+
+figure {
+	margin: 20px 0;
+}
+
+figure > figcaption {
+	background: #FBFBFB;
+	border-width: 0 1px 1px 1px;
+	text-align: center;
+}
+
+.marcacao,
+.marcacao:hover {
+	background-color: #CCFB5D;
+	border: none;
+	color: #41A317;
+}
+
+.correcao,
+.correcao:hover {
+	background-color: #F06;
+	border: none;
+	color: #FFF;
+}
+@charset "utf-8";
+
+table.quadro td,
+table.quadro th {
+	border-color: #000;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	padding: 5px;
+	text-align:center;
+	vertical-align: middle;
+}
+
+table.quadro th {
+	background-color: #EEE;
+}
+
+table.quadro td.marcado {
+	background-color: #DDD;
+}
+
+table.quadro > thead th,
+table.quadro > tfoot th {
+	font-weight: bold;
+}

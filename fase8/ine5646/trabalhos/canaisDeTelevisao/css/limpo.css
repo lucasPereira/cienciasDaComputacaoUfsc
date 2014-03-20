@@ -1,0 +1,150 @@
+@charset "utf-8";
+
+* {
+	background-attachment: scroll; /* scroll | fixed */
+	background-color: transparent;
+	background-image: none;
+	background-position: left top; /* [ left | center | right ] [ top | center | bottom ] */
+	background-repeat: no-repeat; /* repeat | repeat-x | repeat-y | no-repeat */
+	border-color: transparent;
+	border-radius: 0;
+	border-style: none; /* none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset */
+	border-width: 0;
+	bottom: auto;
+	box-shadow: none;
+	clip: auto;
+	color: #000;
+	/*counter-increment */
+	/*counter-reset */
+	direction: ltr; /* ltr | rtl */
+	float: none; /* left | right | none */
+	height: auto;
+	left: auto;
+	margin: 0;
+	max-height: none;
+	max-width: none;
+	min-height: 0;
+	min-width: 0;
+	opacity: 1;
+	/*outline-color: invert; */
+	outline-style: none; /* none | hidden | dotted | dashed | solid | double | groove | ridge | inset | outset */
+	outline-width: 0;
+	padding: 0;
+	position: static; /* static | relative | absolute | fixed */
+	quotes: none; /* [<string> <string>]+ | none */
+	right: auto;
+	top: auto;
+	unicode-bidi: normal; /* normal | embed | bidi-override */
+	visibility: inherit; /* visible | hidden | collapse */
+	white-space: normal; /* normal | pre | nowrap | pre-wrap | pre-line */
+	width: auto;
+	z-index: 1;
+
+	font-family: sans-serif; /* serif | sans-serif | cursive | fantasy | monospace */
+	font-size: 1em;
+	font-size: 1rem;
+	font-style: normal; /* normal | italic | oblique */
+	font-variant: normal; /* normal | small-caps */
+	font-weight: normal; /* normal | bold | bolder | lighter */
+	letter-spacing: normal; /* normal | <length> */
+	line-height: normal; /* normal | <number> | <length> | <percentage> */ 
+	text-decoration: none; /* none | underline | overline | line-through | blink */
+	text-transform: none; /* capitalize | uppercase | lowercase | none */
+	text-shadow: none;
+	word-spacing: normal; /* normal | <length> */
+
+	clear: none; /* none | left | right | both */
+	cursor: auto;  /* [<uri> ,]* [ auto | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize | text | wait | help | progress ] */
+	/*display: block; inline | block | list-item | inline-block | table | inline-table | table-row-group | table-header-group | table-footer-group | table-row | table-column-group | table-column | table-cell | table-caption | none	 */
+	overflow: visible; /* visible | hidden | scroll | auto */
+	page-break-after: auto; /* auto | always | avoid | left | right | */
+	page-break-before: auto; /* auto | always | avoid | left | right | */
+	page-break-inside : auto; /* auto  | avoid */
+	text-align: left; /* left | right | center | justify */
+	text-indent: 0; 
+	/*orphans */
+	/*widows */
+
+	caption-side: top; /* top | bottom */
+	list-style-image: none;
+	list-style-position: inside; /* inside | outside */
+	list-style-type: none; /* disc | circle | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-greek | lower-latin | upper-latin | armenian | georgian | lower-alpha | upper-alpha | none */
+	border-collapse: collapse; /* collapse | separate */
+	border-spacing: 0;
+	table-layout: auto; /* auto | fixed */
+	empty-cells: show; /* show | hide */
+	vertical-align: baseline; /* baseline | sub | super | top | text-top | middle | bottom | text-bottom */
+}
+
+*::before,
+*::after {
+	content: none;
+}
+
+html {
+	font-size: 12pt;
+}
+
+head,
+title,
+base,
+link,
+meta,
+style {
+	display: none;
+	visibility: hidden;
+}
+
+li {
+	display: list-item;
+}
+
+table {
+	display: table;
+}
+
+tbody {
+	display: table-row-group;
+}
+
+thead {
+	display: table-header-group; 
+}
+
+tfoot {
+	display: table-footer-group;
+}
+
+col {
+	display: table-column;
+}
+
+collgroup {
+	display: table-column-group;
+}
+
+caption {
+	display: table-caption;
+}
+
+tr {
+	display: table-row;
+}
+
+td,
+th {
+	display: table-cell;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+code {
+	white-space: pre-wrap;
+}
+
+input[type="hidden"] {
+	display: none;
+	visibility: hidden;
+}

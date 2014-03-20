@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Livros>
+<livro ISBN="112"> 
+  <titulo>Tecnologia XML</titulo>
+  <preco>79.00</preco>
+  <autor> 
+    <nome>Joao da Silva</nome>
+    <mail>js@hotmail.com</mail>
+    <mail>jsilva@xxx.com</mail>
+  </autor>
+  <autor> 
+    <nome>Maria Souza</nome>
+  </autor>
+  <editora>Campus</editora>
+</livro>
+<livro ISBN="72"> 
+  <titulo>Banco de Dados</titulo>
+  <preco>129.00</preco>
+  <autor> 
+    <nome>Pedro Santos</nome>
+  </autor>
+  <editora>Makron Books</editora>
+</livro>
+<livro ISBN="239"> 
+  <titulo>Sistemas de Informacao</titulo>
+  <preco>208.50</preco>
+  <autor> 
+    <nome>Ana Pereira</nome>
+    <mail>ps@ig.com.br</mail>
+    <mail>anap@zzz.com</mail>
+  </autor>
+  <editora>Campus</editora>
+</livro>
+<livro ISBN="243"> 
+  <titulo>ERBD 2007</titulo>
+  <preco>38.50</preco>
+  <evento>
+	<local>
+		<cidade>Caxias do Sul</cidade>
+		<estado>RS</estado>
+	</local>
+	<dataInicio>2007-04-09</dataInicio>
+	<dataTermino>2007-04-11</dataTermino>
+  </evento>  
+  <editora>Editora da UCS</editora>
+</livro>
+<livro ISBN="0">
+  <titulo>Ciencia</titulo>
+  <preco>666</preco>
+  <autor>
+    <nome>Ze Ruela</nome>
+  </autor>
+  <autor>
+    <nome>Ze Casquinha</nome>
+  </autor>
+  <editora>Void</editora>
+</livro>
+<livro ISBN="1">
+  <titulo>Programacao Web</titulo>
+  <preco>60</preco>
+  <autor>
+    <nome>Felipe Custodio</nome>
+  </autor>
+  <editora>UFSC</editora>
+</livro>
+<livro ISBN="2">
+  <titulo>Banco de Dados NoSQL</titulo>
+  <preco>90</preco>
+  <autor>
+    <nome>Renato Fileto</nome>
+  </autor>
+  <editora>UFSC</editora>
+</livro>
+<livro ISBN="3">
+  <titulo>Data Mining</titulo>
+  <preco>75.25</preco>
+  <evento>
+	<local>
+		<cidade>Florianopolis</cidade>
+		<estado>SC</estado>
+	</local>
+	<dataInicio>2013-10-13</dataInicio>
+	<dataTermino>2013-10-18</dataTermino>
+  </evento>
+  <editora>Insular</editora>
+</livro>
+<livro ISBN="4">
+  <titulo>Paradigmas de Programacao</titulo>
+  <preco>75</preco>
+  <evento>
+	<local>
+		<cidade>Porto Belo</cidade>
+		<estado>SC</estado>
+	</local>
+	<dataInicio>2013-10-13</dataInicio>
+	<dataTermino>2013-10-15</dataTermino>
+  </evento>
+  <editora>Praia Bunita</editora>
+</livro>
+<livro ISBN="5">
+  <titulo>Inteligencia Artificial</titulo>
+  <preco>1</preco>
+  <evento>
+	<local>
+		<cidade>Sao Paulo</cidade>
+		<estado>SP</estado>
+	</local>
+	<dataInicio>1999-10-12</dataInicio>
+	<dataTermino>1999-10-12</dataTermino>
+  </evento>
+  <editora>Cascoa</editora>
+</livro>
+</Livros>

@@ -1,0 +1,12 @@
+# ALunos:
+# André Stangarlin de Camargo (10100731)
+# Lucas Pereira (10100754)
+
+a) SELECT m.cpf, m.nome FROM medicos m WHERE m.atuacao = 'ortopedia' AND m.nome LIKE 'M%';
+b) SELECT * FROM pacientes p WHERE p.tratamento IS NULL;
+c) SELECT p.cpf, p.nome FROM pacientes p WHERE p.leito.andar = 1;
+d) SELECT m.crm, m.nome FROM medicos m WHERE m.atuacao = ELEMENT(m.formacao, 0);
+e) SELECT p.nome, p.telefone FROM ONLY pacientes p;
+f) SELECT p.cpf, p.nome from pessoas p where p.idade() > 30;
+g) SELECT p.cpf , p.nome from pacientes p WHERE p.responsavel.responsavel.cpf = 6 AND p.cpf <> 6;
+h) SELECT m.nome, m.crm FROM medicos m WHERE LENGTH(m.pacResponsavel(m.crm)) > 1;

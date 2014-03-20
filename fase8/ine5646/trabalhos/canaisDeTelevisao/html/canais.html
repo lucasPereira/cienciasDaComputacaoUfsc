@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Canais de TV a Cabo</title>
+		<link type="text/css" rel=" stylesheet" href="../css/limpo.css" />
+		<link type="text/css" rel=" stylesheet" href="../css/canais.css" />
+		<script type="application/javascript" src="../js/linda.js"></script>
+		<script type="application/javascript" src="../js/sistema.js"></script>
+		<script type="application/javascript" src="../js/operadoras.js"></script>
+		<script type="application/javascript" src="../js/generos.js"></script>
+		<script type="application/javascript" src="../js/canais.js"></script>
+		<script type="application/javascript" src="../js/pacotes.js"></script>
+		<script type="application/javascript">
+			Dom.$(janela).tratarCarregamento(function() {
+				Sistema = Sistema.instancia();
+			});
+		</script>
+	</head>
+	<body>
+		<section class="sistema">Canais de TV a Cabo</section>
+		<div class="conteudo">
+			<div class="operadorasPacotes">
+				<section class="operadoras">
+					<input type="text" class="operadora" placeholder="URL da operadora" />
+					<button class="cadastrar">Cadastrar Operadora</button>
+					<hr />
+					<ul class="operadoras"></ul>
+				</section>
+				<section class="pacotes">
+					<p>Canais selecionados: <span class="canais"></p>
+					<p>Gêneros selecionados: <span class="generos"></p>
+					<p>Preço máximo: <span class="precoMaximo"></p>
+					<hr />
+					<div class="comando">
+						<input type="text" class="canal" placeholder="identificador do canal" />
+						<button class="adicionarCanal">Adicionar canal</button>
+					</div>
+					<div class="comando">
+						<input type="text" class="genero" placeholder="gênero" />
+						<input type="text" class="quantidadeDoGenero" placeholder="quatidade" />
+						<button class="adicionarGenero">Adicionar gênero</button>
+					</div>
+					<div class="comando">
+						<input type="text" class="precoMaximo" placeholder="preço máximo" />
+						<button class="fixarPrecoMaximo">Fixar preço máximo</button>
+					</div>
+					<button class="limpar">Limpar critérios de busca</button>
+					<button class="buscar">Buscar pacotes</button>
+					<hr />
+					<ul class="pacotes"></ul>
+				</section>
+			</div>
+			<div class="generosCanais">
+				<section class="generos">
+					<button class="atualizar">Atualizar gêneros</button>
+					<hr />
+					<ul class="generos"></ul>
+				</section>
+				<section class="canais">
+					<button class="atualizar">Mostrar todos canais</button>
+					<div>
+						<input type="text" class="canal" placeholder="busca" />
+						<button class="buscar">Buscar</button>
+					</div>
+					<hr />
+					<ul class="canais"></ul>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>

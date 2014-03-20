@@ -1,0 +1,22 @@
+a) buscar os dados de todos os livros;
+	/Livros/livro/(@* | *)
+b) buscar os títulos e os ISBNs dos livros;
+	/Livros/livro/(@ISBN | titulo)
+c) buscar os títulos dos livros com preço superior a 200;
+	/Livros/livro[preco > 200]/titulo
+d) buscar os nomes dos autores que possuem mail;
+	/Livros/livro/autor[mail]/nome
+e) buscar os dados dos livros de 2005 que não sejam da editora Campus; [SEM DATA]
+	/Livros/livro/(@* | *)
+f) buscar os títulos dos livros escritos por Joao da Silva ou Ana Pereira que custam menos de 100;
+	//livro[(autor/nome = "Joao da Silva" or autor/nome =  "Ana Pereira") and preco < 100]/titulo
+g) buscar o nome do segundo autor de cada livro (função position());
+	//livro/autor[position() = 2]/nome
+h) buscar o nome do autor ou o titulo do evento de cada livro; [SEM TITULO]
+	//livro/(autor/nome | evento/)
+i) buscar o titulo dos eventos que ocorreram no estado RS; [SEM TITULO]
+	//livro
+j) buscar apenas os textos dos títulos dos livros, sem a tag ‘titulo’ (função text()) ;
+	//livro/titulo/text()
+k) buscar os dados dos autores que possuem livros com preço inferior a 80.
+	//livro[preco < 80]/autor/*

@@ -1,0 +1,14 @@
+<!ELEMENT listaLivros(livro*)>
+<!ELEMENT livro(titulo, preco, (autor+ | eventos), editora)>
+<!ELEMENT titulo(#PCDATA)>
+<!ELEMENT preco(#PCDATA)>
+<!ELEMENT autor(nome, mail*)>
+<!ELEMENT nome(#PCATA)>
+<!ELEMENT mail(#PCDATA)>
+<!ELEMENT evento(local, dataInicio, dataTermino)>
+<!ELEMENT local(cidade, estado)>
+<!ELEMENT cidade(#PCDATA)>
+<!ELEMENT estado(#PCDATA)>
+<!ELEMENT dataInicio(#PCDATA)>
+<!ELEMENT dataTermino(#PCDATA)>
+<!ELEMENT editora(#PCDATA)>

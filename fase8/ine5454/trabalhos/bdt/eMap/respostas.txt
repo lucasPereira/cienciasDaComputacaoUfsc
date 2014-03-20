@@ -1,0 +1,17 @@
+André Camargo (10100731)
+Lucas Pereira (10100754)
+
+1.
+SELECT p.cd_pessoa, p.nm_pessoa, pb.vt_begin
+FROM pessoa p, pesquisador_bolsa pb
+WHERE p.nivel_bolsa = '1A'
+AND p.cd_pessoa = pb.cd_pessoa;
+
+
+2.
+SELECT p.nm_pessoa, i.nm_instituicao, pc.vt_end
+FROM pessoa p, pesquisador_cargo pc, instituicao i
+WHERE p.cd_pessoa = pc.cd_pessoa
+AND i.cd_instituicao = pc.cd_instituicao
+AND VALID(pc) INTERSECT'15-07-2004'
+

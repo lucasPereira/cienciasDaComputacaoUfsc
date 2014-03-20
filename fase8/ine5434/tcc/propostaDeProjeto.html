@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+	<head>
+		<link href="estilos/limpo.css" type="text/css" media="all" rel="stylesheet" />
+		<link href="estilos/propostaDeProjeto.css" type="text/css" media="all" rel="stylesheet" />
+		<meta charset="utf-8" />
+		<title>Webis: Linguagem e ambiente Web acessível de programação</title>
+	</head>
+	<body>
+		<section class="capa">
+			<header>
+				<p>Universidade Federal de Santa Catarina</p>
+				<p>Centro Tecnológico</p>
+				<p>Departamento de Informática e Estatística</p>
+				<p>Curso de Ciências da Computação</p>
+			</header>
+			<hgroup>
+				<h1>Webis:</h1>
+				<h2>Linguagem e ambiente Web acessível de programação</h2>
+			</hgroup>
+			<section>
+				<p>Lucas Pereira da Silva</p>
+			</section>
+			<footer>
+				<address>Florianópolis</address>
+				<time datetime="2012-12">Dezembro de 2012</time>
+			</footer>
+		</section>
+		<section class="preTextual">
+			<h1 id="sumario">Sumário</h1>
+			<ol>
+				<li><h1><a href="#introducao">Introdução</a></h1></li>
+				<li><h1><a href="#objetivos">Objetivos</a></h1></li> 
+				<li><h2><a href="#objetivoGeral">Objetivo geral</a></h2></li>
+				<li><h2><a href="#objetivosEspecificos">Objetivos específicos</a></h2></li>
+				<li><h1><a href="#metodoDePesquisa">Método de pesquisa</a></h1></li>
+				<li><h1><a href="#cronograma">Cronograma</a></h1></li>
+				<li><h1><a href="#custos">Custos</a></h1></li>
+				<li><h1><a href="#comunicacao">Comunicação</a></h1></li>
+				<li><h1><a href="#riscos">Riscos</a></h1></li>
+				<li><h1 class="naoNumerado"><a href="#referencias">Referências bibliográficas</a></h1></li>
+			</ol>
+		</section>
+		<section class="textual">
+			<h1 id="introducao"><a href="#sumario">Introdução</a></h1>
+			<p>A facilidade no aprendizado de uma primeira linguagem de programação está diretamente relacionada com a própria linguagem que é objeto de estudo e também com o ambiente de programação a ser utilizado. Boa parte das linguagens não possuem regras sintáticas e semânticas simples, e tão pouco oferecem um bom ambiente de programação, já que, na maioria dos casos, as linguagens de programação são desenvolvidas para serem ferramentas profissionais e não de aprendizado <cite class="parenteses"><a href="#referencia4">Gomes; Mendes, <time>2012</time></a></cite>. Em decorrência desse fato, o primeiro contato com uma linguagem de programação pode ser muitas vezes traumático, fazendo com que o aluno perca o interesse.</p>
+			<p>A linguagem Telis, desenvolvida no <dfn>Laboratório de Software Educacional <abbr title="Laboratório de Software Educacional">Edugraf</abbr></dfn>, possui regras sintáticas e semânticas simples que podem ser facilmente assimiladas. Telis também é o nome do ambiente de programação oferecido para a linguagem. Um programa Telis pode ser executado em um navegador Web através do uso de <i lang="en">applets</i> Java <cite class="parenteses"><a href="#referencia5">PIERI <i lang="la"> et al</i>, <time>2009</time></a></cite>.</p>
+			<p><cite><a href="#referencia1">Saviski <time>2010</time></a></cite>, propôs o porte da linguagem Telis para execução nativa em navegadores Web sem a necessidade da utilização de <i lang="en">applets</i>. A abordagem adotada foi a de gerar em JavaScript (linguagem interpretada nativamente pelos navegadores) o código escrito em Java da já existente máquina Telis.</p>
+			<p>O presente projeto terá embasamento no projeto desenvolvido por <cite><a href="#referencia1">Saviski <time>2010</time></a></cite> e consistirá do desenvolvimento de uma linguagem baseada em Telis e de uma máquina de execução escrita diretamente em JavaScript. O projeto também deverá ter grande foco no ambiente de programação que deverá ser executado nativamente por navegadores Web. O novo ambiente e a nova linguagem de programação a serem desenvolvidos serão chamados doravante de Webis.</p>
+			<p>A importância de um ambiente de programação acessível está no fato de possibilitar que qualquer pessoa possa aprender uma primeira linguagem de programação de maneira fácil e sem ter que se deparar com barreiras de acessibilidade. Garantir a acessibilidade é permitir que uma pessoa cega, por exemplo, possa utilizar o ambiente sem maiores dificuldades.</p>
+			<p>Projetos como o Eclipse Orion mostram que é possível o desenvolvimento de um ambiente de programação que execute diretamente nos navegadores. O Eclipse Orion é um editor de texto para o desenvolvimento de aplicações Web escritas em HTML, JavaScript e CSS. Uma de suas principais ideias é fazer com que não só as aplicações executem na Web, mas também o próprio ambiente de programação.</p>
+			<p>A utilização da Web como plataforma se encaixa muito bem nos requisitos de um ambiente acessível. Além de ser um sistema distribuído de baixo acoplamento, a Web se mostra uma ótima plataforma para a execução de aplicações, pois permite a manipulação de recursos <i lang="en">online</i> e gera independência da aplicação para com o sistema operacional. A <dfn>Linguagem de Marcação de Hipertexto <abbr lang="en" title="Hypertext Markup Language 5">HTML5</abbr></dfn> introduz de maneira acessível novos recursos essenciais que ainda não eram suportados de forma padronizada pela Web. Isso garante ao usuário uma acessibilidade adequada e permite que ele se familiarize desde os primeiros passos no aprendizado de uma linguagem de programação com o desenvolvimento de aplicações que executem na Web.</p>
+		</section>
+		<section class="textual">
+			<h1 id="objetivos"><a href="#sumario">Objetivos</a></h1>
+			<h2 id="objetivoGeral"><a href="#sumario">Objetivo geral</a></h2>
+			<p>Desenvolver uma linguagem de programação baseada em Telis e um ambiente acessível de programação. Tanto o ambiente de programação quanto os programas gerados pela linguagem deverão executar nativamente em navegadores Web sem a necessidade da utilização de extensões. A linguagem deverá priorizar a acessibilidade de programadores e usuários cegos possibilitando a utilização e manipulação de sons 3D que poderão ser usados  para a criação de aplicações mais ricas e acessíveis.</p>
+			<h2 id="objetivosEspecificos"><a href="#sumario">Objetivos específicos</a></h2>
+			<ul>
+				<li>Definir uma linguagem de programação com sintaxe e semântica baseada em Telis.</li>
+				<li>Desenvolver o ambiente Web de execução para a linguagem definida.</li>
+				<li>Desenvolver o ambiente Web de programação para a linguagem definida.</li>
+				<li>Garantir a acessibilidade dos ambientes de execução e de programação desenvolvidos.</li>
+				<li>Disponibilizar na linguagem elementos que permitam a utilização e manipulação de sons 3D.</li>
+			</ul>
+		</section>
+		<section class="textual">
+			<h1 id="metodoDePesquisa"><a href="#sumario">Método de pesquisa</a></h1>
+			<p>Em um primeiro momento a pesquisa será fundamentada no estudo tanto da linguagem quanto do ambiente de programação Telis. Serão pesquisadas formas de criar um ambiente Web acessível de execução e programação para uma linguagem baseada em Telis.</p>
+			<p>O Telis foi desenvolvido no Edugraf e a partir do seu desenvolvimento foram gerados alguns <dfn>trabalhos de conclusão de curso <abbr title="Trabalho de Conclusão de Curso">TCC</abbr></dfn>, como os trabalhos desenvolvidos por <cite><a href="#referencia1">Saviski <time>2012</time></a></cite>, <cite><a href="#referencia2">Pieri <time>2007</time></a></cite> e <cite><a href="#referencia6">Xavier <time>2006</time></a></cite>.</p>
+			<p>Também serão estudadas as novas tecnologias que fazem parte da especificação do <abbr lang="en" title="Hypertext Markup Language 5">HTML5</abbr> e que poderão ser utilizadas para compor o Webis. Como existirá um grande foco na acessibilidade, será necessário pesquisar referências que tratem desse assunto. As <cite><a href="#referencia3"><dfn>Diretrizes de Acessibilidade para o Conteúdo da Web <abbr lang="en" title="Web Content Accessibility Guidelines">WCAG</abbr></dfn></a></cite> servirão como ponto de partida e base de apoio para os estudos de acessibilidade.</p>
+			<p>A pesquisa terá caráter exploratório e será desenvolvida no Edugraf. Para o desenvolvimento do projeto e da implementação serão utilizadas apenas plataformas livres. A validação do trabalho se dará através da utilização da linguagem e do ambiente de programação por voluntários cegos que, através de atividades de aprendizagem, desenvolverão suas aplicações Webis.</p>
+		</section>
+		<section class="textual">
+			<h1 id="cronograma"><a href="#sumario">Cronograma</a></h1>
+			<table class="quadro">
+				<thead>
+					<tr>
+						<th rowspan="2">Etapas</th>
+						<th colspan="10">Meses</th>
+					</tr>
+					<tr>
+						<td><time datetime="2013-03">Mar.</time></td>
+						<td><time datetime="2013-04">Abr.</time></td>
+						<td><time datetime="2013-05">Mai.</time></td>
+						<td><time datetime="2013-06">Jun.</time></td>
+						<td><time datetime="2013-07">Jul.</time></td>
+						<td><time datetime="2013-08">Ago.</time></td>
+						<td><time datetime="2013-09">Set.</time></td>
+						<td><time datetime="2013-10">Out.</time></td>
+						<td><time datetime="2013-11">Nov.</time></td>
+						<td><time datetime="2013-12">Dez.</time></td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Fundamentação teórica</th>
+						<td class="marcado"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Desenvolvimento da linguagem</th>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Desenvolvimento do ambiente de execução</th>
+						<td></td>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Desenvolvimento do ambiente de programação</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Relatório parcial</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Relatório final</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="marcado"></td>
+						<td class="marcado"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Defesa pública</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="marcado"></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Relatório final corrigido</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td class="marcado"></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section class="textual">
+			<h1 id="custos"><a href="#sumario">Custos</a></h1>
+			<table class="quadro">
+				<thead>
+					<tr>
+						<th>Item</th>
+						<th>Quantidade</th>
+						<th>Valor unitário</th>
+						<th>Valor total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Folhas A4</td>
+						<td>1 (resma)</td>
+						<td>R$ 12,00</td>
+						<td>R$ 12,00</td>
+					</tr>
+					<tr>
+						<td><i lang="en">Tonner</i> de impressora</td>
+						<td>1</td>
+						<td>R$ 200,00</td>
+						<td>R$ 200,00</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th colspan="3">Total</th>
+						<td>R$ 212,00</td>
+					</tr>
+				</tfoot>
+			</table>
+		</section>
+		<section class="textual">
+			<h1 id="recursosHumanos"><a href="#sumario">Recursos humanos</a></h1>
+			<table class="quadro">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Função</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Lucas Pereira da Silva</td>
+						<td>Autor</td>
+					</tr>
+					<tr>
+						<td>Luiz Fernando Bier Melgarejo</td>
+						<td>Orientador</td>
+					</tr>
+					<tr>
+						<td>Giovani Pieri</td>
+						<td>Co-orientador</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section class="textual">
+			<h1 id="comunicacao"><a href="#sumario">Comunicação</a></h1>
+			<table class="quadro">
+				<thead>
+					<tr>
+						<th>O que deve ser comunicado</th>
+						<th>Por quem</th>
+						<th>Para quem</th>
+						<th>Melhor forma</th>
+						<th>Frequência</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th>Proposta de projeto</th>
+						<td>Autor</td>
+						<td>Coordenador, orientador e co-orientador</td>
+						<td>Relatório</td>
+						<td>Uma vez (<time datetime="2012-12">dezembro de 2012</time>)</td>
+					</tr>
+					<tr>
+						<th>Relatório parcial</th>
+						<td>Autor</td>
+						<td>Coordenador, orientador e co-orientador</td>
+						<td>Relatório</td>
+						<td>Uma vez (<time datetime="2013-12">julho de 2013</time>)</td>
+					</tr>
+					<tr>
+						<th>Relatório final</th>
+						<td>Autor</td>
+						<td>Coordenador, orientador, co-orientador, membros da banca</td>
+						<td>Relatório</td>
+						<td>Uma vez (<time datetime="2013-11">novembro de 2013</time>)</td>
+					</tr>
+					<tr>
+						<th>Relatório final corrigido</th>
+						<td>Autor</td>
+						<td>Coordenador, orientador, co-orientador, membros da banca</td>
+						<td>Relatório</td>
+						<td>Uma vez (<time datetime="2013-11">dezembro de 2013</time>)</td>
+					</tr>
+					<tr>
+						<th>Defesa</th>
+						<td>Autor</td>
+						<td>Coordenador. orientador, co-orientador e membros da banca</td>
+						<td>Apresentação oral</td>
+						<td>Uma vez (<time datetime="2013-07">novembro de 2012</time>)</td>
+					</tr>
+					<tr>
+						<th>Andamento do projeto</th>
+						<td>Autor</td>
+						<td>Orientador e co-orientador</td>
+						<td>Correio eletrônico</td>
+						<td>Diária</td>
+					</tr>
+					<tr>
+						<th>Andamento geral do projeto</th>
+						<td>Autor</td>
+						<td>Orientador e co-orientador</td>
+						<td>Reunião</td>
+						<td>Quinzenal</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section class="textual">
+			<h1 id="riscos"><a href="#sumario">Riscos</a></h1>
+			<table class="quadro">
+				<thead>
+					<tr>
+						<th>Risco</th>
+						<th>Probabilidade</th>
+						<th>Impacto</th>
+						<th>Prioridade</th>
+						<th>Estratégia de resposta</th>
+						<th>Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Perda dos dados</td>
+						<td>Baixa</td>
+						<td>Alto</td>
+						<td>Alta</td>
+						<td>Recuperação da cópia de segurança</td>
+						<td>Cópia de segurança e controle de versão descentralizado</td>
+					</tr>
+					<tr>
+						<td>Funcionalidade necessário não implementada nos navegadores</td>
+						<td>Média</td>
+						<td>Médio</td>
+						<td>Média</td>
+						<td>Renegociação do escopo e implementação total ou parcial nos navegadores que implementam a funcionalidade</td>
+						<td>Acompanhamento do desenvolvimento dos navegadores mais utilizados para detectar quais funcionalidades poderão ser utilizadas com segurança</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section class="posTextual">
+			<h1 id="referencias"><a href="#sumario">Referências bibliográficas</a></h1>
+			<p id="referencia1">SAVISKI, Marcelo. <strong>Porte de uma linguagem de programação para execução nativa em navegadores Web</strong>. Curso de Ciências da Computação, Departamento de Informática e Estatística, Universidade Federal de Santa Catarina, Florianópolis, 2010.</p>
+			<p id="referencia2">PIERI, Giovani. <strong>Projeto e implementação de uma linguagem de programação</strong>. Curso de Ciências da Computação, Departamento de Informática e Estatística, Universidade Federal de Santa Catarina, Florianópolis, 2007.</p>
+			<p id="referencia3">CALDWELL, Ben <i lang="la">et al</i>. <i lang="en"><strong>Web Content Accessibility Guidelines 2.0</strong>. World Wide Web Consortium</i>, 2008. Disponível em: <a href="http://www.w3.org/TR/WCAG/">http://www.w3.org/TR/WCAG/</a> Acesso em: dezembro de 2012.</p>
+			<p id="referencia4">GOMES, Anabela; MENDES, A. J. <i lang="en"><strong>Learning to program: difficulties and solutions</strong>. International Conference on Engineering Education</i>, Coimbra, Portugal, 2007.</p>
+			<p id="referencia5">PIERI, Giovani <i lang="la">et al</i>. <strong>Telis: a programming tool set for beginners</strong>. In: <i lang"en">INTERNATIONAL INFORMATION AND TELECOMMUNICATION TECHNOLOGIES SYMPOSIUM</i>, 8., 2009, Florianópolis, Santa Catarina, Brasil. Anais... Florianópolis: Fundação Bardal de Educação e Cultura, 2009. p. 183-186.</p>
+			<p id="referencia6">XAVIER, Marcus Vinícius Cruz. <strong>Telis ME: uma versão de Telis para dispositivos móveis</strong>. Curso de Ciências da Computação, Departamento de Informática e Estatística, Universidade Federal de Santa Catarina, Florianópolis, 2006.</p>
+		</section>
+	</body>
+</html>
